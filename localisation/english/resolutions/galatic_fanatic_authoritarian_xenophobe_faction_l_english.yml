@@ -11,3 +11,7 @@
 
  resolution_force_establish_galatic_fanatic_authoritarian_xenophobe_faction_static_modifier:0 "Galatic Fanatic Authoritarian Xenophobe Faction"
  
+ edict_found_fanatic_authoritarian_xenophobe_faction:0 "Found Fanatic Authoritarian Xenophobe Faction"
+ edict_found_fanatic_authoritarian_xenophobe_faction_desc:0 "Enable the Fanatic Authoritarian Xenophobe Faction to spawn."
+ edict_found_fanatic_authoritarian_xenophobe_faction_tooltip:0 "Enable the Fanatic Authoritarian Xenophobe Faction to spawn."
+ 

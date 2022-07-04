@@ -11,3 +11,7 @@
 
  resolution_force_establish_galatic_militarist_xenophile_spiritualist_faction_static_modifier:0 "Galatic Militarist Xenophile Spiritualist Faction"
  
+ edict_found_militarist_xenophile_spiritualist_faction:0 "Found Militarist Xenophile Spiritualist Faction"
+ edict_found_militarist_xenophile_spiritualist_faction_desc:0 "Enable the Militarist Xenophile Spiritualist Faction to spawn."
+ edict_found_militarist_xenophile_spiritualist_faction_tooltip:0 "Enable the Militarist Xenophile Spiritualist Faction to spawn."
+ 

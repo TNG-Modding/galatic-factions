@@ -116,6 +116,15 @@
             "disabled": false,
             "dumpContents": true,
             "isBom": true
+        },
+        {
+            "name": "Fanatic Factions Edicts",
+            "specFilePath": "./specs/fanaticFactions.json",
+            "templateDirectoryPath": "./templates/found_faction_edict",
+            "outputDirectoryPath": "../common/edicts",
+            "disabled": false,
+            "dumpContents": true,
+            "isBom": false
         }
     ]
 }

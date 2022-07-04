@@ -11,3 +11,7 @@
 
  resolution_force_establish_galatic_pacifist_authoritarian_spiritualist_faction_static_modifier:0 "Galatic Pacifist Authoritarian Spiritualist Faction"
  
+ edict_found_pacifist_authoritarian_spiritualist_faction:0 "Found Pacifist Authoritarian Spiritualist Faction"
+ edict_found_pacifist_authoritarian_spiritualist_faction_desc:0 "Enable the Pacifist Authoritarian Spiritualist Faction to spawn."
+ edict_found_pacifist_authoritarian_spiritualist_faction_tooltip:0 "Enable the Pacifist Authoritarian Spiritualist Faction to spawn."
+ 

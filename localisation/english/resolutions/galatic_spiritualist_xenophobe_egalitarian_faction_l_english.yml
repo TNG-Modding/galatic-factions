@@ -11,3 +11,7 @@
 
  resolution_force_establish_galatic_spiritualist_xenophobe_egalitarian_faction_static_modifier:0 "Galatic Spiritualist Xenophobe Egalitarian Faction"
  
+ edict_found_spiritualist_xenophobe_egalitarian_faction:0 "Found Spiritualist Xenophobe Egalitarian Faction"
+ edict_found_spiritualist_xenophobe_egalitarian_faction_desc:0 "Enable the Spiritualist Xenophobe Egalitarian Faction to spawn."
+ edict_found_spiritualist_xenophobe_egalitarian_faction_tooltip:0 "Enable the Spiritualist Xenophobe Egalitarian Faction to spawn."
+ 

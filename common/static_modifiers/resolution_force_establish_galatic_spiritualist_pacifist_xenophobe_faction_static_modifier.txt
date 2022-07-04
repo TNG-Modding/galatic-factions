@@ -1,3 +1,19 @@
 resolution_force_establish_galatic_spiritualist_pacifist_xenophobe_faction_static_modifier = {
+   
     
+    
+    
+    pop_ethic_xenophobe_attraction_mult = 0.25
+    
+    
+    
+    
+    
+    pop_ethic_pacifist_attraction_mult = 0.25
+    
+    
+    
+    
+    
+    pop_ethic_spiritualist_attraction_mult = 0.25
 }

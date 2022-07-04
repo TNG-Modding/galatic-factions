@@ -1,0 +1,65 @@
+@Edict1Cost = 10
+@Edict2Cost = 20
+@Edict3Cost = 30
+
+@EdictPerpetual = -1
+
+found_fanatic_militarist_xenophobe_faction = {
+	length = @EdictPerpetual
+	icon = "GFX_edict_type_policy"
+
+	resources = {
+		category = edicts
+		upkeep = {
+			influence = 1
+		}
+	}
+
+	effects = {
+		custom_tooltip = edict_found_fanatic_militarist_xenophobe_faction_tooltip
+	}
+
+	potential = {
+		OR = {
+			has_ethic = ethic_fanatic_militarist
+			has_ethic = ethic_militarist
+			has_ethic = ethic_fanatic_xenophobe
+			has_ethic = ethic_xenophobe
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+		}
+
+		NAND = {
+			has_ethic = ethic_fanatic_militarist
+			
+			
+			has_ethic = ethic_xenophobe
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+		}
+	}
+
+	ai_weight = {
+		weight = 0
+	}
+}

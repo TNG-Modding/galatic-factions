@@ -11,3 +11,7 @@
 
  resolution_force_establish_galatic_militarist_egalitarian_xenophile_faction_static_modifier:0 "Galatic Militarist Egalitarian Xenophile Faction"
  
+ edict_found_militarist_egalitarian_xenophile_faction:0 "Found Militarist Egalitarian Xenophile Faction"
+ edict_found_militarist_egalitarian_xenophile_faction_desc:0 "Enable the Militarist Egalitarian Xenophile Faction to spawn."
+ edict_found_militarist_egalitarian_xenophile_faction_tooltip:0 "Enable the Militarist Egalitarian Xenophile Faction to spawn."
+ 

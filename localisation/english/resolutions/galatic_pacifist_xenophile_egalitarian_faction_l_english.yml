@@ -11,3 +11,7 @@
 
  resolution_force_establish_galatic_pacifist_xenophile_egalitarian_faction_static_modifier:0 "Galatic Pacifist Xenophile Egalitarian Faction"
  
+ edict_found_pacifist_xenophile_egalitarian_faction:0 "Found Pacifist Xenophile Egalitarian Faction"
+ edict_found_pacifist_xenophile_egalitarian_faction_desc:0 "Enable the Pacifist Xenophile Egalitarian Faction to spawn."
+ edict_found_pacifist_xenophile_egalitarian_faction_tooltip:0 "Enable the Pacifist Xenophile Egalitarian Faction to spawn."
+ 

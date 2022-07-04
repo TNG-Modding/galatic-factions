@@ -11,3 +11,7 @@
 
  resolution_force_establish_galatic_xenophile_authoritarian_pacifist_faction_static_modifier:0 "Galatic Xenophile Authoritarian Pacifist Faction"
  
+ edict_found_xenophile_authoritarian_pacifist_faction:0 "Found Xenophile Authoritarian Pacifist Faction"
+ edict_found_xenophile_authoritarian_pacifist_faction_desc:0 "Enable the Xenophile Authoritarian Pacifist Faction to spawn."
+ edict_found_xenophile_authoritarian_pacifist_faction_tooltip:0 "Enable the Xenophile Authoritarian Pacifist Faction to spawn."
+ 

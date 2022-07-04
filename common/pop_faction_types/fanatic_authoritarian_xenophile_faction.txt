@@ -33,6 +33,7 @@ fanatic_authoritarian_xenophile_faction = {
 
 			OR = {
 				has_modifier = resolution_force_establish_galatic_fanatic_authoritarian_xenophile_faction_static_modifier
+				has_edict = found_fanatic_authoritarian_xenophile_faction
 				AND = {
 					
 					
@@ -139,7 +140,141 @@ fanatic_authoritarian_xenophile_faction = {
 	}
 
 	actions = {
-		
+		embrace_faction = {
+			title = "EMBRACE_FACTION"
+			description = "EMBRACE_FACTION_DESC"
+
+			cost = {
+				unity = 5000
+			}
+
+			potential = {
+				exists = owner
+				owner = {
+					OR = {
+						is_subject = no
+						NOT = { any_agreement = { agreement_preset = preset_dominion } }
+					}
+				}
+			}
+
+			valid = {
+				custom_tooltip = {
+					fail_text = EMBRACE_FACTION_COOLDOWN
+					parameter:empire = {
+						NOT = { has_modifier = embraced_faction_timer }
+					}
+				}
+				support > 0.20
+				parameter:empire = {
+					NOR = { 
+						
+						
+						
+						
+						
+						
+						
+						
+						
+						
+						
+						has_ethic = ethic_xenophile
+						has_ethic = ethic_fanatic_authoritarian
+						
+						
+						 
+					}
+				}
+			}
+
+			effect = {
+				add_modifier = { modifier = embraced_faction days = 3600 }
+				parameter:empire = {
+					hidden_effect = {
+						add_modifier = { modifier = embraced_faction_timer days = 3600 }
+						every_pop_faction = {
+							limit = { NOT = { is_same_value = root } }
+							add_modifier = { modifier = embraced_another_faction days = 3600 }
+						}
+						country_remove_ethic = ethic_militarist
+						country_remove_ethic = ethic_fanatic_militarist
+						country_remove_ethic = ethic_pacifist
+						country_remove_ethic = ethic_fanatic_pacifist
+						country_remove_ethic = ethic_xenophobe
+						country_remove_ethic = ethic_fanatic_xenophobe
+						country_remove_ethic = ethic_xenophile
+						country_remove_ethic = ethic_fanatic_xenophile
+						country_remove_ethic = ethic_egalitarian
+						country_remove_ethic = ethic_fanatic_egalitarian
+						country_remove_ethic = ethic_authoritarian
+						country_remove_ethic = ethic_fanatic_authoritarian
+						country_remove_ethic = ethic_materialist
+						country_remove_ethic = ethic_fanatic_materialist
+						country_remove_ethic = ethic_spiritualist
+						country_remove_ethic = ethic_fanatic_spiritualist
+					}
+
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					country_add_ethic = ethic_xenophile
+					country_add_ethic = ethic_fanatic_authoritarian
+					
+					
+					
+				}
+			}
+
+			ai_weight = {
+				base = 1
+				modifier = {
+					factor = 0
+					support < 0.50
+					owner = {
+						
+						
+						
+						
+						
+						
+						
+						
+						
+						
+						
+						has_ethic = ethic_xenophile
+						has_ethic = ethic_fanatic_authoritarian
+						
+						
+						
+					}
+				}
+				modifier = {
+					factor = 0
+					owner = { 
+						has_valid_civic = civic_fanatic_purifiers
+						has_valid_civic = civic_inwards_perfection
+					}
+				}
+				modifier = {
+					factor = 0
+					owner = {
+						count_pop_faction = {
+							count < 4
+						}
+					}
+				}
+			}
+		}
 	}
 
 	
@@ -323,11 +458,11 @@ fanatic_authoritarian_xenophile_faction = {
     }
     
 
-	    
+	
 
 	    
 
-	    
+	
 
 	    
 

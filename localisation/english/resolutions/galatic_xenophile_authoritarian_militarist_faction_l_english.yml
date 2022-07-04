@@ -11,3 +11,7 @@
 
  resolution_force_establish_galatic_xenophile_authoritarian_militarist_faction_static_modifier:0 "Galatic Xenophile Authoritarian Militarist Faction"
  
+ edict_found_xenophile_authoritarian_militarist_faction:0 "Found Xenophile Authoritarian Militarist Faction"
+ edict_found_xenophile_authoritarian_militarist_faction_desc:0 "Enable the Xenophile Authoritarian Militarist Faction to spawn."
+ edict_found_xenophile_authoritarian_militarist_faction_tooltip:0 "Enable the Xenophile Authoritarian Militarist Faction to spawn."
+ 

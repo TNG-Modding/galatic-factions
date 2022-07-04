@@ -11,3 +11,7 @@
 
  resolution_force_establish_galatic_authoritarian_xenophobe_materialist_faction_static_modifier:0 "Galatic Authoritarian Xenophobe Materialist Faction"
  
+ edict_found_authoritarian_xenophobe_materialist_faction:0 "Found Authoritarian Xenophobe Materialist Faction"
+ edict_found_authoritarian_xenophobe_materialist_faction_desc:0 "Enable the Authoritarian Xenophobe Materialist Faction to spawn."
+ edict_found_authoritarian_xenophobe_materialist_faction_tooltip:0 "Enable the Authoritarian Xenophobe Materialist Faction to spawn."
+ 

@@ -1,0 +1,65 @@
+@Edict1Cost = 10
+@Edict2Cost = 20
+@Edict3Cost = 30
+
+@EdictPerpetual = -1
+
+found_{{varname}} = {
+	length = @EdictPerpetual
+	icon = "GFX_edict_type_policy"
+
+	resources = {
+		category = edicts
+		upkeep = {
+			influence = 1
+		}
+	}
+
+	effects = {
+		custom_tooltip = edict_found_{{varname}}_tooltip
+	}
+
+	potential = {
+		OR = {
+			{% if isMilitarist > 0 %}has_ethic = ethic_fanatic_militarist{% endif %}
+			{% if isMilitarist > 0 %}has_ethic = ethic_militarist{% endif %}
+			{% if isXenophobe > 0 %}has_ethic = ethic_fanatic_xenophobe{% endif %}
+			{% if isXenophobe > 0 %}has_ethic = ethic_xenophobe{% endif %}
+			{% if isEgalitarian > 0 %}has_ethic = ethic_fanatic_egalitarian{% endif %}
+			{% if isEgalitarian > 0 %}has_ethic = ethic_egalitarian{% endif %}
+			{% if isMaterialist > 0 %}has_ethic = ethic_fanatic_materialist{% endif %}
+			{% if isMaterialist > 0 %}has_ethic = ethic_materialist{% endif %}
+			{% if isPacifist > 0 %}has_ethic = ethic_fanatic_pacifist{% endif %}
+			{% if isPacifist > 0 %}has_ethic = ethic_pacifist{% endif %}
+			{% if isXenophile > 0 %}has_ethic = ethic_fanatic_xenophile{% endif %}
+			{% if isXenophile > 0 %}has_ethic = ethic_xenophile{% endif %}
+			{% if isAuthoritarian > 0 %}has_ethic = ethic_fanatic_authoritarian{% endif %}
+			{% if isAuthoritarian > 0 %}has_ethic = ethic_authoritarian{% endif %}
+			{% if isSpiritualist > 0 %}has_ethic = ethic_fanatic_spiritualist{% endif %}
+			{% if isSpiritualist > 0 %}has_ethic = ethic_spiritualist{% endif %}
+		}
+
+		NAND = {
+			{% if isMilitarist == 2 %}has_ethic = ethic_fanatic_militarist{% endif %}
+			{% if isMilitarist == 1 %}has_ethic = ethic_militarist{% endif %}
+			{% if isXenophobe == 2 %}has_ethic = ethic_fanatic_xenophobe{% endif %}
+			{% if isXenophobe == 1 %}has_ethic = ethic_xenophobe{% endif %}
+			{% if isEgalitarian == 2 %}has_ethic = ethic_fanatic_egalitarian{% endif %}
+			{% if isEgalitarian == 1 %}has_ethic = ethic_egalitarian{% endif %}
+			{% if isMaterialist == 2 %}has_ethic = ethic_fanatic_materialist{% endif %}
+			{% if isMaterialist == 1 %}has_ethic = ethic_materialist{% endif %}
+			{% if isPacifist == 2 %}has_ethic = ethic_fanatic_pacifist{% endif %}
+			{% if isPacifist == 1 %}has_ethic = ethic_pacifist{% endif %}
+			{% if isXenophile == 2 %}has_ethic = ethic_fanatic_xenophile{% endif %}
+			{% if isXenophile == 1 %}has_ethic = ethic_xenophile{% endif %}
+			{% if isAuthoritarian == 2 %}has_ethic = ethic_fanatic_authoritarian{% endif %}
+			{% if isAuthoritarian == 1 %}has_ethic = ethic_authoritarian{% endif %}
+			{% if isSpiritualist == 2 %}has_ethic = ethic_fanatic_spiritualist{% endif %}
+			{% if isSpiritualist == 1 %}has_ethic = ethic_spiritualist{% endif %}
+		}
+	}
+
+	ai_weight = {
+		weight = 0
+	}
+}

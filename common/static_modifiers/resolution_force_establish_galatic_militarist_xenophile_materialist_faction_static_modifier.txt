@@ -1,3 +1,19 @@
 resolution_force_establish_galatic_militarist_xenophile_materialist_faction_static_modifier = {
+   
+    
+    pop_ethic_militarist_attraction_mult = 0.25
+    
+    
+    
+    
+    
+    pop_ethic_materialist_attraction_mult = 0.25
+    
+    
+    
+    pop_ethic_xenophile_attraction_mult = 0.25
+    
+    
+    
     
 }

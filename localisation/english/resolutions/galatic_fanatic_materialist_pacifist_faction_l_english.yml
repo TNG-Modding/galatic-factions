@@ -11,3 +11,7 @@
 
  resolution_force_establish_galatic_fanatic_materialist_pacifist_faction_static_modifier:0 "Galatic Fanatic Materialist Pacifist Faction"
  
+ edict_found_fanatic_materialist_pacifist_faction:0 "Found Fanatic Materialist Pacifist Faction"
+ edict_found_fanatic_materialist_pacifist_faction_desc:0 "Enable the Fanatic Materialist Pacifist Faction to spawn."
+ edict_found_fanatic_materialist_pacifist_faction_tooltip:0 "Enable the Fanatic Materialist Pacifist Faction to spawn."
+ 

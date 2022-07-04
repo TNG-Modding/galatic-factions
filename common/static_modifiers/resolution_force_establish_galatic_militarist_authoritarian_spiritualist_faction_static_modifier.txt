@@ -1,3 +1,19 @@
 resolution_force_establish_galatic_militarist_authoritarian_spiritualist_faction_static_modifier = {
+   
     
+    pop_ethic_militarist_attraction_mult = 0.25
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    pop_ethic_authoritarian_attraction_mult = 0.25
+    
+    pop_ethic_spiritualist_attraction_mult = 0.25
 }

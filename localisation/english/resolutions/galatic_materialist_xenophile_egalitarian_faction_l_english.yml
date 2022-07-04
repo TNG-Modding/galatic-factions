@@ -11,3 +11,7 @@
 
  resolution_force_establish_galatic_materialist_xenophile_egalitarian_faction_static_modifier:0 "Galatic Materialist Xenophile Egalitarian Faction"
  
+ edict_found_materialist_xenophile_egalitarian_faction:0 "Found Materialist Xenophile Egalitarian Faction"
+ edict_found_materialist_xenophile_egalitarian_faction_desc:0 "Enable the Materialist Xenophile Egalitarian Faction to spawn."
+ edict_found_materialist_xenophile_egalitarian_faction_tooltip:0 "Enable the Materialist Xenophile Egalitarian Faction to spawn."
+ 

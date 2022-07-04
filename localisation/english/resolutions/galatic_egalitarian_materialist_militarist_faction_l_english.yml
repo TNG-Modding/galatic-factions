@@ -11,3 +11,7 @@
 
  resolution_force_establish_galatic_egalitarian_materialist_militarist_faction_static_modifier:0 "Galatic Egalitarian Materialist Militarist Faction"
  
+ edict_found_egalitarian_materialist_militarist_faction:0 "Found Egalitarian Materialist Militarist Faction"
+ edict_found_egalitarian_materialist_militarist_faction_desc:0 "Enable the Egalitarian Materialist Militarist Faction to spawn."
+ edict_found_egalitarian_materialist_militarist_faction_tooltip:0 "Enable the Egalitarian Materialist Militarist Faction to spawn."
+ 

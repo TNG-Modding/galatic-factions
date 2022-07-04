@@ -11,3 +11,7 @@ l_english:
 
  resolution_force_establish_galatic_{{varname}}_static_modifier:0 "Galatic {{Faction}} Faction"
  
+ edict_found_{{varname}}:0 "Found {{Faction}} Faction"
+ edict_found_{{varname}}_desc:0 "Enable the {{Faction}} Faction to spawn."
+ edict_found_{{varname}}_tooltip:0 "Enable the {{Faction}} Faction to spawn."
+ 

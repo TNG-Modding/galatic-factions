@@ -40,6 +40,7 @@
 
 			OR = {
 				has_modifier = resolution_force_establish_galatic_{{varname}}_static_modifier
+				has_edict = found_{{varname}}
 				AND = {
 					{% if isMilitarist == 2 %}has_ethic = ethic_fanatic_militarist{% endif %}
 					{% if isMilitarist == 1 %}has_ethic = ethic_militarist{% endif %}
@@ -146,7 +147,141 @@
 	}
 
 	actions = {
-		
+		embrace_faction = {
+			title = "EMBRACE_FACTION"
+			description = "EMBRACE_FACTION_DESC"
+
+			cost = {
+				unity = 5000
+			}
+
+			potential = {
+				exists = owner
+				owner = {
+					OR = {
+						is_subject = no
+						NOT = { any_agreement = { agreement_preset = preset_dominion } }
+					}
+				}
+			}
+
+			valid = {
+				custom_tooltip = {
+					fail_text = EMBRACE_FACTION_COOLDOWN
+					parameter:empire = {
+						NOT = { has_modifier = embraced_faction_timer }
+					}
+				}
+				support > 0.20
+				parameter:empire = {
+					NOR = { 
+						{% if isMilitarist == 2 %}has_ethic = ethic_fanatic_militarist{% endif %}
+						{% if isMilitarist == 1 %}has_ethic = ethic_militarist{% endif %}
+						{% if isXenophobe == 2 %}has_ethic = ethic_fanatic_xenophobe{% endif %}
+						{% if isXenophobe == 1 %}has_ethic = ethic_xenophobe{% endif %}
+						{% if isEgalitarian == 2 %}has_ethic = ethic_fanatic_egalitarian{% endif %}
+						{% if isEgalitarian == 1 %}has_ethic = ethic_egalitarian{% endif %}
+						{% if isMaterialist == 2 %}has_ethic = ethic_fanatic_materialist{% endif %}
+						{% if isMaterialist == 1 %}has_ethic = ethic_materialist{% endif %}
+						{% if isPacifist == 2 %}has_ethic = ethic_fanatic_pacifist{% endif %}
+						{% if isPacifist == 1 %}has_ethic = ethic_pacifist{% endif %}
+						{% if isXenophile == 2 %}has_ethic = ethic_fanatic_xenophile{% endif %}
+						{% if isXenophile == 1 %}has_ethic = ethic_xenophile{% endif %}
+						{% if isAuthoritarian == 2 %}has_ethic = ethic_fanatic_authoritarian{% endif %}
+						{% if isAuthoritarian == 1 %}has_ethic = ethic_authoritarian{% endif %}
+						{% if isSpiritualist == 2 %}has_ethic = ethic_fanatic_spiritualist{% endif %}
+						{% if isSpiritualist == 1 %}has_ethic = ethic_spiritualist{% endif %} 
+					}
+				}
+			}
+
+			effect = {
+				add_modifier = { modifier = embraced_faction days = 3600 }
+				parameter:empire = {
+					hidden_effect = {
+						add_modifier = { modifier = embraced_faction_timer days = 3600 }
+						every_pop_faction = {
+							limit = { NOT = { is_same_value = root } }
+							add_modifier = { modifier = embraced_another_faction days = 3600 }
+						}
+						country_remove_ethic = ethic_militarist
+						country_remove_ethic = ethic_fanatic_militarist
+						country_remove_ethic = ethic_pacifist
+						country_remove_ethic = ethic_fanatic_pacifist
+						country_remove_ethic = ethic_xenophobe
+						country_remove_ethic = ethic_fanatic_xenophobe
+						country_remove_ethic = ethic_xenophile
+						country_remove_ethic = ethic_fanatic_xenophile
+						country_remove_ethic = ethic_egalitarian
+						country_remove_ethic = ethic_fanatic_egalitarian
+						country_remove_ethic = ethic_authoritarian
+						country_remove_ethic = ethic_fanatic_authoritarian
+						country_remove_ethic = ethic_materialist
+						country_remove_ethic = ethic_fanatic_materialist
+						country_remove_ethic = ethic_spiritualist
+						country_remove_ethic = ethic_fanatic_spiritualist
+					}
+
+					{% if isMilitarist == 2 %}country_add_ethic = ethic_fanatic_militarist{% endif %}
+					{% if isMilitarist == 1 %}country_add_ethic = ethic_militarist{% endif %}
+					{% if isXenophobe == 2 %}country_add_ethic = ethic_fanatic_xenophobe{% endif %}
+					{% if isXenophobe == 1 %}country_add_ethic = ethic_xenophobe{% endif %}
+					{% if isEgalitarian == 2 %}country_add_ethic = ethic_fanatic_egalitarian{% endif %}
+					{% if isEgalitarian == 1 %}country_add_ethic = ethic_egalitarian{% endif %}
+					{% if isMaterialist == 2 %}country_add_ethic = ethic_fanatic_materialist{% endif %}
+					{% if isMaterialist == 1 %}country_add_ethic = ethic_materialist{% endif %}
+					{% if isPacifist == 2 %}country_add_ethic = ethic_fanatic_pacifist{% endif %}
+					{% if isPacifist == 1 %}country_add_ethic = ethic_pacifist{% endif %}
+					{% if isXenophile == 2 %}country_add_ethic = ethic_fanatic_xenophile{% endif %}
+					{% if isXenophile == 1 %}country_add_ethic = ethic_xenophile{% endif %}
+					{% if isAuthoritarian == 2 %}country_add_ethic = ethic_fanatic_authoritarian{% endif %}
+					{% if isAuthoritarian == 1 %}country_add_ethic = ethic_authoritarian{% endif %}
+					{% if isSpiritualist == 2 %}country_add_ethic = ethic_fanatic_spiritualist{% endif %}
+					{% if isSpiritualist == 1 %}country_add_ethic = ethic_spiritualist{% endif %}
+				}
+			}
+
+			ai_weight = {
+				base = 1
+				modifier = {
+					factor = 0
+					support < 0.50
+					owner = {
+						{% if isMilitarist == 2 %}has_ethic = ethic_fanatic_militarist{% endif %}
+						{% if isMilitarist == 1 %}has_ethic = ethic_militarist{% endif %}
+						{% if isXenophobe == 2 %}has_ethic = ethic_fanatic_xenophobe{% endif %}
+						{% if isXenophobe == 1 %}has_ethic = ethic_xenophobe{% endif %}
+						{% if isEgalitarian == 2 %}has_ethic = ethic_fanatic_egalitarian{% endif %}
+						{% if isEgalitarian == 1 %}has_ethic = ethic_egalitarian{% endif %}
+						{% if isMaterialist == 2 %}has_ethic = ethic_fanatic_materialist{% endif %}
+						{% if isMaterialist == 1 %}has_ethic = ethic_materialist{% endif %}
+						{% if isPacifist == 2 %}has_ethic = ethic_fanatic_pacifist{% endif %}
+						{% if isPacifist == 1 %}has_ethic = ethic_pacifist{% endif %}
+						{% if isXenophile == 2 %}has_ethic = ethic_fanatic_xenophile{% endif %}
+						{% if isXenophile == 1 %}has_ethic = ethic_xenophile{% endif %}
+						{% if isAuthoritarian == 2 %}has_ethic = ethic_fanatic_authoritarian{% endif %}
+						{% if isAuthoritarian == 1 %}has_ethic = ethic_authoritarian{% endif %}
+						{% if isSpiritualist == 2 %}has_ethic = ethic_fanatic_spiritualist{% endif %}
+						{% if isSpiritualist == 1 %}has_ethic = ethic_spiritualist{% endif %}
+					}
+				}
+				modifier = {
+					factor = 0
+					owner = { 
+						has_valid_civic = civic_fanatic_purifiers
+						has_valid_civic = civic_inwards_perfection
+					}
+				}
+				modifier = {
+					factor = 0
+					owner = {
+						count_pop_faction = {
+							count < 4
+						}
+					}
+				}
+			}
+		}
 	}
 
 	{% if isAuthoritarian > 0 %}
@@ -330,7 +465,7 @@
     }
     {% endif %}
 
-	    {% if isEgalitarian > 0 %}
+	{% if isEgalitarian > 0 %}
     demand = {
         title = "FACTION_OUTRAGED_GC"
         unfulfilled_title = "FACTION_OUTRAGED_GC"
@@ -376,34 +511,34 @@
     }
 
     demand = {
-        title = "PROGRESSIVE_FREE_MOVEMENT"
-        unfulfilled_title = "PROGRESSIVE_NO_FREE_MOVEMENT"
-        desc = "PROGRESSIVE_FREE_MOVEMENT_DESC"
+		title = "PROGRESSIVE_FREE_MOVEMENT"
+		unfulfilled_title = "PROGRESSIVE_NO_FREE_MOVEMENT"
+		desc = "PROGRESSIVE_FREE_MOVEMENT_DESC"
 
-        fulfilled_effect = 10
-        unfulfilled_effect = -10
+		fulfilled_effect = 10
+		unfulfilled_effect = -10
 
-        potential = {
-            exists = owner
-            owner = { has_encountered_other_species = yes }
-        }
+		potential = {
+			exists = owner
+			owner = { has_encountered_other_species = yes }
+		}
 
-        trigger = {
-            owner = {
-                NOR = {
-                    any_owned_pop = {
-                        has_migration_control = yes
-                        is_sapient = yes
-                        is_enslaved = no
-                        is_being_purged = no
-                        is_shackled_robot = no
-                        is_robot_pop = no
-                    }
-                    has_policy_flag = resettlement_allowed
-                }
-            }
-        }
-    }
+		trigger = {
+			owner = {
+				NOR = {
+					has_policy_flag = resettlement_allowed
+					any_owned_pop = {
+						has_migration_control = { value = yes }
+						is_sapient = yes
+						is_enslaved = no
+						is_being_purged = no
+						is_shackled_robot = no
+						is_robot_pop = no
+					}
+				}
+			}
+		}
+	}
 
     demand = {
         title = "PROGRESSIVE_REPRODUCTIVE_FREEDOM"
@@ -858,7 +993,7 @@
     }
     {% endif %}
 
-	    {% if isMaterialist > 0 %}
+	{% if isMaterialist > 0 %}
     demand = {
         title = "TECHNOLOGIST_ROBOTS_ALLOWED"
         unfulfilled_title = "TECHNOLOGIST_ROBOTS_BANNED"
@@ -1014,10 +1149,6 @@
                 }
             }
         }
-    }
-
-    on_create = {
-        pop_faction_event = { id = faction_spawn.1 }
     }
 
     demand = {

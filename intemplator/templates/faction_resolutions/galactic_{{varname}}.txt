@@ -20,19 +20,18 @@ resolution_establish_galatic_{{varname}} = {
 	resources = {
 		category = resolutions
 		cost = {
-			influence = @resolution_cost_t5
+			influence = @resolution_cost_t2
 		}
 	}
 	target = no
 	level = 1
 
+	modifier = {
+		resolution_force_establish_galatic_{{varname}}_static_modifier = 1
+	}
+
 	effect = {
 		custom_tooltip = resolution_establish_galatic_{{varname}}_tooltip
-		hidden_effect = {
-			every_country = {
-				add_modifier = resolution_force_establish_galatic_{{varname}}_static_modifier
-			}
-		}
 	}
 
 	fail_effects = {
@@ -102,7 +101,7 @@ resolution_establish_galatic_{{varname}} = {
 			desc = ethic_pacifist
 		}
 		modifier = {
-			factor = 1.25
+			factor = 2
 			is_militarist = yes
 			desc = ethic_militarist
 		}
@@ -115,7 +114,7 @@ resolution_establish_galatic_{{varname}} = {
 			desc = ethic_militarist
 		}
 		modifier = {
-			factor = 1.25
+			factor = 2
 			is_pacifist = yes
 			desc = ethic_pacifist
 		}
@@ -128,7 +127,7 @@ resolution_establish_galatic_{{varname}} = {
 			desc = ethic_authoritarian
 		}
 		modifier = {
-			factor = 1.25
+			factor = 2
 			is_egalitarian = yes
 			desc = ethic_egalitarian
 		}
@@ -141,7 +140,7 @@ resolution_establish_galatic_{{varname}} = {
 			desc = ethic_egalitarian
 		}
 		modifier = {
-			factor = 1.25
+			factor = 2
 			is_authoritarian = yes
 			desc = ethic_authoritarian
 		}
@@ -149,7 +148,7 @@ resolution_establish_galatic_{{varname}} = {
 
         {% if isMaterialist > 1 %}
 		modifier = {
-			factor = 1.25
+			factor = 2
 			is_materialist = yes
 			desc = ethic_materialist
 		}
@@ -167,7 +166,7 @@ resolution_establish_galatic_{{varname}} = {
 			desc = ethic_materialist
 		}
 		modifier = {
-			factor = 1.25
+			factor = 2
 			is_spiritualist = yes
 			desc = ethic_spiritualist
 		}
@@ -175,7 +174,7 @@ resolution_establish_galatic_{{varname}} = {
 
         {% if isXenophobe > 1 %}
 		modifier = {
-			factor = 1.25
+			factor = 2
 			is_xenophobe = yes
 			desc = ethic_xenophobe
 		}
@@ -188,7 +187,7 @@ resolution_establish_galatic_{{varname}} = {
 
         {% if isXenophile > 1 %}
 		modifier = {
-			factor = 1.25
+			factor = 2
 			is_xenophile = yes
 			desc = ethic_xenophile
 		}
@@ -223,10 +222,6 @@ resolution_disband_galatic_{{varname}} = {
 		custom_tooltip = resolution_disband_galatic_{{varname}}_effect_success
 		hidden_effect = {
 			cancel_resolution = "resolution_establish_galatic_{{varname}}"
-			add_modifier = {
-				modifier = resolution_passed_diplomatic_weight
-				days = 2200
-			}
 		}
 	}
 

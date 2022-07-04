@@ -1,0 +1,65 @@
+@Edict1Cost = 10
+@Edict2Cost = 20
+@Edict3Cost = 30
+
+@EdictPerpetual = -1
+
+found_fanatic_spiritualist_authoritarian_faction = {
+	length = @EdictPerpetual
+	icon = "GFX_edict_type_policy"
+
+	resources = {
+		category = edicts
+		upkeep = {
+			influence = 1
+		}
+	}
+
+	effects = {
+		custom_tooltip = edict_found_fanatic_spiritualist_authoritarian_faction_tooltip
+	}
+
+	potential = {
+		OR = {
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			has_ethic = ethic_fanatic_authoritarian
+			has_ethic = ethic_authoritarian
+			has_ethic = ethic_fanatic_spiritualist
+			has_ethic = ethic_spiritualist
+		}
+
+		NAND = {
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			has_ethic = ethic_authoritarian
+			has_ethic = ethic_fanatic_spiritualist
+			
+		}
+	}
+
+	ai_weight = {
+		weight = 0
+	}
+}

@@ -20,19 +20,18 @@ resolution_establish_galatic_fanatic_egalitarian_xenophile_faction = {
 	resources = {
 		category = resolutions
 		cost = {
-			influence = @resolution_cost_t5
+			influence = @resolution_cost_t2
 		}
 	}
 	target = no
 	level = 1
 
+	modifier = {
+		resolution_force_establish_galatic_fanatic_egalitarian_xenophile_faction_static_modifier = 1
+	}
+
 	effect = {
 		custom_tooltip = resolution_establish_galatic_fanatic_egalitarian_xenophile_faction_tooltip
-		hidden_effect = {
-			every_country = {
-				add_modifier = resolution_force_establish_galatic_fanatic_egalitarian_xenophile_faction_static_modifier
-			}
-		}
 	}
 
 	fail_effects = {
@@ -88,7 +87,7 @@ resolution_establish_galatic_fanatic_egalitarian_xenophile_faction = {
 			desc = ethic_authoritarian
 		}
 		modifier = {
-			factor = 1.25
+			factor = 2
 			is_egalitarian = yes
 			desc = ethic_egalitarian
 		}
@@ -128,10 +127,6 @@ resolution_disband_galatic_fanatic_egalitarian_xenophile_faction = {
 		custom_tooltip = resolution_disband_galatic_fanatic_egalitarian_xenophile_faction_effect_success
 		hidden_effect = {
 			cancel_resolution = "resolution_establish_galatic_fanatic_egalitarian_xenophile_faction"
-			add_modifier = {
-				modifier = resolution_passed_diplomatic_weight
-				days = 2200
-			}
 		}
 	}
 

@@ -11,3 +11,7 @@
 
  resolution_force_establish_galatic_spiritualist_militarist_authoritarian_faction_static_modifier:0 "Galatic Spiritualist Militarist Authoritarian Faction"
  
+ edict_found_spiritualist_militarist_authoritarian_faction:0 "Found Spiritualist Militarist Authoritarian Faction"
+ edict_found_spiritualist_militarist_authoritarian_faction_desc:0 "Enable the Spiritualist Militarist Authoritarian Faction to spawn."
+ edict_found_spiritualist_militarist_authoritarian_faction_tooltip:0 "Enable the Spiritualist Militarist Authoritarian Faction to spawn."
+ 

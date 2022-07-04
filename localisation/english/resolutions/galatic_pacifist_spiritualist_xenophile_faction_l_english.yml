@@ -11,3 +11,7 @@
 
  resolution_force_establish_galatic_pacifist_spiritualist_xenophile_faction_static_modifier:0 "Galatic Pacifist Spiritualist Xenophile Faction"
  
+ edict_found_pacifist_spiritualist_xenophile_faction:0 "Found Pacifist Spiritualist Xenophile Faction"
+ edict_found_pacifist_spiritualist_xenophile_faction_desc:0 "Enable the Pacifist Spiritualist Xenophile Faction to spawn."
+ edict_found_pacifist_spiritualist_xenophile_faction_tooltip:0 "Enable the Pacifist Spiritualist Xenophile Faction to spawn."
+ 
