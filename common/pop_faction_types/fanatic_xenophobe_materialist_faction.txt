@@ -25,10 +25,9 @@ fanatic_xenophobe_materialist_faction = {
 		}
 	}
 
-
 	is_potential = {
 		AND = { 
-			is_faction_allowed = yes
+			# is_faction_allowed = yes
 			
 			
 			has_ethic = ethic_fanatic_xenophobe
@@ -93,19 +92,19 @@ fanatic_xenophobe_materialist_faction = {
 		}
 
 		
+		# Fanatic factions are enticing if we are also fanatic, this keeps our competative if we are fanatic, 
+		# but makes matching fanatic ethics also competative
 		modifier = {
 			factor = 1.25
 
-			OR = {
-				
-				has_ethic = ethic_fanatic_xenophobe
-				
-				
-				
-				
-				
-				
-			}
+			
+			has_ethic = ethic_fanatic_xenophobe
+			
+			
+			
+			
+			
+			
 		}
 		
 	}

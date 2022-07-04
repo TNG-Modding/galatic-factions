@@ -25,10 +25,9 @@ pacifist_authoritarian_xenophobe_faction = {
 		}
 	}
 
-
 	is_potential = {
 		AND = { 
-			is_faction_allowed = yes
+			# is_faction_allowed = yes
 			
 			
 			

@@ -23,7 +23,7 @@
             "specFilePath": "./specs/moderateFactions.json",
             "templateDirectoryPath": "./templates/faction_random_names",
             "outputDirectoryPath": "../common/random_names",
-            "disabled": false,
+            "disabled": true,
             "dumpContents": true,
             "isBom": false
         },
@@ -32,7 +32,7 @@
             "specFilePath": "./specs/fanaticFactions.json",
             "templateDirectoryPath": "./templates/faction_random_names",
             "outputDirectoryPath": "../common/random_names",
-            "disabled": false,
+            "disabled": true,
             "dumpContents": true,
             "isBom": false
         },
@@ -41,7 +41,7 @@
             "specFilePath": "./specs/moderateFactions.json",
             "templateDirectoryPath": "./templates/faction_interface",
             "outputDirectoryPath": "../interface/factions",
-            "disabled": false,
+            "disabled": true,
             "dumpContents": true,
             "isBom": false
         },
@@ -50,7 +50,7 @@
             "specFilePath": "./specs/fanaticFactions.json",
             "templateDirectoryPath": "./templates/faction_interface",
             "outputDirectoryPath": "../interface/factions",
-            "disabled": false,
+            "disabled": true,
             "dumpContents": true,
             "isBom": false
         },
@@ -59,7 +59,7 @@
             "specFilePath": "./specs/moderateFactions.json",
             "templateDirectoryPath": "./templates/faction_localisation",
             "outputDirectoryPath": "../localisation/english/faction_defs",
-            "disabled": false,
+            "disabled": true,
             "dumpContents": true,
             "isBom": true
         },
@@ -68,7 +68,7 @@
             "specFilePath": "./specs/fanaticFactions.json",
             "templateDirectoryPath": "./templates/faction_localisation",
             "outputDirectoryPath": "../localisation/english/faction_defs",
-            "disabled": false,
+            "disabled": true,
             "dumpContents": true,
             "isBom": true
         }

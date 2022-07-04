@@ -27,7 +27,7 @@
 
 	is_potential = {
 		AND = { 
-			is_faction_allowed = yes
+			# is_faction_allowed = yes
 			{% if isMilitarist == 2 %}has_ethic = ethic_fanatic_militarist{% endif %}
 			{% if isMilitarist == 1 %}has_ethic = ethic_militarist{% endif %}
 			{% if isXenophobe == 2 %}has_ethic = ethic_fanatic_xenophobe{% endif %}
