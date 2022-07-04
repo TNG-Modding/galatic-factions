@@ -1,0 +1,119 @@
+##############################
+# {{Faction}} Faction
+##############################
+
+{{varname}} = {
+	election_header = "GFX_faction_header_yellow"
+	guiding_ethic = ethic_militarist
+
+	unique = yes
+	support_multiplier = 0.5
+
+	resources = {
+		category = pop_factions
+		produces = {
+			trigger = {
+				owner = { years_passed > 10
+				has_encountered_other_species = yes }
+			}
+			influence = 2
+		}
+	}
+
+	is_potential = {
+		AND = { 
+			{% if isMilitarist == 2 %}has_ethic = ethic_fanatic_militarist{% endif %}
+			{% if isMilitarist == 1 %}has_ethic = ethic_militarist{% endif %}
+			{% if isXenophobe == 2 %}has_ethic = ethic_fanatic_xenophobe{% endif %}
+			{% if isXenophobe == 1 %}has_ethic = ethic_xenophobe{% endif %}
+			{% if isEgalitarian == 2 %}has_ethic = ethic_fanatic_egalitarian{% endif %}
+			{% if isEgalitarian == 1 %}has_ethic = ethic_egalitarian{% endif %}
+			{% if isMaterialist == 2 %}has_ethic = ethic_fanatic_materialist{% endif %}
+			{% if isMaterialist == 1 %}has_ethic = ethic_materialist{% endif %}
+			{% if isPacifist == 2 %}has_ethic = ethic_fanatic_pacifist{% endif %}
+			{% if isPacifist == 1 %}has_ethic = ethic_pacifist{% endif %}
+			{% if isXenophile == 2 %}has_ethic = ethic_fanatic_xenophile{% endif %}
+			{% if isXenophile == 1 %}has_ethic = ethic_xenophile{% endif %}
+			{% if isAuthoritarian == 2 %}has_ethic = ethic_fanatic_authoritarian{% endif %}
+			{% if isAuthoritarian == 1 %}has_ethic = ethic_authoritarian{% endif %}
+			{% if isSpiritualist == 2 %}has_ethic = ethic_fanatic_spiritualist{% endif %}
+			{% if isSpiritualist == 1 %}has_ethic = ethic_spiritualist{% endif %}
+		}
+	}
+
+	parameters = {
+		empire = {
+			type = country
+			valid_objects = {
+				is_same_value = root
+			}
+		}
+	}
+
+	can_join_pre_triggers = {
+		is_enslaved = no
+		is_being_purged = no
+	}
+
+	can_join_faction = {
+		is_shackled_robot = no
+		NOT = { has_trait = trait_nerve_stapled }
+		OR = {
+			{% if isMilitarist > 0 %}has_ethic = ethic_militarist{% endif %}
+			{% if isXenophobe > 0 %}has_ethic = ethic_xenophobe{% endif %}
+			{% if isEgalitarian > 0 %}has_ethic = ethic_egalitarian{% endif %}
+			{% if isMaterialist > 0 %}has_ethic = ethic_materialist{% endif %}
+			{% if isPacifist > 0 %}has_ethic = ethic_pacifist{% endif %}
+			{% if isXenophile > 0 %}has_ethic = ethic_xenophile{% endif %}
+			{% if isAuthoritarian > 0 %}has_ethic = ethic_authoritarian{% endif %}
+			{% if isSpiritualist > 0 %}has_ethic = ethic_spiritualist{% endif %}
+		}
+	}
+
+	attraction = {
+		base = 100
+
+		modifier = {
+			factor = 1.25
+			exists = from
+			from = {
+				exists = leader
+				leader = { leader_class = ruler }
+			}
+		}
+
+		modifier = {
+			factor = 0.75
+			exists = from
+			from = {
+				NOT = { exists = leader }
+			}
+		}
+
+		modifier = {
+			factor = 1.25
+			has_citizenship_rights = yes
+		}
+	}
+
+	leader = {
+		base = 100
+
+		modifier = {
+			factor = 0.0
+			is_event_leader = yes
+		}
+		modifier = {
+			factor = 0.25
+			leader_class = ruler
+		}
+	}
+
+	on_create = {
+		# pop_faction_event = { id = faction_spawn.1 }
+	}
+
+	actions = {
+		
+	}
+}

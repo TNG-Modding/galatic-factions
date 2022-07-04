@@ -1,0 +1,15 @@
+        {
+            'varname': '{varname}_faction',
+            'faction': '{ethics}',
+            'Faction': '{name}',
+            'adjective': '{ethics}',
+            'Adjective': '{name}',
+            'isMilitarist': {isMilitarist},
+            'isPacifist': {isPacifist},
+            'isXenophobe': {isXenophobe},
+            'isXenophile': {isXenophile},
+            'isEgalitarian': {isEgalitarian},
+            'isAuthoritarian': {isAuthoritarian},
+            'isMaterialist': {isMaterialist},
+            'isSpiritualist': {isSpiritualist}
+        },

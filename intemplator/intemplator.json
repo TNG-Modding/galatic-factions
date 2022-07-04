@@ -1,0 +1,40 @@
+{
+    "orders": [
+        {
+            "name": "Moderation Pop Faction Defines",
+            "specFilePath": "./specs/moderateFactions.json",
+            "templateDirectoryPath": "./templates/faction",
+            "outputDirectoryPath": "../common/pop_faction_types",
+            "disabled": false,
+            "dumpContents": true,
+            "isBom": false
+        },
+        {
+            "name": "Fanatic Pop Faction Defines",
+            "specFilePath": "./specs/fanaticFactions.json",
+            "templateDirectoryPath": "./templates/faction",
+            "outputDirectoryPath": "../common/pop_faction_types",
+            "disabled": false,
+            "dumpContents": true,
+            "isBom": false
+        },
+        {
+            "name": "Moderation Pop Faction Names",
+            "specFilePath": "./specs/moderateFactions.json",
+            "templateDirectoryPath": "./templates/faction_random_names",
+            "outputDirectoryPath": "../common/random_names",
+            "disabled": false,
+            "dumpContents": true,
+            "isBom": false
+        },
+        {
+            "name": "Fanatic Pop Faction Names",
+            "specFilePath": "./specs/fanaticFactions.json",
+            "templateDirectoryPath": "./templates/faction_random_names",
+            "outputDirectoryPath": "../common/random_names",
+            "disabled": false,
+            "dumpContents": true,
+            "isBom": false
+        }
+    ]
+}
