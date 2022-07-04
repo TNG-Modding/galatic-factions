@@ -1,167 +1,169 @@
-demand = {
-    title = "FACTION_OUTRAGED_GC"
-    unfulfilled_title = "FACTION_OUTRAGED_GC"
-    desc = "FACTION_OUTRAGED_GC_DESC"
+    {% if isEgalitarian > 0 %}
+    demand = {
+        title = "FACTION_OUTRAGED_GC"
+        unfulfilled_title = "FACTION_OUTRAGED_GC"
+        desc = "FACTION_OUTRAGED_GC_DESC"
 
-    fulfilled_effect = -20
-    unfulfilled_effect = -0.001
+        fulfilled_effect = -20
+        unfulfilled_effect = -0.001
 
-    potential = {
-        exists = owner
-        owner = {
-            has_country_flag = faction_egalitarian_outraged_gc
+        potential = {
+            exists = owner
+            owner = {
+                has_country_flag = faction_egalitarian_outraged_gc
+            }
         }
-    }
 
-    trigger = {
-        owner = {
-            has_country_flag = faction_egalitarian_outraged_gc
-        }
-    }
-}
-
-demand = {
-    title = "PROGRESSIVE_NO_AUTO"
-    unfulfilled_title = "PROGRESSIVE_AUTO"
-    desc = "PROGRESSIVE_DEMOCRATIC_GOVERNMENT_DESC"
-
-    fulfilled_effect = 10
-    unfulfilled_effect = -15
-
-    potential = {
-        exists = owner
-    }
-
-    trigger = {
-        owner = {
-            NOR = {
-                has_authority = auth_imperial
-                has_authority = auth_dictatorial
+        trigger = {
+            owner = {
+                has_country_flag = faction_egalitarian_outraged_gc
             }
         }
     }
-}
 
-demand = {
-    title = "PROGRESSIVE_FREE_MOVEMENT"
-    unfulfilled_title = "PROGRESSIVE_NO_FREE_MOVEMENT"
-    desc = "PROGRESSIVE_FREE_MOVEMENT_DESC"
+    demand = {
+        title = "PROGRESSIVE_NO_AUTO"
+        unfulfilled_title = "PROGRESSIVE_AUTO"
+        desc = "PROGRESSIVE_DEMOCRATIC_GOVERNMENT_DESC"
 
-    fulfilled_effect = 10
-    unfulfilled_effect = -10
+        fulfilled_effect = 10
+        unfulfilled_effect = -15
 
-    potential = {
-        exists = owner
-        owner = { has_encountered_other_species = yes }
-    }
+        potential = {
+            exists = owner
+        }
 
-    trigger = {
-        owner = {
-            NOR = {
-                any_owned_pop = {
-                    has_migration_control = yes
-                    is_sapient = yes
-                    is_enslaved = no
-                    is_being_purged = no
-                    is_shackled_robot = no
-                    is_robot_pop = no
+        trigger = {
+            owner = {
+                NOR = {
+                    has_authority = auth_imperial
+                    has_authority = auth_dictatorial
                 }
-                has_policy_flag = resettlement_allowed
             }
         }
     }
-}
 
-demand = {
-    title = "PROGRESSIVE_REPRODUCTIVE_FREEDOM"
-    unfulfilled_title = "PROGRESSIVE_NO_REPRODUCTIVE_FREEDOM"
-    desc = "PROGRESSIVE_REPRODUCTIVE_FREEDOM_DESC"
+    demand = {
+        title = "PROGRESSIVE_FREE_MOVEMENT"
+        unfulfilled_title = "PROGRESSIVE_NO_FREE_MOVEMENT"
+        desc = "PROGRESSIVE_FREE_MOVEMENT_DESC"
 
-    fulfilled_effect = 5
-    unfulfilled_effect = -20
+        fulfilled_effect = 10
+        unfulfilled_effect = -10
 
-    potential = {
-        exists = owner
-    }
+        potential = {
+            exists = owner
+            owner = { has_encountered_other_species = yes }
+        }
 
-    trigger = {
-        NOT = {
-            owner = { has_policy_flag = population_controls_allowed }
+        trigger = {
+            owner = {
+                NOR = {
+                    any_owned_pop = {
+                        has_migration_control = yes
+                        is_sapient = yes
+                        is_enslaved = no
+                        is_being_purged = no
+                        is_shackled_robot = no
+                        is_robot_pop = no
+                    }
+                    has_policy_flag = resettlement_allowed
+                }
+            }
         }
     }
-}
 
-demand = {
-    title = "PROGRESSIVE_NO_STRATIFIED"
-    unfulfilled_title = "PROGRESSIVE_STRATIFIED"
-    desc = "PROGRESSIVE_NO_STRATIFIED_DESC"
+    demand = {
+        title = "PROGRESSIVE_REPRODUCTIVE_FREEDOM"
+        unfulfilled_title = "PROGRESSIVE_NO_REPRODUCTIVE_FREEDOM"
+        desc = "PROGRESSIVE_REPRODUCTIVE_FREEDOM_DESC"
 
-    unfulfilled_effect = -25
-    fulfilled_effect = 0.001
+        fulfilled_effect = 5
+        unfulfilled_effect = -20
 
-    potential = {
-        exists = owner
-    }
+        potential = {
+            exists = owner
+        }
 
-    trigger = {
-        owner = {
+        trigger = {
             NOT = {
-                any_owned_pop = {
-                    has_living_standard = { type = living_standard_stratified }
+                owner = { has_policy_flag = population_controls_allowed }
+            }
+        }
+    }
+
+    demand = {
+        title = "PROGRESSIVE_NO_STRATIFIED"
+        unfulfilled_title = "PROGRESSIVE_STRATIFIED"
+        desc = "PROGRESSIVE_NO_STRATIFIED_DESC"
+
+        unfulfilled_effect = -25
+        fulfilled_effect = 0.001
+
+        potential = {
+            exists = owner
+        }
+
+        trigger = {
+            owner = {
+                NOT = {
+                    any_owned_pop = {
+                        has_living_standard = { type = living_standard_stratified }
+                    }
                 }
             }
         }
     }
-}
 
-demand = {
-    title = "PROGRESSIVE_NO_ELITISM"
-    unfulfilled_title = "PROGRESSIVE_ELITISM"
-    desc = "PROGRESSIVE_NO_ELITISM_DESC"
+    demand = {
+        title = "PROGRESSIVE_NO_ELITISM"
+        unfulfilled_title = "PROGRESSIVE_ELITISM"
+        desc = "PROGRESSIVE_NO_ELITISM_DESC"
 
-    fulfilled_effect = 5
-    unfulfilled_effect = -5
+        fulfilled_effect = 5
+        unfulfilled_effect = -5
 
-    potential = {
-        exists = owner
-        owner = {
-            OR = {
-                has_technology = tech_selected_lineages
-                has_technology = tech_capacity_boosters
+        potential = {
+            exists = owner
+            owner = {
+                OR = {
+                    has_technology = tech_selected_lineages
+                    has_technology = tech_capacity_boosters
+                }
+            }
+        }
+
+        trigger = {
+            owner = {
+                NOR = {
+                    has_policy_flag = leader_enhancement_selected_lineages
+                    has_policy_flag = leader_enhancement_capacity_boosters
+                }
             }
         }
     }
 
-    trigger = {
-        owner = {
-            NOR = {
-                has_policy_flag = leader_enhancement_selected_lineages
-                has_policy_flag = leader_enhancement_capacity_boosters
+    demand = {
+        title = "COOPERATIVE_DIPLO_STANCE"
+        unfulfilled_title = "COOPERATIVE_DIPLO_STANCE"
+        desc = "COOPERATIVE_DIPLO_STANCE_DESC"
+
+        fulfilled_effect = 5
+        unfulfilled_effect = -0.001
+
+        potential = {
+            exists = owner
+            owner = {
+                is_homicidal = no
+                is_country_type = default
+                has_policy_flag = diplo_stance_cooperative
+            }
+        }
+
+        trigger = {
+            owner = {
+                has_policy_flag = diplo_stance_cooperative
             }
         }
     }
-}
-
-demand = {
-    title = "COOPERATIVE_DIPLO_STANCE"
-    unfulfilled_title = "COOPERATIVE_DIPLO_STANCE"
-    desc = "COOPERATIVE_DIPLO_STANCE_DESC"
-
-    fulfilled_effect = 5
-    unfulfilled_effect = -0.001
-
-    potential = {
-        exists = owner
-        owner = {
-            is_homicidal = no
-            is_country_type = default
-            has_policy_flag = diplo_stance_cooperative
-        }
-    }
-
-    trigger = {
-        owner = {
-            has_policy_flag = diplo_stance_cooperative
-        }
-    }
-}
+    {% endif %}

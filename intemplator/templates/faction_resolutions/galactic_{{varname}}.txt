@@ -15,12 +15,12 @@
 @resolution_flag_timer = 360
 
 resolution_establish_galatic_{{varname}} = {
-	icon = "GFX_resolution_defence_privatization"
+	icon = "GFX_resolution_united_front"
 
 	resources = {
 		category = resolutions
 		cost = {
-			influence = @resolution_cost_t1
+			influence = @resolution_cost_t5
 		}
 	}
 	target = no
@@ -29,28 +29,13 @@ resolution_establish_galatic_{{varname}} = {
 	effect = {
 		custom_tooltip = resolution_establish_galatic_{{varname}}_tooltip
 		hidden_effect = {
-			set_global_flag = galactic_community_resolution_passed
-			set_timed_country_flag = { flag = galactic_community_resolution_passed_establish_galatic_faction days = @resolution_flag_timer }
-			add_modifier = {
-				modifier = resolution_passed_diplomatic_weight
-				days = 2200
-			}
 			every_country = {
-				add_modifier = {
-					modifier = resolution_force_establish_galatic_{{varname}}_static_modifier
-				}
+				add_modifier = resolution_force_establish_galatic_{{varname}}_static_modifier
 			}
 		}
 	}
 
 	fail_effects = {
-		hidden_effect = {
-			set_timed_country_flag = { flag = galactic_community_resolution_failed_establish_galatic_faction days = @resolution_flag_timer }
-			add_modifier = {
-				modifier = resolution_failed_diplomatic_weight
-				days = 2200
-			}
-		}
 	}
 
 	allow = {
@@ -58,114 +43,157 @@ resolution_establish_galatic_{{varname}} = {
 			fail_text = "resolution_already_active"
 			NOR = {
 				is_active_resolution = "resolution_establish_galatic_{{varname}}"
-			}
+			}			
+		}
+	}
 
-			# Only available to countries whose ethics don't conflict
+	potential = {
+		# Only available to countries that have an ethic
+		OR = {
+			{% if isMilitarist > 0 %}
+			has_ethic = ethic_militarist
+			has_ethic = ethic_fanatic_militarist
+			{% endif %}
+
+			{% if isXenophobe > 0 %}
+			has_ethic = ethic_xenophobe
+			has_ethic = ethic_fanatic_xenophobe
+			{% endif %}
+
+			{% if isEgalitarian > 0 %}
+			has_ethic = ethic_egalitarian
+			has_ethic = ethic_fanatic_egalitarian
+			{% endif %}
+
+			{% if isMaterialist > 0 %}
+			has_ethic = ethic_materialist
+			has_ethic = ethic_fanatic_materialist
+			{% endif %}
+
+			{% if isPacifist > 0 %}
+			has_ethic = ethic_pacifist
+			has_ethic = ethic_fanatic_pacifist
+			{% endif %}
+
+			{% if isXenophile > 0 %}
+			has_ethic = ethic_xenophile
+			has_ethic = ethic_fanatic_xenophile
+			{% endif %}
+
+			{% if isAuthoritarian > 0 %}
+			has_ethic = ethic_authoritarian
+			has_ethic = ethic_fanatic_authoritarian
+			{% endif %}
+
+			{% if isSpiritualist > 0 %}
+			has_ethic = ethic_spiritualist
+			has_ethic = ethic_fanatic_spiritualist
+			{% endif %}
 		}
 	}
 
 	ai_weight = { 
-		base = @resolution_weight_loved
+		base = @resolution_weight_disliked
 
-        {% if isMilitarist > 0 %}
+        {% if isMilitarist > 1 %}
         modifier = {
-			factor = 0.5
+			factor = 0
 			is_pacifist = yes
 			desc = ethic_pacifist
 		}
 		modifier = {
-			factor = 2
+			factor = 1.25
 			is_militarist = yes
 			desc = ethic_militarist
 		}
         {% endif %}
 
-        {% if isPacifist > 0 %}
+        {% if isPacifist > 1 %}
         modifier = {
-			factor = 0.5
+			factor = 0
 			is_militarist = yes
 			desc = ethic_militarist
 		}
 		modifier = {
-			factor = 2
+			factor = 1.25
 			is_pacifist = yes
 			desc = ethic_pacifist
 		}
         {% endif %}
 
-        {% if isEgalitarian > 0 %}
+        {% if isEgalitarian > 1 %}
         modifier = {
-			factor = 0.5
+			factor = 0
 			is_authoritarian = yes
 			desc = ethic_authoritarian
 		}
 		modifier = {
-			factor = 2
+			factor = 1.25
 			is_egalitarian = yes
 			desc = ethic_egalitarian
 		}
         {% endif %}
 
-        {% if isAuthoritarian > 0 %}
+        {% if isAuthoritarian > 1 %}
         modifier = {
-			factor = 0.5
+			factor = 0
 			is_egalitarian = yes
 			desc = ethic_egalitarian
 		}
 		modifier = {
-			factor = 2
+			factor = 1.25
 			is_authoritarian = yes
 			desc = ethic_authoritarian
 		}
         {% endif %}
 
-        {% if isMaterialist > 0 %}
+        {% if isMaterialist > 1 %}
 		modifier = {
-			factor = 2
+			factor = 1.25
 			is_materialist = yes
 			desc = ethic_materialist
 		}
         modifier = {
-			factor = 0.5
+			factor = 0
 			is_spiritualist = yes
 			desc = ethic_spiritualist
 		}
         {% endif %}
 
-        {% if isSpiritualist > 0 %}
+        {% if isSpiritualist > 1 %}
         modifier = {
-			factor = 0.5
+			factor = 0
 			is_materialist = yes
 			desc = ethic_materialist
 		}
 		modifier = {
-			factor = 2
+			factor = 1.25
 			is_spiritualist = yes
 			desc = ethic_spiritualist
 		}
         {% endif %}
 
-        {% if isXenophobe > 0 %}
+        {% if isXenophobe > 1 %}
 		modifier = {
-			factor = 2
+			factor = 1.25
 			is_xenophobe = yes
 			desc = ethic_xenophobe
 		}
         modifier = {
-			factor = 0.5
+			factor = 0
 			is_xenophile = yes
 			desc = ethic_xenophile
 		}
         {% endif %}
 
-        {% if isXenophile > 0 %}
+        {% if isXenophile > 1 %}
 		modifier = {
-			factor = 2
+			factor = 1.25
 			is_xenophile = yes
 			desc = ethic_xenophile
 		}
         modifier = {
-			factor = 0.5
+			factor = 0
 			is_xenophobe = yes
 			desc = ethic_xenophobe
 		}
@@ -194,11 +222,7 @@ resolution_disband_galatic_{{varname}} = {
 	effect = {
 		custom_tooltip = resolution_disband_galatic_{{varname}}_effect_success
 		hidden_effect = {
-			every_country = {
-				remove_modifier = resolution_force_establish_galatic_{{varname}}_static_modifier
-			}
 			cancel_resolution = "resolution_establish_galatic_{{varname}}"
-			set_timed_country_flag = { flag = galactic_community_resolution_passed_disband_galatic_faction days = @resolution_flag_timer }
 			add_modifier = {
 				modifier = resolution_passed_diplomatic_weight
 				days = 2200
@@ -208,7 +232,6 @@ resolution_disband_galatic_{{varname}} = {
 
 	fail_effects = {
 		hidden_effect = {
-			set_timed_country_flag = { flag = galactic_community_resolution_failed_disband_galatic_faction days = @resolution_flag_timer }
 			add_modifier = {
 				modifier = resolution_failed_diplomatic_weight
 				days = 2200
@@ -230,7 +253,7 @@ resolution_disband_galatic_{{varname}} = {
 			desc = ethic_pacifist
 		}
 		modifier = {
-			factor = 0.5
+			factor = 0
 			is_militarist = yes
 			desc = ethic_militarist
 		}
@@ -243,7 +266,7 @@ resolution_disband_galatic_{{varname}} = {
 			desc = ethic_militarist
 		}
 		modifier = {
-			factor = 0.5
+			factor = 0
 			is_pacifist = yes
 			desc = ethic_pacifist
 		}
@@ -256,7 +279,7 @@ resolution_disband_galatic_{{varname}} = {
 			desc = ethic_authoritarian
 		}
 		modifier = {
-			factor = 0.5
+			factor = 0
 			is_egalitarian = yes
 			desc = ethic_egalitarian
 		}
@@ -269,7 +292,7 @@ resolution_disband_galatic_{{varname}} = {
 			desc = ethic_egalitarian
 		}
 		modifier = {
-			factor = 0.5
+			factor = 0
 			is_authoritarian = yes
 			desc = ethic_authoritarian
 		}
@@ -277,7 +300,7 @@ resolution_disband_galatic_{{varname}} = {
 
         {% if isMaterialist > 0 %}
 		modifier = {
-			factor = 0.5
+			factor = 0
 			is_materialist = yes
 			desc = ethic_materialist
 		}
@@ -295,7 +318,7 @@ resolution_disband_galatic_{{varname}} = {
 			desc = ethic_materialist
 		}
 		modifier = {
-			factor = 0.5
+			factor = 0
 			is_spiritualist = yes
 			desc = ethic_spiritualist
 		}
@@ -303,7 +326,7 @@ resolution_disband_galatic_{{varname}} = {
 
         {% if isXenophobe > 0 %}
 		modifier = {
-			factor = 0.5
+			factor = 0
 			is_xenophobe = yes
 			desc = ethic_xenophobe
 		}
@@ -316,7 +339,7 @@ resolution_disband_galatic_{{varname}} = {
 
         {% if isXenophile > 0 %}
 		modifier = {
-			factor = 0.5
+			factor = 0
 			is_xenophile = yes
 			desc = ethic_xenophile
 		}

@@ -15,12 +15,12 @@
 @resolution_flag_timer = 360
 
 resolution_establish_galatic_fanatic_authoritarian_xenophile_faction = {
-	icon = "GFX_resolution_defence_privatization"
+	icon = "GFX_resolution_united_front"
 
 	resources = {
 		category = resolutions
 		cost = {
-			influence = @resolution_cost_t1
+			influence = @resolution_cost_t5
 		}
 	}
 	target = no
@@ -29,28 +29,13 @@ resolution_establish_galatic_fanatic_authoritarian_xenophile_faction = {
 	effect = {
 		custom_tooltip = resolution_establish_galatic_fanatic_authoritarian_xenophile_faction_tooltip
 		hidden_effect = {
-			set_global_flag = galactic_community_resolution_passed
-			set_timed_country_flag = { flag = galactic_community_resolution_passed_establish_galatic_faction days = @resolution_flag_timer }
-			add_modifier = {
-				modifier = resolution_passed_diplomatic_weight
-				days = 2200
-			}
 			every_country = {
-				add_modifier = {
-					modifier = resolution_force_establish_galatic_fanatic_authoritarian_xenophile_faction_static_modifier
-				}
+				add_modifier = resolution_force_establish_galatic_fanatic_authoritarian_xenophile_faction_static_modifier
 			}
 		}
 	}
 
 	fail_effects = {
-		hidden_effect = {
-			set_timed_country_flag = { flag = galactic_community_resolution_failed_establish_galatic_faction days = @resolution_flag_timer }
-			add_modifier = {
-				modifier = resolution_failed_diplomatic_weight
-				days = 2200
-			}
-		}
 	}
 
 	allow = {
@@ -58,14 +43,39 @@ resolution_establish_galatic_fanatic_authoritarian_xenophile_faction = {
 			fail_text = "resolution_already_active"
 			NOR = {
 				is_active_resolution = "resolution_establish_galatic_fanatic_authoritarian_xenophile_faction"
-			}
+			}			
+		}
+	}
 
-			# Only available to countries whose ethics don't conflict
+	potential = {
+		# Only available to countries that have an ethic
+		OR = {
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+			has_ethic = ethic_xenophile
+			has_ethic = ethic_fanatic_xenophile
+			
+
+			
+			has_ethic = ethic_authoritarian
+			has_ethic = ethic_fanatic_authoritarian
+			
+
+			
 		}
 	}
 
 	ai_weight = { 
-		base = @resolution_weight_loved
+		base = @resolution_weight_disliked
 
         
 
@@ -75,12 +85,12 @@ resolution_establish_galatic_fanatic_authoritarian_xenophile_faction = {
 
         
         modifier = {
-			factor = 0.5
+			factor = 0
 			is_egalitarian = yes
 			desc = ethic_egalitarian
 		}
 		modifier = {
-			factor = 2
+			factor = 1.25
 			is_authoritarian = yes
 			desc = ethic_authoritarian
 		}
@@ -92,17 +102,6 @@ resolution_establish_galatic_fanatic_authoritarian_xenophile_faction = {
 
         
 
-        
-		modifier = {
-			factor = 2
-			is_xenophile = yes
-			desc = ethic_xenophile
-		}
-        modifier = {
-			factor = 0.5
-			is_xenophobe = yes
-			desc = ethic_xenophobe
-		}
         
 
 		modifier = {
@@ -128,11 +127,7 @@ resolution_disband_galatic_fanatic_authoritarian_xenophile_faction = {
 	effect = {
 		custom_tooltip = resolution_disband_galatic_fanatic_authoritarian_xenophile_faction_effect_success
 		hidden_effect = {
-			every_country = {
-				remove_modifier = resolution_force_establish_galatic_fanatic_authoritarian_xenophile_faction_static_modifier
-			}
 			cancel_resolution = "resolution_establish_galatic_fanatic_authoritarian_xenophile_faction"
-			set_timed_country_flag = { flag = galactic_community_resolution_passed_disband_galatic_faction days = @resolution_flag_timer }
 			add_modifier = {
 				modifier = resolution_passed_diplomatic_weight
 				days = 2200
@@ -142,7 +137,6 @@ resolution_disband_galatic_fanatic_authoritarian_xenophile_faction = {
 
 	fail_effects = {
 		hidden_effect = {
-			set_timed_country_flag = { flag = galactic_community_resolution_failed_disband_galatic_faction days = @resolution_flag_timer }
 			add_modifier = {
 				modifier = resolution_failed_diplomatic_weight
 				days = 2200
@@ -170,7 +164,7 @@ resolution_disband_galatic_fanatic_authoritarian_xenophile_faction = {
 			desc = ethic_egalitarian
 		}
 		modifier = {
-			factor = 0.5
+			factor = 0
 			is_authoritarian = yes
 			desc = ethic_authoritarian
 		}
@@ -184,7 +178,7 @@ resolution_disband_galatic_fanatic_authoritarian_xenophile_faction = {
 
         
 		modifier = {
-			factor = 0.5
+			factor = 0
 			is_xenophile = yes
 			desc = ethic_xenophile
 		}

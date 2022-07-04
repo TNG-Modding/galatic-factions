@@ -1,355 +1,357 @@
-demand = {
-    title = "FACTION_OUTRAGED_GC"
-    unfulfilled_title = "FACTION_OUTRAGED_GC"
-    desc = "FACTION_OUTRAGED_GC_DESC"
+    {% if isXenophobe > 0 and isMilitarist == 0 %}
+    demand = {
+        title = "FACTION_OUTRAGED_GC"
+        unfulfilled_title = "FACTION_OUTRAGED_GC"
+        desc = "FACTION_OUTRAGED_GC_DESC"
 
-    fulfilled_effect = -20
-    unfulfilled_effect = -0.001
+        fulfilled_effect = -20
+        unfulfilled_effect = -0.001
 
-    potential = {
-        exists = owner
-        owner = {
-            has_country_flag = faction_xenophobe_isolationist_outraged_gc
+        potential = {
+            exists = owner
+            owner = {
+                has_country_flag = faction_xenophobe_isolationist_outraged_gc
+            }
         }
-    }
 
-    trigger = {
-        owner = {
-            has_country_flag = faction_xenophobe_isolationist_outraged_gc
-        }
-    }
-}
-
-demand = { # "ISOLATIONIST_PHILOSOPHY"
-    title = "ISOLATIONIST_PHILOSOPHY"
-    unfulfilled_title = "ISOLATIONIST_NO_PHILOSOPHY"
-    desc = "ISOLATIONIST_PHILOSOPHY_DESC"
-
-    unfulfilled_effect = -25
-    fulfilled_effect = 0.001
-
-    potential = {
-        exists = owner
-        owner = {
-            any_relation = {
-                has_communications = root.owner
-                is_country_type = default
-                NOT = { exists = overlord }
+        trigger = {
+            owner = {
+                has_country_flag = faction_xenophobe_isolationist_outraged_gc
             }
         }
     }
 
-    trigger = {
-        owner = {
-            NOT = { has_policy_flag = unrestricted_wars }
-        }
-    }
-}
+    demand = { # "ISOLATIONIST_PHILOSOPHY"
+        title = "ISOLATIONIST_PHILOSOPHY"
+        unfulfilled_title = "ISOLATIONIST_NO_PHILOSOPHY"
+        desc = "ISOLATIONIST_PHILOSOPHY_DESC"
 
-demand = { # "ISOLATIONIST_NO_AGGRESSIVE_WAR"
-    title = "ISOLATIONIST_NO_AGGRESSIVE_WAR"
-    unfulfilled_title = "ISOLATIONIST_AGGRESSIVE_WAR"
-    desc = "ISOLATIONIST_NO_AGGRESSIVE_WAR_DESC"
+        unfulfilled_effect = -25
+        fulfilled_effect = 0.001
 
-    unfulfilled_effect = -25
-    fulfilled_effect = 0.001
-
-    potential = {
-        exists = owner
-        owner = {
-            num_communications > 2
-            any_war = { is_war_participant = { who = prev side = attackers } }
-        }
-    }
-
-    trigger = {
-        owner = {
-            NOR = {
-                any_war = { is_war_participant = { who = prev side = attackers } }
-                has_country_flag = entered_war_as_defender
-            }
-        }
-    }
-}
-
-demand = {
-    title = "SUPREMACIST_ISOLATIONIST_NO_FEDERATION"
-    unfulfilled_title = "SUPREMACIST_ISOLATIONIST_FEDERATION"
-    desc = "SUPREMACIST_ISOLATIONIST_NO_FEDERATION_DESC"
-
-    unfulfilled_effect = -25
-    fulfilled_effect = 0.001
-
-    potential = {
-        exists = owner
-        owner = {
-            num_communications > 0
-        }
-    }
-
-    trigger = {
-        owner = {
-            has_federation = no
-        }
-    }
-}
-
-demand = {
-    title = "ISOLATIONIST_MOVEMENT_RESTRICTED"
-    unfulfilled_title = "ISOLATIONIST_MOVEMENT_UNRESTRICTED"
-    desc = "ISOLATIONIST_MOVEMENT_RESTRICTED_DESC"
-
-    unfulfilled_effect = -10
-    fulfilled_effect = 0.001
-
-    potential = {
-        exists = owner
-        owner = {
-            num_communications > 2
-        }
-    }
-
-    trigger = {
-        owner = {
-            NOR = {
+        potential = {
+            exists = owner
+            owner = {
                 any_relation = {
                     has_communications = root.owner
-                    OR = {
-                        has_diplo_migration_treaty = root.owner
-                        root = {
-                            owner = {
-                                has_diplo_migration_treaty = prevprev
+                    is_country_type = default
+                    NOT = { exists = overlord }
+                }
+            }
+        }
+
+        trigger = {
+            owner = {
+                NOT = { has_policy_flag = unrestricted_wars }
+            }
+        }
+    }
+
+    demand = { # "ISOLATIONIST_NO_AGGRESSIVE_WAR"
+        title = "ISOLATIONIST_NO_AGGRESSIVE_WAR"
+        unfulfilled_title = "ISOLATIONIST_AGGRESSIVE_WAR"
+        desc = "ISOLATIONIST_NO_AGGRESSIVE_WAR_DESC"
+
+        unfulfilled_effect = -25
+        fulfilled_effect = 0.001
+
+        potential = {
+            exists = owner
+            owner = {
+                num_communications > 2
+                any_war = { is_war_participant = { who = prev side = attackers } }
+            }
+        }
+
+        trigger = {
+            owner = {
+                NOR = {
+                    any_war = { is_war_participant = { who = prev side = attackers } }
+                    has_country_flag = entered_war_as_defender
+                }
+            }
+        }
+    }
+
+    demand = {
+        title = "SUPREMACIST_ISOLATIONIST_NO_FEDERATION"
+        unfulfilled_title = "SUPREMACIST_ISOLATIONIST_FEDERATION"
+        desc = "SUPREMACIST_ISOLATIONIST_NO_FEDERATION_DESC"
+
+        unfulfilled_effect = -25
+        fulfilled_effect = 0.001
+
+        potential = {
+            exists = owner
+            owner = {
+                num_communications > 0
+            }
+        }
+
+        trigger = {
+            owner = {
+                has_federation = no
+            }
+        }
+    }
+
+    demand = {
+        title = "ISOLATIONIST_MOVEMENT_RESTRICTED"
+        unfulfilled_title = "ISOLATIONIST_MOVEMENT_UNRESTRICTED"
+        desc = "ISOLATIONIST_MOVEMENT_RESTRICTED_DESC"
+
+        unfulfilled_effect = -10
+        fulfilled_effect = 0.001
+
+        potential = {
+            exists = owner
+            owner = {
+                num_communications > 2
+            }
+        }
+
+        trigger = {
+            owner = {
+                NOR = {
+                    any_relation = {
+                        has_communications = root.owner
+                        OR = {
+                            has_diplo_migration_treaty = root.owner
+                            root = {
+                                owner = {
+                                    has_diplo_migration_treaty = prevprev
+                                }
                             }
                         }
                     }
+                    has_policy_flag = refugees_allowed
                 }
-                has_policy_flag = refugees_allowed
             }
         }
     }
-}
 
-demand = {
-    title = "ISOLATIONIST_NON_AGGRESSION1"
-    unfulfilled_title = "ISOLATIONIST_FEW_NON_AGGRESSION1"
-    desc = "ISOLATIONIST_NON_AGGRESSION_DESC1"
+    demand = {
+        title = "ISOLATIONIST_NON_AGGRESSION1"
+        unfulfilled_title = "ISOLATIONIST_FEW_NON_AGGRESSION1"
+        desc = "ISOLATIONIST_NON_AGGRESSION_DESC1"
 
-    fulfilled_effect = 5
-    unfulfilled_effect = -0.001
+        fulfilled_effect = 5
+        unfulfilled_effect = -0.001
 
-    potential = {
-        exists = owner
-        owner = {
-            num_communications > 2
-            count_playable_country = {
-                limit = {
+        potential = {
+            exists = owner
+            owner = {
+                num_communications > 2
+                count_playable_country = {
+                    limit = {
+                        OR = {
+                            has_non_aggression_pact = root.owner
+                            has_association_status = root.owner
+                        }
+                    }
+                    count < 2
+                }
+            }
+        }
+
+        trigger = {
+            owner = {
+                any_country = {
                     OR = {
                         has_non_aggression_pact = root.owner
                         has_association_status = root.owner
                     }
                 }
-                count < 2
             }
         }
     }
 
-    trigger = {
-        owner = {
-            any_country = {
-                OR = {
-                    has_non_aggression_pact = root.owner
-                    has_association_status = root.owner
-                }
-            }
-        }
-    }
-}
+    demand = {
+        title = "ISOLATIONIST_NON_AGGRESSION2"
+        unfulfilled_title = "ISOLATIONIST_FEW_NON_AGGRESSION2"
+        desc = "ISOLATIONIST_NON_AGGRESSION_DESC2"
 
-demand = {
-    title = "ISOLATIONIST_NON_AGGRESSION2"
-    unfulfilled_title = "ISOLATIONIST_FEW_NON_AGGRESSION2"
-    desc = "ISOLATIONIST_NON_AGGRESSION_DESC2"
+        fulfilled_effect = 10
+        unfulfilled_effect = -0.001
 
-    fulfilled_effect = 10
-    unfulfilled_effect = -0.001
-
-    potential = {
-        exists = owner
-        owner = {
-            num_communications > 2
-            count_playable_country = {
-                limit = {
-                    OR = {
-                        has_non_aggression_pact = root.owner
-                        has_association_status = root.owner
+        potential = {
+            exists = owner
+            owner = {
+                num_communications > 2
+                count_playable_country = {
+                    limit = {
+                        OR = {
+                            has_non_aggression_pact = root.owner
+                            has_association_status = root.owner
+                        }
                     }
+                    count > 1
                 }
-                count > 1
-            }
-            count_playable_country = {
-                limit = {
-                    OR = {
-                        has_non_aggression_pact = root.owner
-                        has_association_status = root.owner
+                count_playable_country = {
+                    limit = {
+                        OR = {
+                            has_non_aggression_pact = root.owner
+                            has_association_status = root.owner
+                        }
                     }
+                    count < 3
                 }
-                count < 3
             }
         }
-    }
 
-    trigger = {
-        owner = {
-            count_playable_country = {
-                limit = {
-                    OR = {
-                        has_non_aggression_pact = root.owner
-                        has_association_status = root.owner
+        trigger = {
+            owner = {
+                count_playable_country = {
+                    limit = {
+                        OR = {
+                            has_non_aggression_pact = root.owner
+                            has_association_status = root.owner
+                        }
                     }
+                    count > 1
                 }
-                count > 1
             }
         }
     }
-}
 
-demand = {
-    title = "ISOLATIONIST_NON_AGGRESSION3"
-    unfulfilled_title = "ISOLATIONIST_FEW_NON_AGGRESSION3"
-    desc = "ISOLATIONIST_NON_AGGRESSION_DESC3"
+    demand = {
+        title = "ISOLATIONIST_NON_AGGRESSION3"
+        unfulfilled_title = "ISOLATIONIST_FEW_NON_AGGRESSION3"
+        desc = "ISOLATIONIST_NON_AGGRESSION_DESC3"
 
-    fulfilled_effect = 15
-    unfulfilled_effect = -0.001
+        fulfilled_effect = 15
+        unfulfilled_effect = -0.001
 
-    potential = {
-        exists = owner
-        owner = {
-            num_communications > 2
-            count_playable_country = {
-                limit = {
-                    OR = {
-                        has_non_aggression_pact = root.owner
-                        has_association_status = root.owner
+        potential = {
+            exists = owner
+            owner = {
+                num_communications > 2
+                count_playable_country = {
+                    limit = {
+                        OR = {
+                            has_non_aggression_pact = root.owner
+                            has_association_status = root.owner
+                        }
                     }
+                    count > 2
                 }
-                count > 2
             }
         }
-    }
 
-    trigger = {
-        owner = {
-            count_playable_country = {
-                limit = {
-                    OR = {
-                        has_non_aggression_pact = root.owner
-                        has_association_status = root.owner
+        trigger = {
+            owner = {
+                count_playable_country = {
+                    limit = {
+                        OR = {
+                            has_non_aggression_pact = root.owner
+                            has_association_status = root.owner
+                        }
                     }
+                    count > 2
                 }
-                count > 2
-            }
-        }
-    }
-}
-
-demand = {
-    title = "ISOLATIONIST_PEACE1"
-    unfulfilled_title = "ISOLATIONIST_NO_PEACE1"
-    desc = "ISOLATIONIST_PEACE_DESC1"
-
-    fulfilled_effect = 5
-    unfulfilled_effect = -0.001
-
-    potential = {
-        exists = owner
-        owner = {
-            num_communications > 0
-        }
-    }
-
-    trigger = {
-        owner = {
-            years_of_peace = {
-                value > 9
-            }
-        }
-    }
-}
-
-demand = {
-    title = "ISOLATIONIST_PEACE2"
-    unfulfilled_title = "ISOLATIONIST_NO_PEACE2"
-    desc = "ISOLATIONIST_PEACE_DESC2"
-
-    fulfilled_effect = 10
-    unfulfilled_effect = -0.001
-
-    potential = {
-        exists = owner
-        owner = {
-            num_communications > 0
-            years_of_peace = {
-                value > 9
             }
         }
     }
 
-    trigger = {
-        owner = {
-            years_of_peace = {
-                value > 24
+    demand = {
+        title = "ISOLATIONIST_PEACE1"
+        unfulfilled_title = "ISOLATIONIST_NO_PEACE1"
+        desc = "ISOLATIONIST_PEACE_DESC1"
+
+        fulfilled_effect = 5
+        unfulfilled_effect = -0.001
+
+        potential = {
+            exists = owner
+            owner = {
+                num_communications > 0
+            }
+        }
+
+        trigger = {
+            owner = {
+                years_of_peace = {
+                    value > 9
+                }
             }
         }
     }
-}
 
-demand = {
-    title = "ISOLATIONIST_PEACE3"
-    unfulfilled_title = "ISOLATIONIST_NO_PEACE3"
-    desc = "ISOLATIONIST_PEACE_DESC3"
+    demand = {
+        title = "ISOLATIONIST_PEACE2"
+        unfulfilled_title = "ISOLATIONIST_NO_PEACE2"
+        desc = "ISOLATIONIST_PEACE_DESC2"
 
-    fulfilled_effect = 15
-    unfulfilled_effect = -0.001
+        fulfilled_effect = 10
+        unfulfilled_effect = -0.001
 
-    potential = {
-        exists = owner
-        owner = {
-            num_communications > 0
-            years_of_peace = {
-                value > 24
+        potential = {
+            exists = owner
+            owner = {
+                num_communications > 0
+                years_of_peace = {
+                    value > 9
+                }
+            }
+        }
+
+        trigger = {
+            owner = {
+                years_of_peace = {
+                    value > 24
+                }
             }
         }
     }
 
-    trigger = {
-        owner = {
-            years_of_peace = {
-                value > 49
+    demand = {
+        title = "ISOLATIONIST_PEACE3"
+        unfulfilled_title = "ISOLATIONIST_NO_PEACE3"
+        desc = "ISOLATIONIST_PEACE_DESC3"
+
+        fulfilled_effect = 15
+        unfulfilled_effect = -0.001
+
+        potential = {
+            exists = owner
+            owner = {
+                num_communications > 0
+                years_of_peace = {
+                    value > 24
+                }
+            }
+        }
+
+        trigger = {
+            owner = {
+                years_of_peace = {
+                    value > 49
+                }
             }
         }
     }
-}
 
-demand = {
-    title = "ISOLATIONIST_DIPLO_STANCE"
-    unfulfilled_title = "ISOLATIONIST_DIPLO_STANCE"
-    desc = "ISOLATIONIST_DIPLO_STANCE_DESC"
+    demand = {
+        title = "ISOLATIONIST_DIPLO_STANCE"
+        unfulfilled_title = "ISOLATIONIST_DIPLO_STANCE"
+        desc = "ISOLATIONIST_DIPLO_STANCE_DESC"
 
-    fulfilled_effect = 10
-    unfulfilled_effect = -10
+        fulfilled_effect = 10
+        unfulfilled_effect = -10
 
-    potential = {
-        exists = owner
-        owner = {
-            is_homicidal = no
-            is_country_type = default
-            is_megacorp = no
+        potential = {
+            exists = owner
+            owner = {
+                is_homicidal = no
+                is_country_type = default
+                is_megacorp = no
+            }
+        }
+
+        trigger = {
+            owner = {
+                has_policy_flag = diplo_stance_isolationist
+            }
         }
     }
-
-    trigger = {
-        owner = {
-            has_policy_flag = diplo_stance_isolationist
-        }
-    }
-}
+    {% endif %}

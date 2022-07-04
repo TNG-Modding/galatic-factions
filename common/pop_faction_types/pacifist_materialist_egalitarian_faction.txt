@@ -4,10 +4,11 @@
 
 pacifist_materialist_egalitarian_faction = {
 	election_header = "GFX_faction_header_yellow"
-	guiding_ethic = ethic_militarist #only pops of this ethic can join the faction
+	guiding_ethic = ethic_militarist
 
 	unique = yes
 	support_multiplier = 1
+	use_guiding_ethic_as_pop_filter = no
 
 	resources = {
 		category = pop_factions
@@ -61,6 +62,7 @@ pacifist_materialist_egalitarian_faction = {
 	can_join_faction = {
 		is_shackled_robot = no
 		NOT = { has_trait = trait_nerve_stapled }
+
 		OR = {
 			
 			
@@ -99,6 +101,8 @@ pacifist_materialist_egalitarian_faction = {
 		}
 
 		
+
+		
 	}
 
 	leader = {
@@ -121,4 +125,713 @@ pacifist_materialist_egalitarian_faction = {
 	actions = {
 		
 	}
+
+	
+
+	    
+    demand = {
+        title = "FACTION_OUTRAGED_GC"
+        unfulfilled_title = "FACTION_OUTRAGED_GC"
+        desc = "FACTION_OUTRAGED_GC_DESC"
+
+        fulfilled_effect = -20
+        unfulfilled_effect = -0.001
+
+        potential = {
+            exists = owner
+            owner = {
+                has_country_flag = faction_egalitarian_outraged_gc
+            }
+        }
+
+        trigger = {
+            owner = {
+                has_country_flag = faction_egalitarian_outraged_gc
+            }
+        }
+    }
+
+    demand = {
+        title = "PROGRESSIVE_NO_AUTO"
+        unfulfilled_title = "PROGRESSIVE_AUTO"
+        desc = "PROGRESSIVE_DEMOCRATIC_GOVERNMENT_DESC"
+
+        fulfilled_effect = 10
+        unfulfilled_effect = -15
+
+        potential = {
+            exists = owner
+        }
+
+        trigger = {
+            owner = {
+                NOR = {
+                    has_authority = auth_imperial
+                    has_authority = auth_dictatorial
+                }
+            }
+        }
+    }
+
+    demand = {
+        title = "PROGRESSIVE_FREE_MOVEMENT"
+        unfulfilled_title = "PROGRESSIVE_NO_FREE_MOVEMENT"
+        desc = "PROGRESSIVE_FREE_MOVEMENT_DESC"
+
+        fulfilled_effect = 10
+        unfulfilled_effect = -10
+
+        potential = {
+            exists = owner
+            owner = { has_encountered_other_species = yes }
+        }
+
+        trigger = {
+            owner = {
+                NOR = {
+                    any_owned_pop = {
+                        has_migration_control = yes
+                        is_sapient = yes
+                        is_enslaved = no
+                        is_being_purged = no
+                        is_shackled_robot = no
+                        is_robot_pop = no
+                    }
+                    has_policy_flag = resettlement_allowed
+                }
+            }
+        }
+    }
+
+    demand = {
+        title = "PROGRESSIVE_REPRODUCTIVE_FREEDOM"
+        unfulfilled_title = "PROGRESSIVE_NO_REPRODUCTIVE_FREEDOM"
+        desc = "PROGRESSIVE_REPRODUCTIVE_FREEDOM_DESC"
+
+        fulfilled_effect = 5
+        unfulfilled_effect = -20
+
+        potential = {
+            exists = owner
+        }
+
+        trigger = {
+            NOT = {
+                owner = { has_policy_flag = population_controls_allowed }
+            }
+        }
+    }
+
+    demand = {
+        title = "PROGRESSIVE_NO_STRATIFIED"
+        unfulfilled_title = "PROGRESSIVE_STRATIFIED"
+        desc = "PROGRESSIVE_NO_STRATIFIED_DESC"
+
+        unfulfilled_effect = -25
+        fulfilled_effect = 0.001
+
+        potential = {
+            exists = owner
+        }
+
+        trigger = {
+            owner = {
+                NOT = {
+                    any_owned_pop = {
+                        has_living_standard = { type = living_standard_stratified }
+                    }
+                }
+            }
+        }
+    }
+
+    demand = {
+        title = "PROGRESSIVE_NO_ELITISM"
+        unfulfilled_title = "PROGRESSIVE_ELITISM"
+        desc = "PROGRESSIVE_NO_ELITISM_DESC"
+
+        fulfilled_effect = 5
+        unfulfilled_effect = -5
+
+        potential = {
+            exists = owner
+            owner = {
+                OR = {
+                    has_technology = tech_selected_lineages
+                    has_technology = tech_capacity_boosters
+                }
+            }
+        }
+
+        trigger = {
+            owner = {
+                NOR = {
+                    has_policy_flag = leader_enhancement_selected_lineages
+                    has_policy_flag = leader_enhancement_capacity_boosters
+                }
+            }
+        }
+    }
+
+    demand = {
+        title = "COOPERATIVE_DIPLO_STANCE"
+        unfulfilled_title = "COOPERATIVE_DIPLO_STANCE"
+        desc = "COOPERATIVE_DIPLO_STANCE_DESC"
+
+        fulfilled_effect = 5
+        unfulfilled_effect = -0.001
+
+        potential = {
+            exists = owner
+            owner = {
+                is_homicidal = no
+                is_country_type = default
+                has_policy_flag = diplo_stance_cooperative
+            }
+        }
+
+        trigger = {
+            owner = {
+                has_policy_flag = diplo_stance_cooperative
+            }
+        }
+    }
+    
+
+	    
+
+	    
+    demand = {
+        title = "TECHNOLOGIST_ROBOTS_ALLOWED"
+        unfulfilled_title = "TECHNOLOGIST_ROBOTS_BANNED"
+        desc = "TECHNOLOGIST_ROBOTS_ALLOWED_DESC"
+
+        fulfilled_effect = 10
+        unfulfilled_effect = -30
+
+        potential = {
+            exists = owner
+        }
+
+        trigger = {
+            owner = {
+                NOR = {
+                    has_policy_flag = robots_outlawed
+                    has_policy_flag = ai_outlawed
+                }
+            }
+        }
+    }
+
+    demand = {
+        title = "FACTION_OUTRAGED_GC"
+        unfulfilled_title = "FACTION_OUTRAGED_GC"
+        desc = "FACTION_OUTRAGED_GC_DESC"
+
+        fulfilled_effect = -20
+        unfulfilled_effect = -0.001
+
+        potential = {
+            exists = owner
+            owner = {
+                has_country_flag = faction_materialist_outraged_gc
+            }
+        }
+
+        trigger = {
+            owner = {
+                has_country_flag = faction_materialist_outraged_gc
+            }
+        }
+    }
+
+    demand = {
+        title = "TECHNOLOGIST_TECH_LEAP"
+        unfulfilled_title = "TECHNOLOGIST_TECH_LAG"
+        desc = "TECHNOLOGIST_TECH_LEAP_DESC"
+
+        fulfilled_effect = 10
+        unfulfilled_effect = -20
+
+        potential = {
+            exists = owner
+            owner = {
+                any_relation = {
+                    has_communications = root.owner
+                    is_country_type = default
+                    NOT = { has_government = gov_successor_khanate }
+                }
+                NOR = {
+                    has_country_flag = primitives_can_into_space
+                    is_subject = yes
+                }
+            }
+        }
+
+        trigger = {
+            owner = {
+                NOT = {
+                    any_relation = {
+                        has_communications = root.owner
+                        is_country_type = default
+                        NOT = { has_government = gov_successor_khanate }
+                        relative_power = {
+                            who = root.owner
+                            category = technology
+                            value > equivalent
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    demand = {
+        title = "TECHNOLOGIST_RESEARCH_TREATIES"
+        unfulfilled_title = "TECHNOLOGIST_FEW_RESEARCH_TREATIES"
+        desc = "TECHNOLOGIST_RESEARCH_TREATIES_DESC"
+
+        fulfilled_effect = 10
+        unfulfilled_effect = -0.001
+
+        potential = {
+            exists = owner
+            owner = {
+                num_communications > 2
+            }
+        }
+
+        trigger = {
+            owner = {
+                OR = {
+                    AND = {
+                        has_federation = yes
+                        federation = {
+                            has_federation_perk = research_federation_passive
+                        }
+                    }
+                    count_playable_country = {
+                        count > 2
+                        limit = {
+                            exists = this
+                            root.owner = { has_research_agreement = prev }
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    demand = {
+        title = "TECHNOLOGIST_NO_SYNTH_ENVY"
+        unfulfilled_title = "TECHNOLOGIST_SYNTH_ENVY"
+        desc = "TECHNOLOGIST_NO_SYNTH_ENVY_DESC"
+
+        unfulfilled_effect = -10
+        fulfilled_effect = 0.001
+
+        potential = {
+            exists = owner
+            owner = {
+                NOT = { has_ascension_perk = ap_synthetic_evolution }
+                any_relation = {
+                    has_communications = root.owner
+                    any_owned_pop = {
+                        OR = {
+                            pop_has_trait = trait_mechanical
+                            pop_has_trait = trait_cybernetic
+                        }
+                    }
+                }
+            }
+        }
+
+        trigger = {
+            owner = {
+                any_owned_pop = {
+                    OR = {
+                        pop_has_trait = trait_mechanical
+                        pop_has_trait = trait_cybernetic
+                    }
+                }
+            }
+        }
+    }
+
+    on_create = {
+        pop_faction_event = { id = faction_spawn.1 }
+    }
+
+    demand = {
+        title = "TECHNOLOGIST_SECRET_KNOWLEDGE"
+        unfulfilled_title = "TECHNOLOGIST_NO_SECRET_KNOWLEDGE"
+        desc = "TECHNOLOGIST_SECRET_KNOWLEDGE_DESC"
+
+        fulfilled_effect = 10
+        unfulfilled_effect = -0.001
+
+        potential = {
+            exists = owner
+            owner = {
+                OR = {
+                    has_modifier = fallen_empire_gift_databanks
+                    has_modifier = curator_insight
+                }
+            }
+        }
+
+        trigger = {
+            owner = {
+                OR = {
+                    has_modifier = fallen_empire_gift_databanks
+                    has_modifier = curator_insight
+                }
+            }
+        }
+    }
+
+    demand = {
+        title = "TECHNOLOGIST_ARCANA"
+        unfulfilled_title = "TECHNOLOGIST_NO_ARCANA"
+        desc = "TECHNOLOGIST_ARCANA_DESC"
+
+        fulfilled_effect = 5
+        unfulfilled_effect = -0.001
+
+        potential = {
+            exists = owner
+            owner = {
+                OR = {
+                    has_modifier = arcane_deciphering_cooldown
+                    has_modifier = arcane_insight
+                }
+            }
+        }
+
+        trigger = {
+            owner = {
+                OR = {
+                    has_modifier = arcane_deciphering_cooldown
+                    has_modifier = arcane_insight
+                }
+            }
+        }
+    }
+
+    demand = {
+        title = "TECHNOLOGIST_PRECURSOR_SECRETS"
+        unfulfilled_title = "TECHNOLOGIST_NO_PRECURSOR_SECRETS"
+        desc = "TECHNOLOGIST_PRECURSOR_SECRETS_DESC"
+
+        fulfilled_effect = 5
+        unfulfilled_effect = -0.001
+
+        potential = {
+            exists = owner
+            owner = {
+                OR = {
+                    has_modifier = artifact_cybrex_research_completed
+                    has_modifier = artifact_irassian_research_completed
+                    has_modifier = artifact_league_research_completed
+                    has_modifier = artifact_vultaum_research_completed_suppressed
+                    has_modifier = artifact_vultaum_research_completed_public
+                    has_country_flag = artifact_yuht_research_completed
+                }
+            }
+        }
+
+        trigger = {
+            owner = {
+                OR = {
+                    has_modifier = artifact_cybrex_research_completed
+                    has_modifier = artifact_irassian_research_completed
+                    has_modifier = artifact_league_research_completed
+                    has_modifier = artifact_vultaum_research_completed_suppressed
+                    has_modifier = artifact_vultaum_research_completed_public
+                    has_country_flag = artifact_yuht_research_completed
+                }
+            }
+        }
+    }
+
+    demand = {
+        title = "COOPERATIVE_DIPLO_STANCE"
+        unfulfilled_title = "COOPERATIVE_DIPLO_STANCE"
+        desc = "COOPERATIVE_DIPLO_STANCE_DESC"
+
+        fulfilled_effect = 5
+        unfulfilled_effect = -0.001
+
+        potential = {
+            exists = owner
+            owner = {
+                is_homicidal = no
+                is_country_type = default
+                has_policy_flag = diplo_stance_cooperative
+            }
+        }
+
+        trigger = {
+            owner = {
+                has_policy_flag = diplo_stance_cooperative
+            }
+        }
+    }
+
+    
+
+	    
+
+	    
+    demand = {
+        title = "FACTION_OUTRAGED_GC"
+        unfulfilled_title = "FACTION_OUTRAGED_GC"
+        desc = "FACTION_OUTRAGED_GC_DESC"
+
+        fulfilled_effect = -20
+        unfulfilled_effect = -0.001
+
+        potential = {
+            exists = owner
+            owner = {
+                has_country_flag = faction_pacifist_outraged_gc
+            }
+        }
+
+        trigger = {
+            owner = {
+                has_country_flag = faction_pacifist_outraged_gc
+            }
+        }
+    }
+
+    demand = {
+        title = "PROSPERITY_LIQUIDITY"
+        unfulfilled_title = "PROSPERITY_NO_LIQUIDITY"
+        desc = "PROSPERITY_LIQUIDITY_DESC"
+
+        fulfilled_effect = 10
+        unfulfilled_effect = -0.001
+
+        potential = { # TODO get a reasonable trigger for counting colonies?
+            exists = owner
+            owner = {
+                any_owned_planet = {
+                    NOT = { is_same_value = root.capital_scope }
+                    root = {
+                        owner = {
+                            any_owned_planet = {
+                                NOR = {
+                                    is_same_value = prevprevprev
+                                    is_same_value = root.owner.capital_scope
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+
+        trigger = {
+            owner = { resource_stockpile_compare = { resource = energy value >= 5000 } }
+        }
+    }
+
+    demand = {
+        title = "PROSPERITY_PHILOSOPHY"
+        unfulfilled_title = "PROSPERITY_NO_PHILOSOPHY"
+        desc = "PROSPERITY_PHILOSOPHY_DESC"
+
+        fulfilled_effect = 10
+        unfulfilled_effect = -10
+
+        potential = {
+            exists = owner
+            owner = {
+                any_relation = {
+                    has_communications = root.owner
+                    is_country_type = default
+                    NOT = { exists = overlord }
+                }
+            }
+        }
+
+        trigger = {
+            owner = {
+                has_policy_flag = no_wars
+            }
+        }
+    }
+
+    demand = {
+        title = "PROSPERITY_PEACE"
+        unfulfilled_title = "PROSPERITY_NO_PEACE"
+        desc = "PROSPERITY_PEACE_DESC"
+
+        fulfilled_effect = 5
+        unfulfilled_effect = -10
+
+        potential = {
+            exists = owner
+        }
+
+        trigger = {
+            owner = {
+                is_at_war = no
+            }
+        }
+    }
+
+    demand = {
+        title = "PROSPERITY_NOT_AGGRESSOR"
+        unfulfilled_title = "PROSPERITY_AGGRESSOR"
+        desc = "PROSPERITY_NOT_AGGRESSOR_DESC"
+
+        unfulfilled_effect = -30
+        fulfilled_effect = 0.001
+
+        potential = {
+            exists = owner
+            owner = {
+                num_communications > 2
+            }
+        }
+
+        trigger = {
+            owner = {
+                NOR = {
+                    has_country_flag = entered_war_as_attacker
+                    any_war = { is_war_participant = { who = prev side = attackers } }
+                }
+            }
+        }
+    }
+
+    demand = {
+        title = "PROSPERITY_PEACEFUL_APPLICATIONS"
+        unfulfilled_title = "PROSPERITY_NO_PEACEFUL_APPLICATIONS_APPLICATIONS"
+        desc = "PROSPERITY_PEACEFUL_APPLICATIONS_DESC"
+
+        fulfilled_effect = 5
+        unfulfilled_effect = -0.001
+
+        potential = {
+            exists = owner
+            owner = {
+                host_has_dlc = "Ancient Relics Story Pack"
+                has_technology = tech_arcane_deciphering
+                OR = {
+                    has_modifier = artifact_find_peaceful_application_happy_bios
+                    has_modifier = artifact_find_peaceful_application_consumer_goods
+                    has_modifier = artifact_find_peaceful_application_amenities
+                    has_modifier = artifact_find_peaceful_application_leader_improvement
+                }
+            }
+        }
+
+        trigger = {
+            owner = {
+                OR = {
+                    has_modifier = artifact_find_peaceful_application_happy_bios
+                    has_modifier = artifact_find_peaceful_application_consumer_goods
+                    has_modifier = artifact_find_peaceful_application_amenities
+                    has_modifier = artifact_find_peaceful_application_leader_improvement
+                }
+            }
+        }
+    }
+
+    demand = {
+        title = "PROSPERITY_MILITARY_APPLICATIONS"
+        unfulfilled_title = "PROSPERITY_NO_MILITARY_APPLICATIONS"
+        desc = "PROSPERITY_MILITARY_APPLICATIONS_DESC"
+
+        unfulfilled_effect = -5
+        fulfilled_effect = +0.001
+
+        potential = {
+            exists = owner
+            owner = {
+                host_has_dlc = "Ancient Relics Story Pack"
+                has_technology = tech_arcane_deciphering
+                OR = {
+                    has_modifier = artifact_find_military_application_army
+                    has_modifier = artifact_find_military_application_shield_damage
+                    has_modifier = artifact_find_military_application_armor_damage
+                }
+            }
+        }
+
+        trigger = {
+            owner = {
+                NOR = {
+                    has_modifier = artifact_find_military_application_army
+                    has_modifier = artifact_find_military_application_shield_damage
+                    has_modifier = artifact_find_military_application_armor_damage
+                }
+            }
+        }
+    }
+
+    demand = {
+        title = "MERCANTILE_DIPLO_STANCE"
+        unfulfilled_title = "MERCANTILE_DIPLO_STANCE"
+        desc = "MERCANTILE_DIPLO_STANCE_DESC"
+
+        fulfilled_effect = 10
+        unfulfilled_effect = -0.001
+
+        potential = {
+            exists = owner
+            owner = {
+                is_homicidal = no
+                is_country_type = default
+                has_policy_flag = diplo_stance_mercantile
+            }
+        }
+
+        trigger = {
+            owner = {
+                has_policy_flag = diplo_stance_mercantile
+            }
+        }
+    }
+
+    demand = {
+        title = "AGGRESSIVE_DIPLO_STANCE"
+        unfulfilled_title = "AGGRESSIVE_DIPLO_STANCE"
+        desc = "AGGRESSIVE_DIPLO_STANCE_DESC"
+
+        fulfilled_effect = 0.001
+        unfulfilled_effect = -10
+
+        potential = {
+            exists = owner
+            owner = {
+                is_homicidal = no
+                is_country_type = default
+                OR = {
+                    has_policy_flag = diplo_stance_belligerent
+                    has_policy_flag = diplo_stance_supremacist
+                }
+            }
+        }
+
+        trigger = {
+            owner = {
+                NOR = {
+                    has_policy_flag = diplo_stance_belligerent
+                    has_policy_flag = diplo_stance_supremacist
+                }
+            }
+        }
+    }
+
+    
+
+	    
+
+	     
+
+	    
 }

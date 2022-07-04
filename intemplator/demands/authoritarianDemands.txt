@@ -1,178 +1,180 @@
-demand = {
-    title = "FACTION_OUTRAGED_GC"
-    unfulfilled_title = "FACTION_OUTRAGED_GC"
-    desc = "FACTION_OUTRAGED_GC_DESC"
+    {% if isAuthoritarian > 0 %}
+    demand = {
+        title = "FACTION_OUTRAGED_GC"
+        unfulfilled_title = "FACTION_OUTRAGED_GC"
+        desc = "FACTION_OUTRAGED_GC_DESC"
 
-    fulfilled_effect = -20
-    unfulfilled_effect = -0.001
+        fulfilled_effect = -20
+        unfulfilled_effect = -0.001
 
-    potential = {
-        exists = owner
-        owner = {
-            has_country_flag = faction_authoritarian_outraged_gc
-        }
-    }
-
-    trigger = {
-        owner = {
-            has_country_flag = faction_authoritarian_outraged_gc
-        }
-    }
-}
-
-demand = {
-    title = "TOTALITARIAN_AUTOCRACY"
-    unfulfilled_title = "TOTALITARIAN_NO_AUTOCRACY"
-    desc = "TOTALITARIAN_AUTOCRACY_DESC"
-
-    fulfilled_effect = 10
-    unfulfilled_effect = -0.001
-
-    potential = {
-        exists = owner
-        owner = {
-            NOT = { has_authority = auth_democratic }
-        }
-    }
-
-    trigger = {
-        owner = {
-            OR = {
-                has_authority = auth_imperial
-                has_authority = auth_dictatorial
+        potential = {
+            exists = owner
+            owner = {
+                has_country_flag = faction_authoritarian_outraged_gc
             }
         }
-    }
-}
 
-demand = {
-    title = "TOTALITARIAN_DEMOCRACY"
-    unfulfilled_title = "TOTALITARIAN_NO_DEMOCRACY"
-    desc = "TOTALITARIAN_DEMOCRACY_DESC"
-
-    unfulfilled_effect = -25
-    fulfilled_effect = 0.001
-
-    potential = {
-        exists = owner
-        owner = {
-            NOR = {
-                has_authority = auth_imperial
-                has_authority = auth_dictatorial
+        trigger = {
+            owner = {
+                has_country_flag = faction_authoritarian_outraged_gc
             }
         }
     }
 
-    trigger = {
-        owner = {
-            NOT = { has_authority = auth_democratic }
+    demand = {
+        title = "TOTALITARIAN_AUTOCRACY"
+        unfulfilled_title = "TOTALITARIAN_NO_AUTOCRACY"
+        desc = "TOTALITARIAN_AUTOCRACY_DESC"
+
+        fulfilled_effect = 10
+        unfulfilled_effect = -0.001
+
+        potential = {
+            exists = owner
+            owner = {
+                NOT = { has_authority = auth_democratic }
+            }
+        }
+
+        trigger = {
+            owner = {
+                OR = {
+                    has_authority = auth_imperial
+                    has_authority = auth_dictatorial
+                }
+            }
         }
     }
-}
 
-demand = {
-    title = "TOTALITARIAN_STRATIFICATION"
-    unfulfilled_title = "TOTALITARIAN_NO_STRATIFICATION"
-    desc = "TOTALITARIAN_STRATIFICATION_DESC"
+    demand = {
+        title = "TOTALITARIAN_DEMOCRACY"
+        unfulfilled_title = "TOTALITARIAN_NO_DEMOCRACY"
+        desc = "TOTALITARIAN_DEMOCRACY_DESC"
 
-    fulfilled_effect = 10
-    unfulfilled_effect = -20
+        unfulfilled_effect = -25
+        fulfilled_effect = 0.001
 
-    potential = {
-        exists = owner
+        potential = {
+            exists = owner
+            owner = {
+                NOR = {
+                    has_authority = auth_imperial
+                    has_authority = auth_dictatorial
+                }
+            }
+        }
+
+        trigger = {
+            owner = {
+                NOT = { has_authority = auth_democratic }
+            }
+        }
     }
 
-    trigger = {
-        owner = {
-            OR = {
-                NOT = {
-                    any_owned_pop = {
-                        NOR = {
-                            has_living_standard = { type = living_standard_stratified }
-                            has_living_standard = { type = living_standard_academic_privilege }
+    demand = {
+        title = "TOTALITARIAN_STRATIFICATION"
+        unfulfilled_title = "TOTALITARIAN_NO_STRATIFICATION"
+        desc = "TOTALITARIAN_STRATIFICATION_DESC"
+
+        fulfilled_effect = 10
+        unfulfilled_effect = -20
+
+        potential = {
+            exists = owner
+        }
+
+        trigger = {
+            owner = {
+                OR = {
+                    NOT = {
+                        any_owned_pop = {
+                            NOR = {
+                                has_living_standard = { type = living_standard_stratified }
+                                has_living_standard = { type = living_standard_academic_privilege }
+                            }
+                        }
+                    }
+                    any_owned_species = {
+                        OR = {
+                            has_citizenship_type = { type = citizenship_slavery country = prev }
+                            has_citizenship_type = { type = citizenship_purge country = prev }
+                            has_citizenship_type = { type = citizenship_robot_servitude country = prev }
                         }
                     }
                 }
-                any_owned_species = {
-                    OR = {
-                        has_citizenship_type = { type = citizenship_slavery country = prev }
-                        has_citizenship_type = { type = citizenship_purge country = prev }
-                        has_citizenship_type = { type = citizenship_robot_servitude country = prev }
-                    }
+            }
+        }
+    }
+
+    demand = {
+        title = "TOTALITARIAN_ELITISM"
+        unfulfilled_title = "TOTALITARIAN_NO_ELITISM"
+        desc = "TOTALITARIAN_ELITISM_DESC"
+
+        fulfilled_effect = 5
+        unfulfilled_effect = -5
+
+        potential = {
+            exists = owner
+            owner = {
+                OR = {
+                    has_technology = tech_selected_lineages
+                    has_technology = tech_capacity_boosters
+                }
+            }
+        }
+
+        trigger = {
+            owner = {
+                OR = {
+                    has_policy_flag = leader_enhancement_selected_lineages
+                    has_policy_flag = leader_enhancement_capacity_boosters
                 }
             }
         }
     }
-}
 
-demand = {
-    title = "TOTALITARIAN_ELITISM"
-    unfulfilled_title = "TOTALITARIAN_NO_ELITISM"
-    desc = "TOTALITARIAN_ELITISM_DESC"
+    demand = {
+        title = "TOTALITARIAN_EXTRANATIONAL_AUTHORITY"
+        unfulfilled_title = "TOTALITARIAN_NO_EXTRANATIONAL_AUTHORITY"
+        desc = "TOTALITARIAN_EXTRANATIONAL_AUTHORITY_DESC"
 
-    fulfilled_effect = 5
-    unfulfilled_effect = -5
+        fulfilled_effect = 10
+        unfulfilled_effect = -0.001
 
-    potential = {
-        exists = owner
-        owner = {
-            OR = {
-                has_technology = tech_selected_lineages
-                has_technology = tech_capacity_boosters
+        potential = {
+            exists = owner
+            owner = {
+                num_communications > 2
+            }
+        }
+
+        trigger = {
+            owner = {
+                is_overlord = yes
             }
         }
     }
 
-    trigger = {
-        owner = {
-            OR = {
-                has_policy_flag = leader_enhancement_selected_lineages
-                has_policy_flag = leader_enhancement_capacity_boosters
+    demand = {
+        title = "TOTALITARIAN_UNDERLING"
+        unfulfilled_title = "TOTALITARIAN_NOT_UNDERLING"
+        desc = "TOTALITARIAN_UNDERLING_DESC"
+
+        unfulfilled_effect = -10
+        fulfilled_effect = 0.001
+
+        potential = {
+            exists = owner
+            owner = {
+                is_subject = yes
+            }
+        }
+
+        trigger = {
+            owner = {
+                is_subject = yes
             }
         }
     }
-}
-
-demand = {
-    title = "TOTALITARIAN_EXTRANATIONAL_AUTHORITY"
-    unfulfilled_title = "TOTALITARIAN_NO_EXTRANATIONAL_AUTHORITY"
-    desc = "TOTALITARIAN_EXTRANATIONAL_AUTHORITY_DESC"
-
-    fulfilled_effect = 10
-    unfulfilled_effect = -0.001
-
-    potential = {
-        exists = owner
-        owner = {
-            num_communications > 2
-        }
-    }
-
-    trigger = {
-        owner = {
-            is_overlord = yes
-        }
-    }
-}
-
-demand = {
-    title = "TOTALITARIAN_UNDERLING"
-    unfulfilled_title = "TOTALITARIAN_NOT_UNDERLING"
-    desc = "TOTALITARIAN_UNDERLING_DESC"
-
-    unfulfilled_effect = -10
-    fulfilled_effect = 0.001
-
-    potential = {
-        exists = owner
-        owner = {
-            is_subject = yes
-        }
-    }
-
-    trigger = {
-        owner = {
-            is_subject = yes
-        }
-    }
-}
+    {% endif %}
