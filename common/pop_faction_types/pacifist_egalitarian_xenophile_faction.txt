@@ -28,21 +28,28 @@ pacifist_egalitarian_xenophile_faction = {
 	is_potential = {
 		AND = { 
 			# is_faction_allowed = yes
-			
-			
-			
-			
-			
-			has_ethic = ethic_egalitarian
-			
-			
-			
-			has_ethic = ethic_pacifist
-			
-			has_ethic = ethic_xenophile
-			
-			
-			
+
+			OR = {
+				has_modifier = resolution_force_establish_galatic_pacifist_egalitarian_xenophile_faction_static_modifier
+				AND = {
+					
+					
+					
+					
+					
+					has_ethic = ethic_egalitarian
+					
+					
+					
+					has_ethic = ethic_pacifist
+					
+					has_ethic = ethic_xenophile
+					
+					
+					
+					
+				}
+			}
 			
 		}
 	}

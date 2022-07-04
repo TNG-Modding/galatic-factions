@@ -1,7 +1,7 @@
 {
     "orders": [
         {
-            "name": "Moderation Pop Faction Defines",
+            "name": "Moderation Faction Defines",
             "specFilePath": "./specs/moderateFactions.json",
             "templateDirectoryPath": "./templates/faction",
             "outputDirectoryPath": "../common/pop_faction_types",
@@ -10,7 +10,7 @@
             "isBom": false
         },
         {
-            "name": "Fanatic Pop Faction Defines",
+            "name": "Fanatic Faction Defines",
             "specFilePath": "./specs/fanaticFactions.json",
             "templateDirectoryPath": "./templates/faction",
             "outputDirectoryPath": "../common/pop_faction_types",
@@ -19,56 +19,101 @@
             "isBom": false
         },
         {
-            "name": "Moderation Pop Faction Names",
+            "name": "Moderation Faction Names",
             "specFilePath": "./specs/moderateFactions.json",
             "templateDirectoryPath": "./templates/faction_random_names",
             "outputDirectoryPath": "../common/random_names",
-            "disabled": true,
+            "disabled": false,
             "dumpContents": true,
             "isBom": false
         },
         {
-            "name": "Fanatic Pop Faction Names",
+            "name": "Fanatic Faction Names",
             "specFilePath": "./specs/fanaticFactions.json",
             "templateDirectoryPath": "./templates/faction_random_names",
             "outputDirectoryPath": "../common/random_names",
-            "disabled": true,
+            "disabled": false,
             "dumpContents": true,
             "isBom": false
         },
         {
-            "name": "Moderation Pop Faction Icons",
+            "name": "Moderation Faction Icons",
             "specFilePath": "./specs/moderateFactions.json",
             "templateDirectoryPath": "./templates/faction_interface",
             "outputDirectoryPath": "../interface/factions",
-            "disabled": true,
+            "disabled": false,
             "dumpContents": true,
             "isBom": false
         },
         {
-            "name": "Fanatic Pop Faction Icons",
+            "name": "Fanatic Faction Icons",
             "specFilePath": "./specs/fanaticFactions.json",
             "templateDirectoryPath": "./templates/faction_interface",
             "outputDirectoryPath": "../interface/factions",
-            "disabled": true,
+            "disabled": false,
             "dumpContents": true,
             "isBom": false
         },
         {
-            "name": "Moderation Pop Faction Localisation",
+            "name": "Moderation Faction Localisation",
             "specFilePath": "./specs/moderateFactions.json",
             "templateDirectoryPath": "./templates/faction_localisation",
             "outputDirectoryPath": "../localisation/english/faction_defs",
-            "disabled": true,
+            "disabled": false,
             "dumpContents": true,
             "isBom": true
         },
         {
-            "name": "Fanatic Pop Faction Localisation",
+            "name": "Fanatic Faction Localisation",
             "specFilePath": "./specs/fanaticFactions.json",
             "templateDirectoryPath": "./templates/faction_localisation",
             "outputDirectoryPath": "../localisation/english/faction_defs",
-            "disabled": true,
+            "disabled": false,
+            "dumpContents": true,
+            "isBom": true
+        },
+        {
+            "name": "Galatic Fanatic Factions Resolutions",
+            "specFilePath": "./specs/fanaticFactions.json",
+            "templateDirectoryPath": "./templates/faction_resolutions",
+            "outputDirectoryPath": "../common/resolutions",
+            "disabled": false,
+            "dumpContents": true,
+            "isBom": false
+        },
+        {
+            "name": "Galatic Fanatic Factions Resolutions Static Modifiers",
+            "specFilePath": "./specs/fanaticFactions.json",
+            "templateDirectoryPath": "./templates/forced_faction_static_modifiers",
+            "outputDirectoryPath": "../common/static_modifiers",
+            "disabled": false,
+            "dumpContents": true,
+            "isBom": false
+        },
+        {
+            "name": "Galatic Moderate Factions Resolutions Static Modifiers",
+            "specFilePath": "./specs/moderateFactions.json",
+            "templateDirectoryPath": "./templates/forced_faction_static_modifiers",
+            "outputDirectoryPath": "../common/static_modifiers",
+            "disabled": false,
+            "dumpContents": true,
+            "isBom": false
+        },
+        {
+            "name": "Galatic Fanatic Factions Resolutions Localisation",
+            "specFilePath": "./specs/fanaticFactions.json",
+            "templateDirectoryPath": "./templates/faction_resolutions_localisation",
+            "outputDirectoryPath": "../localisation/english/resolutions",
+            "disabled": false,
+            "dumpContents": true,
+            "isBom": true
+        },
+        {
+            "name": "Galatic Moderate Factions Resolutions Localisation",
+            "specFilePath": "./specs/moderateFactions.json",
+            "templateDirectoryPath": "./templates/faction_resolutions_localisation",
+            "outputDirectoryPath": "../localisation/english/resolutions",
+            "disabled": false,
             "dumpContents": true,
             "isBom": true
         }

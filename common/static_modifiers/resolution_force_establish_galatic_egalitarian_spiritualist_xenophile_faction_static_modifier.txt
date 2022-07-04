@@ -1,0 +1,3 @@
+resolution_force_establish_galatic_egalitarian_spiritualist_xenophile_faction_static_modifier = {
+    
+}

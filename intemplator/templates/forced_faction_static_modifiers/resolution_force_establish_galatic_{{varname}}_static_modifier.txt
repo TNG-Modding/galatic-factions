@@ -1,0 +1,3 @@
+resolution_force_establish_galatic_{{varname}}_static_modifier = {
+    
+}

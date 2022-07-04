@@ -1,0 +1,3 @@
+resolution_force_establish_galatic_fanatic_authoritarian_spiritualist_faction_static_modifier = {
+    
+}

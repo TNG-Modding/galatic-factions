@@ -1,0 +1,198 @@
+@resolution_weight_hated = 3
+@resolution_weight_disliked = 4
+@resolution_weight_unpopular = 5
+@resolution_weight_normal = 6
+@resolution_weight_popular = 6.5
+@resolution_weight_loved = 7
+
+@resolution_cost_t1 = 100
+@resolution_cost_t2 = 150
+@resolution_cost_t3 = 200
+@resolution_cost_t4 = 250
+@resolution_cost_t5 = 300
+@resolution_cost_denounce = 25
+
+@resolution_flag_timer = 360
+
+resolution_establish_galatic_fanatic_militarist_materialist_faction = {
+	icon = "GFX_resolution_defence_privatization"
+
+	resources = {
+		category = resolutions
+		cost = {
+			influence = @resolution_cost_t1
+		}
+	}
+	target = no
+	level = 1
+
+	effect = {
+		custom_tooltip = resolution_establish_galatic_fanatic_militarist_materialist_faction_tooltip
+		hidden_effect = {
+			set_global_flag = galactic_community_resolution_passed
+			set_timed_country_flag = { flag = galactic_community_resolution_passed_establish_galatic_faction days = @resolution_flag_timer }
+			add_modifier = {
+				modifier = resolution_passed_diplomatic_weight
+				days = 2200
+			}
+			every_country = {
+				add_modifier = {
+					modifier = resolution_force_establish_galatic_fanatic_militarist_materialist_faction_static_modifier
+				}
+			}
+		}
+	}
+
+	fail_effects = {
+		hidden_effect = {
+			set_timed_country_flag = { flag = galactic_community_resolution_failed_establish_galatic_faction days = @resolution_flag_timer }
+			add_modifier = {
+				modifier = resolution_failed_diplomatic_weight
+				days = 2200
+			}
+		}
+	}
+
+	allow = {
+		custom_tooltip = {
+			fail_text = "resolution_already_active"
+			NOR = {
+				is_active_resolution = "resolution_establish_galatic_fanatic_militarist_materialist_faction"
+			}
+
+			# Only available to countries whose ethics don't conflict
+		}
+	}
+
+	ai_weight = { 
+		base = @resolution_weight_loved
+
+        
+        modifier = {
+			factor = 0.5
+			is_pacifist = yes
+			desc = ethic_pacifist
+		}
+		modifier = {
+			factor = 2
+			is_militarist = yes
+			desc = ethic_militarist
+		}
+        
+
+        
+
+        
+
+        
+
+        
+		modifier = {
+			factor = 2
+			is_materialist = yes
+			desc = ethic_materialist
+		}
+        modifier = {
+			factor = 0.5
+			is_spiritualist = yes
+			desc = ethic_spiritualist
+		}
+        
+
+        
+
+        
+
+        
+
+		modifier = {
+			factor = 0
+			is_gestalt = yes
+			desc = ethic_gestalt_consciousness
+		}
+	}  
+}
+
+resolution_disband_galatic_fanatic_militarist_materialist_faction = {
+	icon = "GFX_resolution_repeal_red"
+
+	resources = {
+		category = resolutions
+		cost = {
+			influence = @resolution_cost_t1
+		}
+	}
+	target = no
+	fire_and_forget = yes
+
+	effect = {
+		custom_tooltip = resolution_disband_galatic_fanatic_militarist_materialist_faction_effect_success
+		hidden_effect = {
+			every_country = {
+				remove_modifier = resolution_force_establish_galatic_fanatic_militarist_materialist_faction_static_modifier
+			}
+			cancel_resolution = "resolution_establish_galatic_fanatic_militarist_materialist_faction"
+			set_timed_country_flag = { flag = galactic_community_resolution_passed_disband_galatic_faction days = @resolution_flag_timer }
+			add_modifier = {
+				modifier = resolution_passed_diplomatic_weight
+				days = 2200
+			}
+		}
+	}
+
+	fail_effects = {
+		hidden_effect = {
+			set_timed_country_flag = { flag = galactic_community_resolution_failed_disband_galatic_faction days = @resolution_flag_timer }
+			add_modifier = {
+				modifier = resolution_failed_diplomatic_weight
+				days = 2200
+			}
+		}
+	}
+
+	potential = {
+		is_active_resolution = "resolution_establish_galatic_fanatic_militarist_materialist_faction"
+	}
+
+	ai_weight = {
+		base = @resolution_weight_unpopular
+
+		
+        modifier = {
+			factor = 2
+			is_pacifist = yes
+			desc = ethic_pacifist
+		}
+		modifier = {
+			factor = 0.5
+			is_militarist = yes
+			desc = ethic_militarist
+		}
+        
+
+        
+
+        
+
+        
+
+        
+		modifier = {
+			factor = 0.5
+			is_materialist = yes
+			desc = ethic_materialist
+		}
+        modifier = {
+			factor = 2
+			is_spiritualist = yes
+			desc = ethic_spiritualist
+		}
+        
+
+        
+
+        
+
+        
+	}
+}

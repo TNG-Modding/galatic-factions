@@ -28,21 +28,28 @@ xenophobe_militarist_materialist_faction = {
 	is_potential = {
 		AND = { 
 			# is_faction_allowed = yes
-			
-			has_ethic = ethic_militarist
-			
-			has_ethic = ethic_xenophobe
-			
-			
-			
-			has_ethic = ethic_materialist
-			
-			
-			
-			
-			
-			
-			
+
+			OR = {
+				has_modifier = resolution_force_establish_galatic_xenophobe_militarist_materialist_faction_static_modifier
+				AND = {
+					
+					has_ethic = ethic_militarist
+					
+					has_ethic = ethic_xenophobe
+					
+					
+					
+					has_ethic = ethic_materialist
+					
+					
+					
+					
+					
+					
+					
+					
+				}
+			}
 			
 		}
 	}

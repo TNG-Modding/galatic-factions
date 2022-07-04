@@ -28,22 +28,29 @@ spiritualist_egalitarian_xenophile_faction = {
 	is_potential = {
 		AND = { 
 			# is_faction_allowed = yes
+
+			OR = {
+				has_modifier = resolution_force_establish_galatic_spiritualist_egalitarian_xenophile_faction_static_modifier
+				AND = {
+					
+					
+					
+					
+					
+					has_ethic = ethic_egalitarian
+					
+					
+					
+					
+					
+					has_ethic = ethic_xenophile
+					
+					
+					
+					has_ethic = ethic_spiritualist
+				}
+			}
 			
-			
-			
-			
-			
-			has_ethic = ethic_egalitarian
-			
-			
-			
-			
-			
-			has_ethic = ethic_xenophile
-			
-			
-			
-			has_ethic = ethic_spiritualist
 		}
 	}
 	can_join_pre_triggers = {

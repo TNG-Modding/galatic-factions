@@ -1,0 +1,13 @@
+﻿l_english:
+
+ resolution_establish_galatic_xenophobe_authoritarian_materialist_faction:0 "Establish the Galatic Xenophobe Authoritarian Materialist Faction"
+ resolution_establish_galatic_xenophobe_authoritarian_materialist_faction_desc:0 "Xenophobe Authoritarian Materialist ideals should be enshired in the political halls of all members of the [global_event_country.GetGalCommunityOrGalImperium]."
+ 
+ resolution_disband_galatic_xenophobe_authoritarian_materialist_faction:0 "§RDisband the Galatic Xenophobe Authoritarian Materialist Faction§!"
+ resolution_disband_galatic_xenophobe_authoritarian_materialist_faction_desc:0 "The ideals of the Galatic Xenophobe Authoritarian Materialist faction do not represent the interests of the [global_event_country.GetGalCommunityOrGalImperium]."
+ 
+ resolution_disband_galatic_xenophobe_authoritarian_materialist_faction_effect_success:0 "Repeals the §Y$resolution_establish_galatic_xenophobe_authoritarian_materialist_faction$§! resolution."
+ resolution_establish_galatic_xenophobe_authoritarian_materialist_faction_tooltip:1 "The Xenophobe Authoritarian Materialist Faction is able to spawn in empires that don't match the ethics of the faction."
+
+ resolution_force_establish_galatic_xenophobe_authoritarian_materialist_faction_static_modifier:0 "The [global_event_country.GetGalCommunityOrGalImperium] has founded the Galatic Xenophobe Authoritarian Materialist Faction in our empire."
+ 

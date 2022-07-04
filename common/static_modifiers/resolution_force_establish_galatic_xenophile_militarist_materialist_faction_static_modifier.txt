@@ -1,0 +1,3 @@
+resolution_force_establish_galatic_xenophile_militarist_materialist_faction_static_modifier = {
+    
+}
