@@ -11,7 +11,7 @@
 
  resolution_force_establish_galatic_fanatic_xenophile_egalitarian_faction_static_modifier:0 "Galatic Fanatic Xenophile Egalitarian Faction"
  
- edict_found_fanatic_xenophile_egalitarian_faction:0 "Found Fanatic Xenophile Egalitarian Faction"
- edict_found_fanatic_xenophile_egalitarian_faction_desc:0 "Enable the Fanatic Xenophile Egalitarian Faction to spawn."
+ edict_found_fanatic_xenophile_egalitarian_faction:0 "The Fanatic Xenophile Egalitarian Faction"
+ edict_found_fanatic_xenophile_egalitarian_faction_desc:0 "Fanatic Xenophile Egalitarian ideals should be considered in matters of state."
  edict_found_fanatic_xenophile_egalitarian_faction_tooltip:0 "Enable the Fanatic Xenophile Egalitarian Faction to spawn."
  

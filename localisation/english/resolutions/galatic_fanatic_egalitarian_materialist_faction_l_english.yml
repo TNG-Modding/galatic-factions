@@ -11,7 +11,7 @@
 
  resolution_force_establish_galatic_fanatic_egalitarian_materialist_faction_static_modifier:0 "Galatic Fanatic Egalitarian Materialist Faction"
  
- edict_found_fanatic_egalitarian_materialist_faction:0 "Found Fanatic Egalitarian Materialist Faction"
- edict_found_fanatic_egalitarian_materialist_faction_desc:0 "Enable the Fanatic Egalitarian Materialist Faction to spawn."
+ edict_found_fanatic_egalitarian_materialist_faction:0 "The Fanatic Egalitarian Materialist Faction"
+ edict_found_fanatic_egalitarian_materialist_faction_desc:0 "Fanatic Egalitarian Materialist ideals should be considered in matters of state."
  edict_found_fanatic_egalitarian_materialist_faction_tooltip:0 "Enable the Fanatic Egalitarian Materialist Faction to spawn."
  

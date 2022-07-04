@@ -15,7 +15,7 @@ found_fanatic_pacifist_materialist_faction = {
 		}
 	}
 
-	effects = {
+	modifier = {
 		custom_tooltip = edict_found_fanatic_pacifist_materialist_faction_tooltip
 	}
 

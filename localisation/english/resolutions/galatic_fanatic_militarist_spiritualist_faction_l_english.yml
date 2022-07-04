@@ -11,7 +11,7 @@
 
  resolution_force_establish_galatic_fanatic_militarist_spiritualist_faction_static_modifier:0 "Galatic Fanatic Militarist Spiritualist Faction"
  
- edict_found_fanatic_militarist_spiritualist_faction:0 "Found Fanatic Militarist Spiritualist Faction"
- edict_found_fanatic_militarist_spiritualist_faction_desc:0 "Enable the Fanatic Militarist Spiritualist Faction to spawn."
+ edict_found_fanatic_militarist_spiritualist_faction:0 "The Fanatic Militarist Spiritualist Faction"
+ edict_found_fanatic_militarist_spiritualist_faction_desc:0 "Fanatic Militarist Spiritualist ideals should be considered in matters of state."
  edict_found_fanatic_militarist_spiritualist_faction_tooltip:0 "Enable the Fanatic Militarist Spiritualist Faction to spawn."
  

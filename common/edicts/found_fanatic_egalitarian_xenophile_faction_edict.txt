@@ -15,7 +15,7 @@ found_fanatic_egalitarian_xenophile_faction = {
 		}
 	}
 
-	effects = {
+	modifier = {
 		custom_tooltip = edict_found_fanatic_egalitarian_xenophile_faction_tooltip
 	}
 

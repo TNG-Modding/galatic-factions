@@ -11,7 +11,7 @@
 
  resolution_force_establish_galatic_egalitarian_militarist_xenophobe_faction_static_modifier:0 "Galatic Egalitarian Militarist Xenophobe Faction"
  
- edict_found_egalitarian_militarist_xenophobe_faction:0 "Found Egalitarian Militarist Xenophobe Faction"
- edict_found_egalitarian_militarist_xenophobe_faction_desc:0 "Enable the Egalitarian Militarist Xenophobe Faction to spawn."
+ edict_found_egalitarian_militarist_xenophobe_faction:0 "The Egalitarian Militarist Xenophobe Faction"
+ edict_found_egalitarian_militarist_xenophobe_faction_desc:0 "Egalitarian Militarist Xenophobe ideals should be considered in matters of state."
  edict_found_egalitarian_militarist_xenophobe_faction_tooltip:0 "Enable the Egalitarian Militarist Xenophobe Faction to spawn."
  

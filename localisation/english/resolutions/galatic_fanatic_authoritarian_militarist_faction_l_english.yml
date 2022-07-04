@@ -11,7 +11,7 @@
 
  resolution_force_establish_galatic_fanatic_authoritarian_militarist_faction_static_modifier:0 "Galatic Fanatic Authoritarian Militarist Faction"
  
- edict_found_fanatic_authoritarian_militarist_faction:0 "Found Fanatic Authoritarian Militarist Faction"
- edict_found_fanatic_authoritarian_militarist_faction_desc:0 "Enable the Fanatic Authoritarian Militarist Faction to spawn."
+ edict_found_fanatic_authoritarian_militarist_faction:0 "The Fanatic Authoritarian Militarist Faction"
+ edict_found_fanatic_authoritarian_militarist_faction_desc:0 "Fanatic Authoritarian Militarist ideals should be considered in matters of state."
  edict_found_fanatic_authoritarian_militarist_faction_tooltip:0 "Enable the Fanatic Authoritarian Militarist Faction to spawn."
  

@@ -15,7 +15,7 @@ found_{{varname}} = {
 		}
 	}
 
-	effects = {
+	modifier = {
 		custom_tooltip = edict_found_{{varname}}_tooltip
 	}
 

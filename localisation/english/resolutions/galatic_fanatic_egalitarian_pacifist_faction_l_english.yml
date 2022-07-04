@@ -11,7 +11,7 @@
 
  resolution_force_establish_galatic_fanatic_egalitarian_pacifist_faction_static_modifier:0 "Galatic Fanatic Egalitarian Pacifist Faction"
  
- edict_found_fanatic_egalitarian_pacifist_faction:0 "Found Fanatic Egalitarian Pacifist Faction"
- edict_found_fanatic_egalitarian_pacifist_faction_desc:0 "Enable the Fanatic Egalitarian Pacifist Faction to spawn."
+ edict_found_fanatic_egalitarian_pacifist_faction:0 "The Fanatic Egalitarian Pacifist Faction"
+ edict_found_fanatic_egalitarian_pacifist_faction_desc:0 "Fanatic Egalitarian Pacifist ideals should be considered in matters of state."
  edict_found_fanatic_egalitarian_pacifist_faction_tooltip:0 "Enable the Fanatic Egalitarian Pacifist Faction to spawn."
  

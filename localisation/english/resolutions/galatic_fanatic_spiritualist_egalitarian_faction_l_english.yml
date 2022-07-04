@@ -11,7 +11,7 @@
 
  resolution_force_establish_galatic_fanatic_spiritualist_egalitarian_faction_static_modifier:0 "Galatic Fanatic Spiritualist Egalitarian Faction"
  
- edict_found_fanatic_spiritualist_egalitarian_faction:0 "Found Fanatic Spiritualist Egalitarian Faction"
- edict_found_fanatic_spiritualist_egalitarian_faction_desc:0 "Enable the Fanatic Spiritualist Egalitarian Faction to spawn."
+ edict_found_fanatic_spiritualist_egalitarian_faction:0 "The Fanatic Spiritualist Egalitarian Faction"
+ edict_found_fanatic_spiritualist_egalitarian_faction_desc:0 "Fanatic Spiritualist Egalitarian ideals should be considered in matters of state."
  edict_found_fanatic_spiritualist_egalitarian_faction_tooltip:0 "Enable the Fanatic Spiritualist Egalitarian Faction to spawn."
  

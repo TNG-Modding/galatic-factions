@@ -11,7 +11,7 @@
 
  resolution_force_establish_galatic_fanatic_spiritualist_xenophobe_faction_static_modifier:0 "Galatic Fanatic Spiritualist Xenophobe Faction"
  
- edict_found_fanatic_spiritualist_xenophobe_faction:0 "Found Fanatic Spiritualist Xenophobe Faction"
- edict_found_fanatic_spiritualist_xenophobe_faction_desc:0 "Enable the Fanatic Spiritualist Xenophobe Faction to spawn."
+ edict_found_fanatic_spiritualist_xenophobe_faction:0 "The Fanatic Spiritualist Xenophobe Faction"
+ edict_found_fanatic_spiritualist_xenophobe_faction_desc:0 "Fanatic Spiritualist Xenophobe ideals should be considered in matters of state."
  edict_found_fanatic_spiritualist_xenophobe_faction_tooltip:0 "Enable the Fanatic Spiritualist Xenophobe Faction to spawn."
  

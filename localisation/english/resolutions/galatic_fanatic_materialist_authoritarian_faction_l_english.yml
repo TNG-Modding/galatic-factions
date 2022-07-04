@@ -11,7 +11,7 @@
 
  resolution_force_establish_galatic_fanatic_materialist_authoritarian_faction_static_modifier:0 "Galatic Fanatic Materialist Authoritarian Faction"
  
- edict_found_fanatic_materialist_authoritarian_faction:0 "Found Fanatic Materialist Authoritarian Faction"
- edict_found_fanatic_materialist_authoritarian_faction_desc:0 "Enable the Fanatic Materialist Authoritarian Faction to spawn."
+ edict_found_fanatic_materialist_authoritarian_faction:0 "The Fanatic Materialist Authoritarian Faction"
+ edict_found_fanatic_materialist_authoritarian_faction_desc:0 "Fanatic Materialist Authoritarian ideals should be considered in matters of state."
  edict_found_fanatic_materialist_authoritarian_faction_tooltip:0 "Enable the Fanatic Materialist Authoritarian Faction to spawn."
  

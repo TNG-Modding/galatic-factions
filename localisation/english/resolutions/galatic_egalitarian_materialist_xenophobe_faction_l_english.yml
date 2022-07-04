@@ -11,7 +11,7 @@
 
  resolution_force_establish_galatic_egalitarian_materialist_xenophobe_faction_static_modifier:0 "Galatic Egalitarian Materialist Xenophobe Faction"
  
- edict_found_egalitarian_materialist_xenophobe_faction:0 "Found Egalitarian Materialist Xenophobe Faction"
- edict_found_egalitarian_materialist_xenophobe_faction_desc:0 "Enable the Egalitarian Materialist Xenophobe Faction to spawn."
+ edict_found_egalitarian_materialist_xenophobe_faction:0 "The Egalitarian Materialist Xenophobe Faction"
+ edict_found_egalitarian_materialist_xenophobe_faction_desc:0 "Egalitarian Materialist Xenophobe ideals should be considered in matters of state."
  edict_found_egalitarian_materialist_xenophobe_faction_tooltip:0 "Enable the Egalitarian Materialist Xenophobe Faction to spawn."
  

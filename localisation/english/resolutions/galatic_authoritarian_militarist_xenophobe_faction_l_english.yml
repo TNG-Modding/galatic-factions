@@ -11,7 +11,7 @@
 
  resolution_force_establish_galatic_authoritarian_militarist_xenophobe_faction_static_modifier:0 "Galatic Authoritarian Militarist Xenophobe Faction"
  
- edict_found_authoritarian_militarist_xenophobe_faction:0 "Found Authoritarian Militarist Xenophobe Faction"
- edict_found_authoritarian_militarist_xenophobe_faction_desc:0 "Enable the Authoritarian Militarist Xenophobe Faction to spawn."
+ edict_found_authoritarian_militarist_xenophobe_faction:0 "The Authoritarian Militarist Xenophobe Faction"
+ edict_found_authoritarian_militarist_xenophobe_faction_desc:0 "Authoritarian Militarist Xenophobe ideals should be considered in matters of state."
  edict_found_authoritarian_militarist_xenophobe_faction_tooltip:0 "Enable the Authoritarian Militarist Xenophobe Faction to spawn."
  
