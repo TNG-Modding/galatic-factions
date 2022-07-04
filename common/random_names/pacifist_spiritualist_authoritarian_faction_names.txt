@@ -1,0 +1,10 @@
+pop_faction_name_format = {
+	random_weight = {
+		factor = 0
+		modifier = {
+			add = 100
+			is_pop_faction_type = "pacifist_spiritualist_authoritarian_faction"
+		}
+	}
+	format = "Pacifist Spiritualist Authoritarian Faction"
+}

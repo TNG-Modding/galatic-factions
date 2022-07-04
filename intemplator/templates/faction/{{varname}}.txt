@@ -4,24 +4,30 @@
 
 {{varname}} = {
 	election_header = "GFX_faction_header_yellow"
-	guiding_ethic = ethic_militarist
+	guiding_ethic = ethic_militarist #only pops of this ethic can join the faction
 
 	unique = yes
-	support_multiplier = 0.5
+	support_multiplier = 1
 
 	resources = {
 		category = pop_factions
 		produces = {
-			trigger = {
-				owner = { years_passed > 10
-				has_encountered_other_species = yes }
+			unity = 0.5
+		}
+	}
+
+	parameters = {
+		empire = {
+			type = country
+			valid_objects = {
+				is_same_value = root
 			}
-			influence = 2
 		}
 	}
 
 	is_potential = {
 		AND = { 
+			is_faction_allowed = yes
 			{% if isMilitarist == 2 %}has_ethic = ethic_fanatic_militarist{% endif %}
 			{% if isMilitarist == 1 %}has_ethic = ethic_militarist{% endif %}
 			{% if isXenophobe == 2 %}has_ethic = ethic_fanatic_xenophobe{% endif %}
@@ -40,16 +46,6 @@
 			{% if isSpiritualist == 1 %}has_ethic = ethic_spiritualist{% endif %}
 		}
 	}
-
-	parameters = {
-		empire = {
-			type = country
-			valid_objects = {
-				is_same_value = root
-			}
-		}
-	}
-
 	can_join_pre_triggers = {
 		is_enslaved = no
 		is_being_purged = no
@@ -94,6 +90,23 @@
 			factor = 1.25
 			has_citizenship_rights = yes
 		}
+
+		{% if isMilitarist == 2 or isXenophobe == 2 or isEgalitarian == 2 or isMaterialist == 2 or isPacifist == 2 or isXenophile == 2 or isAuthoritarian == 2 or isSpiritualist == 2 %}
+		# Fanatic factions are enticing if we are also fanatic, this keeps our competative if we are fanatic, 
+		# but makes matching fanatic ethics also competative
+		modifier = {
+			factor = 1.25
+
+			{% if isMilitarist == 2 %}has_ethic = ethic_fanatic_militarist{% endif %}
+			{% if isXenophobe == 2 %}has_ethic = ethic_fanatic_xenophobe{% endif %}
+			{% if isEgalitarian == 2 %}has_ethic = ethic_fanatic_egalitarian{% endif %}
+			{% if isMaterialist == 2 %}has_ethic = ethic_fanatic_materialist{% endif %}
+			{% if isPacifist == 2 %}has_ethic = ethic_fanatic_pacifist{% endif %}
+			{% if isXenophile == 2 %}has_ethic = ethic_fanatic_xenophile{% endif %}
+			{% if isAuthoritarian == 2 %}has_ethic = ethic_fanatic_authoritarian{% endif %}
+			{% if isSpiritualist == 2 %}has_ethic = ethic_fanatic_spiritualist{% endif %}
+		}
+		{% endif %}
 	}
 
 	leader = {

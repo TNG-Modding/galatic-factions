@@ -35,6 +35,42 @@
             "disabled": false,
             "dumpContents": true,
             "isBom": false
+        },
+        {
+            "name": "Moderation Pop Faction Icons",
+            "specFilePath": "./specs/moderateFactions.json",
+            "templateDirectoryPath": "./templates/faction_interface",
+            "outputDirectoryPath": "../interface/factions",
+            "disabled": false,
+            "dumpContents": true,
+            "isBom": false
+        },
+        {
+            "name": "Fanatic Pop Faction Icons",
+            "specFilePath": "./specs/fanaticFactions.json",
+            "templateDirectoryPath": "./templates/faction_interface",
+            "outputDirectoryPath": "../interface/factions",
+            "disabled": false,
+            "dumpContents": true,
+            "isBom": false
+        },
+        {
+            "name": "Moderation Pop Faction Localisation",
+            "specFilePath": "./specs/moderateFactions.json",
+            "templateDirectoryPath": "./templates/faction_localisation",
+            "outputDirectoryPath": "../localisation/english/faction_defs",
+            "disabled": false,
+            "dumpContents": true,
+            "isBom": true
+        },
+        {
+            "name": "Fanatic Pop Faction Localisation",
+            "specFilePath": "./specs/fanaticFactions.json",
+            "templateDirectoryPath": "./templates/faction_localisation",
+            "outputDirectoryPath": "../localisation/english/faction_defs",
+            "disabled": false,
+            "dumpContents": true,
+            "isBom": true
         }
     ]
 }

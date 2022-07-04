@@ -1,0 +1,118 @@
+##############################
+# Spiritualist Authoritarian Militarist Faction
+##############################
+
+spiritualist_authoritarian_militarist_faction = {
+	election_header = "GFX_faction_header_yellow"
+	guiding_ethic = ethic_militarist #only pops of this ethic can join the faction
+
+	unique = yes
+	support_multiplier = 1
+
+	resources = {
+		category = pop_factions
+		produces = {
+			unity = 0.5
+		}
+	}
+
+	parameters = {
+		empire = {
+			type = country
+			valid_objects = {
+				is_same_value = root
+			}
+		}
+	}
+
+
+	is_potential = {
+		AND = { 
+			is_faction_allowed = yes
+			
+			has_ethic = ethic_militarist
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			has_ethic = ethic_authoritarian
+			
+			has_ethic = ethic_spiritualist
+		}
+	}
+	can_join_pre_triggers = {
+		is_enslaved = no
+		is_being_purged = no
+	}
+
+	can_join_faction = {
+		is_shackled_robot = no
+		NOT = { has_trait = trait_nerve_stapled }
+		OR = {
+			has_ethic = ethic_militarist
+			
+			
+			
+			
+			
+			has_ethic = ethic_authoritarian
+			has_ethic = ethic_spiritualist
+		}
+	}
+
+	attraction = {
+		base = 100
+
+		modifier = {
+			factor = 1.25
+			exists = from
+			from = {
+				exists = leader
+				leader = { leader_class = ruler }
+			}
+		}
+
+		modifier = {
+			factor = 0.75
+			exists = from
+			from = {
+				NOT = { exists = leader }
+			}
+		}
+
+		modifier = {
+			factor = 1.25
+			has_citizenship_rights = yes
+		}
+
+		
+	}
+
+	leader = {
+		base = 100
+
+		modifier = {
+			factor = 0.0
+			is_event_leader = yes
+		}
+		modifier = {
+			factor = 0.25
+			leader_class = ruler
+		}
+	}
+
+	on_create = {
+		# pop_faction_event = { id = faction_spawn.1 }
+	}
+
+	actions = {
+		
+	}
+}
