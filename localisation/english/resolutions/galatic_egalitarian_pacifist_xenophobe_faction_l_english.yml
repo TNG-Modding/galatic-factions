@@ -1,19 +1,19 @@
 ﻿l_english:
 
- resolution_establish_galatic_egalitarian_pacifist_xenophobe_faction:0 "Galatic Egalitarian Pacifist Xenophobe Faction"
- resolution_establish_galatic_egalitarian_pacifist_xenophobe_faction_desc:0 "Egalitarian Pacifist Xenophobe ideals should be enshired in the political halls of all members of the [global_event_country.GetGalCommunityOrGalImperium]."
+ resolution_establish_galactic_egalitarian_pacifist_xenophobe_faction:0 "Galactic Egalitarian Pacifist Xenophobe Faction"
+ resolution_establish_galactic_egalitarian_pacifist_xenophobe_faction_desc:0 "Egalitarian Pacifist Xenophobe ideals should be enshired in the political halls of all members of the [global_event_country.GetGalCommunityOrGalImperium]."
  
- resolution_disband_galatic_egalitarian_pacifist_xenophobe_faction:0 "§RDisband the Egalitarian Pacifist Xenophobe Faction§!"
- resolution_disband_galatic_egalitarian_pacifist_xenophobe_faction_desc:0 "The ideals of the Galatic Egalitarian Pacifist Xenophobe faction do not represent the interests of the [global_event_country.GetGalCommunityOrGalImperium]."
+ resolution_disband_galactic_egalitarian_pacifist_xenophobe_faction:0 "§RDisband the Egalitarian Pacifist Xenophobe Faction§!"
+ resolution_disband_galactic_egalitarian_pacifist_xenophobe_faction_desc:0 "The ideals of the Galactic Egalitarian Pacifist Xenophobe faction do not represent the interests of the [global_event_country.GetGalCommunityOrGalImperium]."
  
- resolution_disband_galatic_egalitarian_pacifist_xenophobe_faction_effect_success:0 "Repeals the §Y$resolution_establish_galatic_egalitarian_pacifist_xenophobe_faction$§! resolution."
- resolution_establish_galatic_egalitarian_pacifist_xenophobe_faction_tooltip:1 "The Egalitarian Pacifist Xenophobe Faction is able to spawn in empires that don't match the ethics of the faction."
+ resolution_disband_galactic_egalitarian_pacifist_xenophobe_faction_effect_success:0 "Repeals the §Y$resolution_establish_galactic_egalitarian_pacifist_xenophobe_faction$§! resolution."
+ resolution_establish_galactic_egalitarian_pacifist_xenophobe_faction_tooltip:1 "The Egalitarian Pacifist Xenophobe Faction is able to spawn in empires that don't match the ethics of the faction."
 
- resolution_galatic_egalitarian_pacifist_xenophobe_faction_static_modifier:0 "Galatic Egalitarian Pacifist Xenophobe Faction"
- resolution_establish_galatic_egalitarian_pacifist_xenophobe_faction_static_modifier:0 "Galatic Egalitarian Pacifist Xenophobe Faction"
- resolution_force_establish_galatic_egalitarian_pacifist_xenophobe_faction_static_modifier:0 "Galatic Egalitarian Pacifist Xenophobe Faction"
+ resolution_galactic_egalitarian_pacifist_xenophobe_faction_static_modifier:0 "Galactic Egalitarian Pacifist Xenophobe Faction"
+ resolution_establish_galactic_egalitarian_pacifist_xenophobe_faction_static_modifier:0 "Galactic Egalitarian Pacifist Xenophobe Faction"
+ resolution_force_establish_galactic_egalitarian_pacifist_xenophobe_faction_static_modifier:0 "Galactic Egalitarian Pacifist Xenophobe Faction"
 
  edict_found_egalitarian_pacifist_xenophobe_faction:0 "The Egalitarian Pacifist Xenophobe Faction"
  edict_found_egalitarian_pacifist_xenophobe_faction_desc:0 "Egalitarian Pacifist Xenophobe ideals should be considered in matters of state."
- found_egalitarian_pacifist_xenophobe_faction_tooltip:0 "Enable the Egalitarian Pacifist Xenophobe Faction to spawn."
+ found_egalitarian_pacifist_xenophobe_faction_tooltip:0 "Enable the Egalitarian Pacifist Xenophobe Faction to spawn. This will pull pops towards egalitarian pacifist xenophobe ethics, especially to the fanatic ethic."
  

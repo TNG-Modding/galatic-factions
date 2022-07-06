@@ -36,10 +36,10 @@
 
 	is_potential = {
 		AND = { 
-			# is_faction_allowed = yes
+			is_faction_allowed = yes
 
 			OR = {
-				has_modifier = resolution_establish_galatic_{{varname}}_static_modifier
+				has_modifier = resolution_establish_galactic_{{varname}}_static_modifier
                 {% if isMilitarist == 2 or isXenophobe == 2 or isEgalitarian == 2 or isMaterialist == 2 or isPacifist == 2 or isXenophile == 2 or isAuthoritarian == 2 or isSpiritualist == 2 %}
 				has_edict = found_{{varname}}
                 {% endif %}

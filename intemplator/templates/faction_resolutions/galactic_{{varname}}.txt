@@ -14,7 +14,7 @@
 
 @resolution_flag_timer = 360
 
-resolution_establish_galatic_{{varname}} = {
+resolution_establish_galactic_{{varname}} = {
 	icon = "GFX_resolution_united_front"
 
 	resources = {
@@ -27,15 +27,15 @@ resolution_establish_galatic_{{varname}} = {
 	level = 1
 
 	modifier = {
-		resolution_galatic_{{varname}}_static_modifier = 1
+		resolution_galactic_{{varname}}_static_modifier = 1
 	}
 
 	effect = {
-		custom_tooltip = resolution_establish_galatic_{{varname}}_tooltip
+		custom_tooltip = resolution_establish_galactic_{{varname}}_tooltip
 		hidden_effect = {
 			every_country = {
 				add_modifier = { 
-					modifier = resolution_establish_galatic_{{varname}}_static_modifier
+					modifier = resolution_establish_galactic_{{varname}}_static_modifier
 				}
 			}
 		}
@@ -48,12 +48,13 @@ resolution_establish_galatic_{{varname}} = {
 		custom_tooltip = {
 			fail_text = "resolution_already_active"
 			NOR = {
-				is_active_resolution = "resolution_establish_galatic_{{varname}}"
+				is_active_resolution = "resolution_establish_galactic_{{varname}}"
 			}			
 		}
 	}
 
 	potential = {
+		is_faction_allowed = yes
 
 		# We cannot suggest a moderate ethic that is at odds with our fanatacism
 		NOR = {
@@ -284,7 +285,7 @@ resolution_establish_galatic_{{varname}} = {
 	}  
 }
 
-resolution_disband_galatic_{{varname}} = {
+resolution_disband_galactic_{{varname}} = {
 	icon = "GFX_resolution_repeal_red"
 
 	resources = {
@@ -297,11 +298,11 @@ resolution_disband_galatic_{{varname}} = {
 	fire_and_forget = yes
 
 	effect = {
-		custom_tooltip = resolution_disband_galatic_{{varname}}_effect_success
+		custom_tooltip = resolution_disband_galactic_{{varname}}_effect_success
 		hidden_effect = {
-			cancel_resolution = "resolution_establish_galatic_{{varname}}"
+			cancel_resolution = "resolution_establish_galactic_{{varname}}"
 			every_country = {
-				remove_modifier = resolution_establish_galatic_{{varname}}_static_modifier
+				remove_modifier = resolution_establish_galactic_{{varname}}_static_modifier
 			}
 		}
 	}
@@ -316,7 +317,7 @@ resolution_disband_galatic_{{varname}} = {
 	}
 
 	potential = {
-		is_active_resolution = "resolution_establish_galatic_{{varname}}"
+		is_active_resolution = "resolution_establish_galactic_{{varname}}"
 	}
 
 	ai_weight = {

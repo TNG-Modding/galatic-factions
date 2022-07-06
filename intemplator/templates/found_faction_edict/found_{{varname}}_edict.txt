@@ -43,7 +43,7 @@ found_{{varname}} = {
 		{% endif %}
 
 		{% if isAuthoritarian == 2 %}
-		pop_ethic_authoritian_attraction_mult = 0.25
+		pop_ethic_authoritarian_attraction_mult = 0.25
 		{% endif %}
 
 		{% if isSpiritualist == 2 %}
@@ -75,7 +75,7 @@ found_{{varname}} = {
 		{% endif %}
 
 		{% if isAuthoritarian == 1 %}
-		pop_ethic_authoritian_attraction_mult = 0.1
+		pop_ethic_authoritarian_attraction_mult = 0.1
 		{% endif %}
 
 		{% if isSpiritualist == 1 %}
@@ -84,6 +84,8 @@ found_{{varname}} = {
 	}
 
 	potential = {
+		is_faction_allowed = yes
+
 		# We cannot suggest a moderate ethic that is at odds with our fanatacism
 		NOR = {
 			{% if isMilitarist == 1 %}
@@ -119,9 +121,9 @@ found_{{varname}} = {
 			{% endif %}
 		}
 		
-		# Disable edict if the galatic community does it for us
+		# Disable edict if the galactic community does it for us
 		NOT = {
-			has_modifier = resolution_establish_galatic_{{varname}}_static_modifier
+			has_modifier = resolution_establish_galactic_{{varname}}_static_modifier
 		}
 
 		# If we are suggesting a fanatic ethic, it must be one of our ethics

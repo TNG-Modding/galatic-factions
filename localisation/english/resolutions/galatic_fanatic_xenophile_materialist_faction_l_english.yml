@@ -1,19 +1,19 @@
 ﻿l_english:
 
- resolution_establish_galatic_fanatic_xenophile_materialist_faction:0 "Galatic Fanatic Xenophile Materialist Faction"
- resolution_establish_galatic_fanatic_xenophile_materialist_faction_desc:0 "Fanatic Xenophile Materialist ideals should be enshired in the political halls of all members of the [global_event_country.GetGalCommunityOrGalImperium]."
+ resolution_establish_galactic_fanatic_xenophile_materialist_faction:0 "Galactic Fanatic Xenophile Materialist Faction"
+ resolution_establish_galactic_fanatic_xenophile_materialist_faction_desc:0 "Fanatic Xenophile Materialist ideals should be enshired in the political halls of all members of the [global_event_country.GetGalCommunityOrGalImperium]."
  
- resolution_disband_galatic_fanatic_xenophile_materialist_faction:0 "§RDisband the Fanatic Xenophile Materialist Faction§!"
- resolution_disband_galatic_fanatic_xenophile_materialist_faction_desc:0 "The ideals of the Galatic Fanatic Xenophile Materialist faction do not represent the interests of the [global_event_country.GetGalCommunityOrGalImperium]."
+ resolution_disband_galactic_fanatic_xenophile_materialist_faction:0 "§RDisband the Fanatic Xenophile Materialist Faction§!"
+ resolution_disband_galactic_fanatic_xenophile_materialist_faction_desc:0 "The ideals of the Galactic Fanatic Xenophile Materialist faction do not represent the interests of the [global_event_country.GetGalCommunityOrGalImperium]."
  
- resolution_disband_galatic_fanatic_xenophile_materialist_faction_effect_success:0 "Repeals the §Y$resolution_establish_galatic_fanatic_xenophile_materialist_faction$§! resolution."
- resolution_establish_galatic_fanatic_xenophile_materialist_faction_tooltip:1 "The Fanatic Xenophile Materialist Faction is able to spawn in empires that don't match the ethics of the faction."
+ resolution_disband_galactic_fanatic_xenophile_materialist_faction_effect_success:0 "Repeals the §Y$resolution_establish_galactic_fanatic_xenophile_materialist_faction$§! resolution."
+ resolution_establish_galactic_fanatic_xenophile_materialist_faction_tooltip:1 "The Fanatic Xenophile Materialist Faction is able to spawn in empires that don't match the ethics of the faction."
 
- resolution_galatic_fanatic_xenophile_materialist_faction_static_modifier:0 "Galatic Fanatic Xenophile Materialist Faction"
- resolution_establish_galatic_fanatic_xenophile_materialist_faction_static_modifier:0 "Galatic Fanatic Xenophile Materialist Faction"
- resolution_force_establish_galatic_fanatic_xenophile_materialist_faction_static_modifier:0 "Galatic Fanatic Xenophile Materialist Faction"
+ resolution_galactic_fanatic_xenophile_materialist_faction_static_modifier:0 "Galactic Fanatic Xenophile Materialist Faction"
+ resolution_establish_galactic_fanatic_xenophile_materialist_faction_static_modifier:0 "Galactic Fanatic Xenophile Materialist Faction"
+ resolution_force_establish_galactic_fanatic_xenophile_materialist_faction_static_modifier:0 "Galactic Fanatic Xenophile Materialist Faction"
 
  edict_found_fanatic_xenophile_materialist_faction:0 "The Fanatic Xenophile Materialist Faction"
  edict_found_fanatic_xenophile_materialist_faction_desc:0 "Fanatic Xenophile Materialist ideals should be considered in matters of state."
- found_fanatic_xenophile_materialist_faction_tooltip:0 "Enable the Fanatic Xenophile Materialist Faction to spawn."
+ found_fanatic_xenophile_materialist_faction_tooltip:0 "Enable the Fanatic Xenophile Materialist Faction to spawn. This will pull pops towards fanatic xenophile materialist ethics, especially to the fanatic ethic."
  

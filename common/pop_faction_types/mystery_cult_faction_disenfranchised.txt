@@ -28,7 +28,7 @@ mystery_cult_faction = {
 
 	is_potential = {
 		AND = { 
-			# is_faction_allowed = yes
+			is_faction_allowed = yes
 			
 			AND = {
 				

@@ -14,7 +14,7 @@
 
 @resolution_flag_timer = 360
 
-resolution_establish_galatic_fanatic_militarist_spiritualist_faction = {
+resolution_establish_galactic_fanatic_militarist_spiritualist_faction = {
 	icon = "GFX_resolution_united_front"
 
 	resources = {
@@ -27,15 +27,15 @@ resolution_establish_galatic_fanatic_militarist_spiritualist_faction = {
 	level = 1
 
 	modifier = {
-		resolution_galatic_fanatic_militarist_spiritualist_faction_static_modifier = 1
+		resolution_galactic_fanatic_militarist_spiritualist_faction_static_modifier = 1
 	}
 
 	effect = {
-		custom_tooltip = resolution_establish_galatic_fanatic_militarist_spiritualist_faction_tooltip
+		custom_tooltip = resolution_establish_galactic_fanatic_militarist_spiritualist_faction_tooltip
 		hidden_effect = {
 			every_country = {
 				add_modifier = { 
-					modifier = resolution_establish_galatic_fanatic_militarist_spiritualist_faction_static_modifier
+					modifier = resolution_establish_galactic_fanatic_militarist_spiritualist_faction_static_modifier
 				}
 			}
 		}
@@ -48,12 +48,13 @@ resolution_establish_galatic_fanatic_militarist_spiritualist_faction = {
 		custom_tooltip = {
 			fail_text = "resolution_already_active"
 			NOR = {
-				is_active_resolution = "resolution_establish_galatic_fanatic_militarist_spiritualist_faction"
+				is_active_resolution = "resolution_establish_galactic_fanatic_militarist_spiritualist_faction"
 			}			
 		}
 	}
 
 	potential = {
+		is_faction_allowed = yes
 
 		# We cannot suggest a moderate ethic that is at odds with our fanatacism
 		NOR = {
@@ -171,7 +172,7 @@ resolution_establish_galatic_fanatic_militarist_spiritualist_faction = {
 	}  
 }
 
-resolution_disband_galatic_fanatic_militarist_spiritualist_faction = {
+resolution_disband_galactic_fanatic_militarist_spiritualist_faction = {
 	icon = "GFX_resolution_repeal_red"
 
 	resources = {
@@ -184,11 +185,11 @@ resolution_disband_galatic_fanatic_militarist_spiritualist_faction = {
 	fire_and_forget = yes
 
 	effect = {
-		custom_tooltip = resolution_disband_galatic_fanatic_militarist_spiritualist_faction_effect_success
+		custom_tooltip = resolution_disband_galactic_fanatic_militarist_spiritualist_faction_effect_success
 		hidden_effect = {
-			cancel_resolution = "resolution_establish_galatic_fanatic_militarist_spiritualist_faction"
+			cancel_resolution = "resolution_establish_galactic_fanatic_militarist_spiritualist_faction"
 			every_country = {
-				remove_modifier = resolution_establish_galatic_fanatic_militarist_spiritualist_faction_static_modifier
+				remove_modifier = resolution_establish_galactic_fanatic_militarist_spiritualist_faction_static_modifier
 			}
 		}
 	}
@@ -203,7 +204,7 @@ resolution_disband_galatic_fanatic_militarist_spiritualist_faction = {
 	}
 
 	potential = {
-		is_active_resolution = "resolution_establish_galatic_fanatic_militarist_spiritualist_faction"
+		is_active_resolution = "resolution_establish_galactic_fanatic_militarist_spiritualist_faction"
 	}
 
 	ai_weight = {

@@ -73,7 +73,7 @@
             "isBom": true
         },
         {
-            "name": "Galatic Fanatic Factions Resolutions",
+            "name": "Galactic Fanatic Factions Resolutions",
             "specFilePath": "./specs/fanaticFactions.json",
             "templateDirectoryPath": "./templates/faction_resolutions",
             "outputDirectoryPath": "../common/resolutions",
@@ -82,7 +82,7 @@
             "isBom": false
         },
         {
-            "name": "Galatic Fanatic Factions Resolutions Static Modifiers",
+            "name": "Galactic Fanatic Factions Resolutions Static Modifiers",
             "specFilePath": "./specs/fanaticFactions.json",
             "templateDirectoryPath": "./templates/forced_faction_static_modifiers",
             "outputDirectoryPath": "../common/static_modifiers",
@@ -91,7 +91,7 @@
             "isBom": false
         },
         {
-            "name": "Galatic Moderate Factions Resolutions Static Modifiers",
+            "name": "Galactic Moderate Factions Resolutions Static Modifiers",
             "specFilePath": "./specs/moderateFactions.json",
             "templateDirectoryPath": "./templates/forced_faction_static_modifiers",
             "outputDirectoryPath": "../common/static_modifiers",
@@ -100,7 +100,7 @@
             "isBom": false
         },
         {
-            "name": "Galatic Fanatic Factions Resolutions Localisation",
+            "name": "Galactic Fanatic Factions Resolutions Localisation",
             "specFilePath": "./specs/fanaticFactions.json",
             "templateDirectoryPath": "./templates/faction_resolutions_localisation",
             "outputDirectoryPath": "../localisation/english/resolutions",
@@ -109,7 +109,7 @@
             "isBom": true
         },
         {
-            "name": "Galatic Moderate Factions Resolutions Localisation",
+            "name": "Galactic Moderate Factions Resolutions Localisation",
             "specFilePath": "./specs/moderateFactions.json",
             "templateDirectoryPath": "./templates/faction_resolutions_localisation",
             "outputDirectoryPath": "../localisation/english/resolutions",

@@ -1,5 +1,5 @@
 # This needs to become a per country thing, since we cant check galcom modifiers at pop_faction level
-resolution_galatic_{{varname}}_static_modifier = {
+resolution_galactic_{{varname}}_static_modifier = {
    
     {% if isMilitarist == 2 %}pop_ethic_militarist_attraction_mult = 0.5{% endif %}
     {% if isMilitarist == 1 %}pop_ethic_militarist_attraction_mult = 0.25{% endif %}
@@ -19,6 +19,6 @@ resolution_galatic_{{varname}}_static_modifier = {
     {% if isSpiritualist == 1 %}pop_ethic_spiritualist_attraction_mult = 0.25{% endif %}
 }
 
-resolution_establish_galatic_{{varname}}_static_modifier = {
+resolution_establish_galactic_{{varname}}_static_modifier = {
     
 }

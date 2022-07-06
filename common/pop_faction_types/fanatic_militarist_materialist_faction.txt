@@ -29,10 +29,10 @@ fanatic_militarist_materialist_faction = {
 
 	is_potential = {
 		AND = { 
-			# is_faction_allowed = yes
+			is_faction_allowed = yes
 
 			OR = {
-				has_modifier = resolution_establish_galatic_fanatic_militarist_materialist_faction_static_modifier
+				has_modifier = resolution_establish_galactic_fanatic_militarist_materialist_faction_static_modifier
                 
 				has_edict = found_fanatic_militarist_materialist_faction
                 

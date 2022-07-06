@@ -56,6 +56,8 @@ found_fanatic_spiritualist_pacifist_faction = {
 	}
 
 	potential = {
+		is_faction_allowed = yes
+
 		# We cannot suggest a moderate ethic that is at odds with our fanatacism
 		NOR = {
 			
@@ -77,9 +79,9 @@ found_fanatic_spiritualist_pacifist_faction = {
 			
 		}
 		
-		# Disable edict if the galatic community does it for us
+		# Disable edict if the galactic community does it for us
 		NOT = {
-			has_modifier = resolution_establish_galatic_fanatic_spiritualist_pacifist_faction_static_modifier
+			has_modifier = resolution_establish_galactic_fanatic_spiritualist_pacifist_faction_static_modifier
 		}
 
 		# If we are suggesting a fanatic ethic, it must be one of our ethics

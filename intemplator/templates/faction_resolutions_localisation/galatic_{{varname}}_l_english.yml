@@ -1,19 +1,19 @@
 l_english:
 
- resolution_establish_galatic_{{varname}}:0 "Galatic {{Faction}} Faction"
- resolution_establish_galatic_{{varname}}_desc:0 "{{Faction}} ideals should be enshired in the political halls of all members of the [global_event_country.GetGalCommunityOrGalImperium]."
+ resolution_establish_galactic_{{varname}}:0 "Galactic {{Faction}} Faction"
+ resolution_establish_galactic_{{varname}}_desc:0 "{{Faction}} ideals should be enshired in the political halls of all members of the [global_event_country.GetGalCommunityOrGalImperium]."
  
- resolution_disband_galatic_{{varname}}:0 "§RDisband the {{Faction}} Faction§!"
- resolution_disband_galatic_{{varname}}_desc:0 "The ideals of the Galatic {{Faction}} faction do not represent the interests of the [global_event_country.GetGalCommunityOrGalImperium]."
+ resolution_disband_galactic_{{varname}}:0 "§RDisband the {{Faction}} Faction§!"
+ resolution_disband_galactic_{{varname}}_desc:0 "The ideals of the Galactic {{Faction}} faction do not represent the interests of the [global_event_country.GetGalCommunityOrGalImperium]."
  
- resolution_disband_galatic_{{varname}}_effect_success:0 "Repeals the §Y$resolution_establish_galatic_{{varname}}$§! resolution."
- resolution_establish_galatic_{{varname}}_tooltip:1 "The {{Faction}} Faction is able to spawn in empires that don't match the ethics of the faction."
+ resolution_disband_galactic_{{varname}}_effect_success:0 "Repeals the §Y$resolution_establish_galactic_{{varname}}$§! resolution."
+ resolution_establish_galactic_{{varname}}_tooltip:1 "The {{Faction}} Faction is able to spawn in empires that don't match the ethics of the faction."
 
- resolution_galatic_{{varname}}_static_modifier:0 "Galatic {{Faction}} Faction"
- resolution_establish_galatic_{{varname}}_static_modifier:0 "Galatic {{Faction}} Faction"
- resolution_force_establish_galatic_{{varname}}_static_modifier:0 "Galatic {{Faction}} Faction"
+ resolution_galactic_{{varname}}_static_modifier:0 "Galactic {{Faction}} Faction"
+ resolution_establish_galactic_{{varname}}_static_modifier:0 "Galactic {{Faction}} Faction"
+ resolution_force_establish_galactic_{{varname}}_static_modifier:0 "Galactic {{Faction}} Faction"
 
  edict_found_{{varname}}:0 "The {{Faction}} Faction"
  edict_found_{{varname}}_desc:0 "{{Faction}} ideals should be considered in matters of state."
- found_{{varname}}_tooltip:0 "Enable the {{Faction}} Faction to spawn."
+ found_{{varname}}_tooltip:0 "Enable the {{Faction}} Faction to spawn. This will pull pops towards {{faction}} ethics, especially to the fanatic ethic."
  

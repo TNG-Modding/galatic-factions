@@ -1,19 +1,19 @@
 ﻿l_english:
 
- resolution_establish_galatic_egalitarian_pacifist_spiritualist_faction:0 "Galatic Egalitarian Pacifist Spiritualist Faction"
- resolution_establish_galatic_egalitarian_pacifist_spiritualist_faction_desc:0 "Egalitarian Pacifist Spiritualist ideals should be enshired in the political halls of all members of the [global_event_country.GetGalCommunityOrGalImperium]."
+ resolution_establish_galactic_egalitarian_pacifist_spiritualist_faction:0 "Galactic Egalitarian Pacifist Spiritualist Faction"
+ resolution_establish_galactic_egalitarian_pacifist_spiritualist_faction_desc:0 "Egalitarian Pacifist Spiritualist ideals should be enshired in the political halls of all members of the [global_event_country.GetGalCommunityOrGalImperium]."
  
- resolution_disband_galatic_egalitarian_pacifist_spiritualist_faction:0 "§RDisband the Egalitarian Pacifist Spiritualist Faction§!"
- resolution_disband_galatic_egalitarian_pacifist_spiritualist_faction_desc:0 "The ideals of the Galatic Egalitarian Pacifist Spiritualist faction do not represent the interests of the [global_event_country.GetGalCommunityOrGalImperium]."
+ resolution_disband_galactic_egalitarian_pacifist_spiritualist_faction:0 "§RDisband the Egalitarian Pacifist Spiritualist Faction§!"
+ resolution_disband_galactic_egalitarian_pacifist_spiritualist_faction_desc:0 "The ideals of the Galactic Egalitarian Pacifist Spiritualist faction do not represent the interests of the [global_event_country.GetGalCommunityOrGalImperium]."
  
- resolution_disband_galatic_egalitarian_pacifist_spiritualist_faction_effect_success:0 "Repeals the §Y$resolution_establish_galatic_egalitarian_pacifist_spiritualist_faction$§! resolution."
- resolution_establish_galatic_egalitarian_pacifist_spiritualist_faction_tooltip:1 "The Egalitarian Pacifist Spiritualist Faction is able to spawn in empires that don't match the ethics of the faction."
+ resolution_disband_galactic_egalitarian_pacifist_spiritualist_faction_effect_success:0 "Repeals the §Y$resolution_establish_galactic_egalitarian_pacifist_spiritualist_faction$§! resolution."
+ resolution_establish_galactic_egalitarian_pacifist_spiritualist_faction_tooltip:1 "The Egalitarian Pacifist Spiritualist Faction is able to spawn in empires that don't match the ethics of the faction."
 
- resolution_galatic_egalitarian_pacifist_spiritualist_faction_static_modifier:0 "Galatic Egalitarian Pacifist Spiritualist Faction"
- resolution_establish_galatic_egalitarian_pacifist_spiritualist_faction_static_modifier:0 "Galatic Egalitarian Pacifist Spiritualist Faction"
- resolution_force_establish_galatic_egalitarian_pacifist_spiritualist_faction_static_modifier:0 "Galatic Egalitarian Pacifist Spiritualist Faction"
+ resolution_galactic_egalitarian_pacifist_spiritualist_faction_static_modifier:0 "Galactic Egalitarian Pacifist Spiritualist Faction"
+ resolution_establish_galactic_egalitarian_pacifist_spiritualist_faction_static_modifier:0 "Galactic Egalitarian Pacifist Spiritualist Faction"
+ resolution_force_establish_galactic_egalitarian_pacifist_spiritualist_faction_static_modifier:0 "Galactic Egalitarian Pacifist Spiritualist Faction"
 
  edict_found_egalitarian_pacifist_spiritualist_faction:0 "The Egalitarian Pacifist Spiritualist Faction"
  edict_found_egalitarian_pacifist_spiritualist_faction_desc:0 "Egalitarian Pacifist Spiritualist ideals should be considered in matters of state."
- found_egalitarian_pacifist_spiritualist_faction_tooltip:0 "Enable the Egalitarian Pacifist Spiritualist Faction to spawn."
+ found_egalitarian_pacifist_spiritualist_faction_tooltip:0 "Enable the Egalitarian Pacifist Spiritualist Faction to spawn. This will pull pops towards egalitarian pacifist spiritualist ethics, especially to the fanatic ethic."
  
