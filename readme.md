@@ -1,4 +1,4 @@
-[h1]Galatic Factions[/h1]
+[h1]Galactic Factions[/h1]
 
 Galactic Factions is about creating interesting decisions regarding factions both within and without your empire. Choose which factions have a say in your government and force your ethics into other empires through the Galactic Community.
 
@@ -20,7 +20,7 @@ Galactic Factions is about creating interesting decisions regarding factions bot
 
 [h3]Notes[/h3]
 
-Thank you for trying out Galatic Factions. Please leave comments about balance or bugs. Of particular interest to me are statements like "what's the point of X?".
+Thank you for trying out Galactic Factions. Please leave comments about balance or bugs. Of particular interest to me are statements like "what's the point of X?".
 
 [h3]Todo[/h3]
 [list]
