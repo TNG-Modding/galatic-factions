@@ -9,9 +9,11 @@ l_english:
  resolution_disband_galatic_{{varname}}_effect_success:0 "Repeals the §Y$resolution_establish_galatic_{{varname}}$§! resolution."
  resolution_establish_galatic_{{varname}}_tooltip:1 "The {{Faction}} Faction is able to spawn in empires that don't match the ethics of the faction."
 
+ resolution_galatic_{{varname}}_static_modifier:0 "Galatic {{Faction}} Faction"
+ resolution_establish_galatic_{{varname}}_static_modifier:0 "Galatic {{Faction}} Faction"
  resolution_force_establish_galatic_{{varname}}_static_modifier:0 "Galatic {{Faction}} Faction"
- 
+
  edict_found_{{varname}}:0 "The {{Faction}} Faction"
  edict_found_{{varname}}_desc:0 "{{Faction}} ideals should be considered in matters of state."
- edict_found_{{varname}}_tooltip:0 "Enable the {{Faction}} Faction to spawn."
+ found_{{varname}}_tooltip:0 "Enable the {{Faction}} Faction to spawn."
  

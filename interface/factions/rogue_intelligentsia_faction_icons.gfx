@@ -1,0 +1,7 @@
+spriteTypes = {
+	spriteType = {
+		name = "GFX_faction_icon_rogue_intelligentsia_faction"
+		textureFile = "gfx/interface/icons/faction_icons/faction_icons_separatists.dds"
+		noOfFrames = 1
+	}
+}

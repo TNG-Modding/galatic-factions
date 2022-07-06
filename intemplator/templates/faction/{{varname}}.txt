@@ -39,8 +39,10 @@
 			# is_faction_allowed = yes
 
 			OR = {
-				has_modifier = resolution_force_establish_galatic_{{varname}}_static_modifier
+				has_modifier = resolution_establish_galatic_{{varname}}_static_modifier
+                {% if isMilitarist == 2 or isXenophobe == 2 or isEgalitarian == 2 or isMaterialist == 2 or isPacifist == 2 or isXenophile == 2 or isAuthoritarian == 2 or isSpiritualist == 2 %}
 				has_edict = found_{{varname}}
+                {% endif %}
 				AND = {
 					{% if isMilitarist == 2 %}has_ethic = ethic_fanatic_militarist{% endif %}
 					{% if isMilitarist == 1 %}has_ethic = ethic_militarist{% endif %}
@@ -147,142 +149,38 @@
 	}
 
 	actions = {
-		embrace_faction = {
-			title = "EMBRACE_FACTION"
-			description = "EMBRACE_FACTION_DESC"
+        {% if isMilitarist > 0 %}
+		embrace_militarist = { title = "embrace_militarist" description = "embrace_militarist_desc" cost = { unity = 5000 } potential = { exists = owner owner = { OR = { is_subject = no NOT = { any_agreement = { agreement_preset = preset_dominion } } } } } valid = { custom_tooltip = { fail_text = EMBRACE_FACTION_COOLDOWN parameter:empire = { NOT = { has_modifier = embraced_faction_timer } } } support > 0.20 parameter:empire = { NOT = { has_ethic = "ethic_fanatic_militarist" } } } effect = { add_modifier = { modifier = embraced_faction days = 3600 } parameter:empire = { shift_ethic = ethic_militarist hidden_effect = { add_modifier = { modifier = embraced_faction_timer days = 3600 } } } hidden_effect = { save_event_target_as = TargetFaction parameter:empire = { every_relation = { limit = { is_ai = no is_country_type = default has_communications = prev has_intel_level = { who = prev category = government level >= 1 } } country_event = { id = factions.2000 } } } } } ai_weight = { base = 1 modifier = { factor = 0 support < 0.50 owner = { has_ethic = ethic_militarist } } modifier = { factor = 0 owner = { has_valid_civic = civic_fanatic_purifiers } } modifier = { factor = 0 owner = { count_pop_faction = { count < 4 } } } } }
+        {% endif %}
 
-			cost = {
-				unity = 5000
-			}
-
-			potential = {
-				exists = owner
-				owner = {
-					OR = {
-						is_subject = no
-						NOT = { any_agreement = { agreement_preset = preset_dominion } }
-					}
-				}
-			}
-
-			valid = {
-				custom_tooltip = {
-					fail_text = EMBRACE_FACTION_COOLDOWN
-					parameter:empire = {
-						NOT = { has_modifier = embraced_faction_timer }
-					}
-				}
-				support > 0.20
-				parameter:empire = {
-					NOR = { 
-						{% if isMilitarist == 2 %}has_ethic = ethic_fanatic_militarist{% endif %}
-						{% if isMilitarist == 1 %}has_ethic = ethic_militarist{% endif %}
-						{% if isXenophobe == 2 %}has_ethic = ethic_fanatic_xenophobe{% endif %}
-						{% if isXenophobe == 1 %}has_ethic = ethic_xenophobe{% endif %}
-						{% if isEgalitarian == 2 %}has_ethic = ethic_fanatic_egalitarian{% endif %}
-						{% if isEgalitarian == 1 %}has_ethic = ethic_egalitarian{% endif %}
-						{% if isMaterialist == 2 %}has_ethic = ethic_fanatic_materialist{% endif %}
-						{% if isMaterialist == 1 %}has_ethic = ethic_materialist{% endif %}
-						{% if isPacifist == 2 %}has_ethic = ethic_fanatic_pacifist{% endif %}
-						{% if isPacifist == 1 %}has_ethic = ethic_pacifist{% endif %}
-						{% if isXenophile == 2 %}has_ethic = ethic_fanatic_xenophile{% endif %}
-						{% if isXenophile == 1 %}has_ethic = ethic_xenophile{% endif %}
-						{% if isAuthoritarian == 2 %}has_ethic = ethic_fanatic_authoritarian{% endif %}
-						{% if isAuthoritarian == 1 %}has_ethic = ethic_authoritarian{% endif %}
-						{% if isSpiritualist == 2 %}has_ethic = ethic_fanatic_spiritualist{% endif %}
-						{% if isSpiritualist == 1 %}has_ethic = ethic_spiritualist{% endif %} 
-					}
-				}
-			}
-
-			effect = {
-				add_modifier = { modifier = embraced_faction days = 3600 }
-				parameter:empire = {
-					hidden_effect = {
-						add_modifier = { modifier = embraced_faction_timer days = 3600 }
-						every_pop_faction = {
-							limit = { NOT = { is_same_value = root } }
-							add_modifier = { modifier = embraced_another_faction days = 3600 }
-						}
-						country_remove_ethic = ethic_militarist
-						country_remove_ethic = ethic_fanatic_militarist
-						country_remove_ethic = ethic_pacifist
-						country_remove_ethic = ethic_fanatic_pacifist
-						country_remove_ethic = ethic_xenophobe
-						country_remove_ethic = ethic_fanatic_xenophobe
-						country_remove_ethic = ethic_xenophile
-						country_remove_ethic = ethic_fanatic_xenophile
-						country_remove_ethic = ethic_egalitarian
-						country_remove_ethic = ethic_fanatic_egalitarian
-						country_remove_ethic = ethic_authoritarian
-						country_remove_ethic = ethic_fanatic_authoritarian
-						country_remove_ethic = ethic_materialist
-						country_remove_ethic = ethic_fanatic_materialist
-						country_remove_ethic = ethic_spiritualist
-						country_remove_ethic = ethic_fanatic_spiritualist
-					}
-
-					{% if isMilitarist == 2 %}country_add_ethic = ethic_fanatic_militarist{% endif %}
-					{% if isMilitarist == 1 %}country_add_ethic = ethic_militarist{% endif %}
-					{% if isXenophobe == 2 %}country_add_ethic = ethic_fanatic_xenophobe{% endif %}
-					{% if isXenophobe == 1 %}country_add_ethic = ethic_xenophobe{% endif %}
-					{% if isEgalitarian == 2 %}country_add_ethic = ethic_fanatic_egalitarian{% endif %}
-					{% if isEgalitarian == 1 %}country_add_ethic = ethic_egalitarian{% endif %}
-					{% if isMaterialist == 2 %}country_add_ethic = ethic_fanatic_materialist{% endif %}
-					{% if isMaterialist == 1 %}country_add_ethic = ethic_materialist{% endif %}
-					{% if isPacifist == 2 %}country_add_ethic = ethic_fanatic_pacifist{% endif %}
-					{% if isPacifist == 1 %}country_add_ethic = ethic_pacifist{% endif %}
-					{% if isXenophile == 2 %}country_add_ethic = ethic_fanatic_xenophile{% endif %}
-					{% if isXenophile == 1 %}country_add_ethic = ethic_xenophile{% endif %}
-					{% if isAuthoritarian == 2 %}country_add_ethic = ethic_fanatic_authoritarian{% endif %}
-					{% if isAuthoritarian == 1 %}country_add_ethic = ethic_authoritarian{% endif %}
-					{% if isSpiritualist == 2 %}country_add_ethic = ethic_fanatic_spiritualist{% endif %}
-					{% if isSpiritualist == 1 %}country_add_ethic = ethic_spiritualist{% endif %}
-				}
-			}
-
-			ai_weight = {
-				base = 1
-				modifier = {
-					factor = 0
-					support < 0.50
-					owner = {
-						{% if isMilitarist == 2 %}has_ethic = ethic_fanatic_militarist{% endif %}
-						{% if isMilitarist == 1 %}has_ethic = ethic_militarist{% endif %}
-						{% if isXenophobe == 2 %}has_ethic = ethic_fanatic_xenophobe{% endif %}
-						{% if isXenophobe == 1 %}has_ethic = ethic_xenophobe{% endif %}
-						{% if isEgalitarian == 2 %}has_ethic = ethic_fanatic_egalitarian{% endif %}
-						{% if isEgalitarian == 1 %}has_ethic = ethic_egalitarian{% endif %}
-						{% if isMaterialist == 2 %}has_ethic = ethic_fanatic_materialist{% endif %}
-						{% if isMaterialist == 1 %}has_ethic = ethic_materialist{% endif %}
-						{% if isPacifist == 2 %}has_ethic = ethic_fanatic_pacifist{% endif %}
-						{% if isPacifist == 1 %}has_ethic = ethic_pacifist{% endif %}
-						{% if isXenophile == 2 %}has_ethic = ethic_fanatic_xenophile{% endif %}
-						{% if isXenophile == 1 %}has_ethic = ethic_xenophile{% endif %}
-						{% if isAuthoritarian == 2 %}has_ethic = ethic_fanatic_authoritarian{% endif %}
-						{% if isAuthoritarian == 1 %}has_ethic = ethic_authoritarian{% endif %}
-						{% if isSpiritualist == 2 %}has_ethic = ethic_fanatic_spiritualist{% endif %}
-						{% if isSpiritualist == 1 %}has_ethic = ethic_spiritualist{% endif %}
-					}
-				}
-				modifier = {
-					factor = 0
-					owner = { 
-						has_valid_civic = civic_fanatic_purifiers
-						has_valid_civic = civic_inwards_perfection
-					}
-				}
-				modifier = {
-					factor = 0
-					owner = {
-						count_pop_faction = {
-							count < 4
-						}
-					}
-				}
-			}
-		}
-	}
+        {% if isPacifist > 0 %}
+        embrace_pacifist = { title = "embrace_pacifist" description = "embrace_pacifist_desc" cost = { unity = 5000 } potential = { exists = owner owner = { OR = { is_subject = no NOT = { any_agreement = { agreement_preset = preset_dominion } } } } } valid = { custom_tooltip = { fail_text = EMBRACE_FACTION_COOLDOWN parameter:empire = { NOT = { has_modifier = embraced_faction_timer } } } support > 0.20 parameter:empire = { NOT = { has_ethic = "ethic_fanatic_pacifist" } } } effect = { add_modifier = { modifier = embraced_faction days = 3600 } parameter:empire = { shift_ethic = ethic_pacifist hidden_effect = { add_modifier = { modifier = embraced_faction_timer days = 3600 } } } hidden_effect = { save_event_target_as = TargetFaction parameter:empire = { every_relation = { limit = { is_ai = no is_country_type = default has_communications = prev has_intel_level = { who = prev category = government level >= 1 } } country_event = { id = factions.2000 } } } } } ai_weight = { base = 1 modifier = { factor = 0 support < 0.50 owner = { has_ethic = ethic_pacifist } } modifier = { factor = 0 owner = { has_valid_civic = civic_fanatic_purifiers } } modifier = { factor = 0 owner = { count_pop_faction = { count < 4 } } } } }
+        {% endif %}
+        
+        {% if isXenophobe > 0 %}
+        embrace_xenophobe = { title = "embrace_xenophobe" description = "embrace_xenophobe_desc" cost = { unity = 5000 } potential = { exists = owner owner = { OR = { is_subject = no NOT = { any_agreement = { agreement_preset = preset_dominion } } } } } valid = { custom_tooltip = { fail_text = EMBRACE_FACTION_COOLDOWN parameter:empire = { NOT = { has_modifier = embraced_faction_timer } } } support > 0.20 parameter:empire = { NOT = { has_ethic = "ethic_fanatic_xenophobe" } } } effect = { add_modifier = { modifier = embraced_faction days = 3600 } parameter:empire = { shift_ethic = ethic_xenophobe hidden_effect = { add_modifier = { modifier = embraced_faction_timer days = 3600 } } } hidden_effect = { save_event_target_as = TargetFaction parameter:empire = { every_relation = { limit = { is_ai = no is_country_type = default has_communications = prev has_intel_level = { who = prev category = government level >= 1 } } country_event = { id = factions.2000 } } } } } ai_weight = { base = 1 modifier = { factor = 0 support < 0.50 owner = { has_ethic = ethic_xenophobe } } modifier = { factor = 0 owner = { has_valid_civic = civic_fanatic_purifiers } } modifier = { factor = 0 owner = { count_pop_faction = { count < 4 } } } } }
+        {% endif %}
+        
+        {% if isXenophile > 0 %}
+        embrace_xenophile = { title = "embrace_xenophile" description = "embrace_xenophile_desc" cost = { unity = 5000 } potential = { exists = owner owner = { OR = { is_subject = no NOT = { any_agreement = { agreement_preset = preset_dominion } } } } } valid = { custom_tooltip = { fail_text = EMBRACE_FACTION_COOLDOWN parameter:empire = { NOT = { has_modifier = embraced_faction_timer } } } support > 0.20 parameter:empire = { NOT = { has_ethic = "ethic_fanatic_xenophile" } } } effect = { add_modifier = { modifier = embraced_faction days = 3600 } parameter:empire = { shift_ethic = ethic_xenophile hidden_effect = { add_modifier = { modifier = embraced_faction_timer days = 3600 } } } hidden_effect = { save_event_target_as = TargetFaction parameter:empire = { every_relation = { limit = { is_ai = no is_country_type = default has_communications = prev has_intel_level = { who = prev category = government level >= 1 } } country_event = { id = factions.2000 } } } } } ai_weight = { base = 1 modifier = { factor = 0 support < 0.50 owner = { has_ethic = ethic_xenophile } } modifier = { factor = 0 owner = { has_valid_civic = civic_fanatic_purifiers } } modifier = { factor = 0 owner = { count_pop_faction = { count < 4 } } } } }
+        {% endif %}
+        
+        {% if isSpiritualist > 0 %}
+        embrace_spiritualist = { title = "embrace_spiritualist" description = "embrace_spiritualist_desc" cost = { unity = 5000 } potential = { exists = owner owner = { OR = { is_subject = no NOT = { any_agreement = { agreement_preset = preset_dominion } } } } } valid = { custom_tooltip = { fail_text = EMBRACE_FACTION_COOLDOWN parameter:empire = { NOT = { has_modifier = embraced_faction_timer } } } support > 0.20 parameter:empire = { NOT = { has_ethic = "ethic_fanatic_spiritualist" } } } effect = { add_modifier = { modifier = embraced_faction days = 3600 } parameter:empire = { shift_ethic = ethic_spiritualist hidden_effect = { add_modifier = { modifier = embraced_faction_timer days = 3600 } } } hidden_effect = { save_event_target_as = TargetFaction parameter:empire = { every_relation = { limit = { is_ai = no is_country_type = default has_communications = prev has_intel_level = { who = prev category = government level >= 1 } } country_event = { id = factions.2000 } } } } } ai_weight = { base = 1 modifier = { factor = 0 support < 0.50 owner = { has_ethic = ethic_spiritualist } } modifier = { factor = 0 owner = { has_valid_civic = civic_fanatic_purifiers } } modifier = { factor = 0 owner = { count_pop_faction = { count < 4 } } } } }
+        {% endif %}
+       
+        {% if isMaterialist > 0 %}
+        embrace_materialist = { title = "embrace_materialist" description = "embrace_materialist_desc" cost = { unity = 5000 } potential = { exists = owner owner = { OR = { is_subject = no NOT = { any_agreement = { agreement_preset = preset_dominion } } } } } valid = { custom_tooltip = { fail_text = EMBRACE_FACTION_COOLDOWN parameter:empire = { NOT = { has_modifier = embraced_faction_timer } } } support > 0.20 parameter:empire = { NOT = { has_ethic = "ethic_fanatic_materialist" } } } effect = { add_modifier = { modifier = embraced_faction days = 3600 } parameter:empire = { shift_ethic = ethic_materialist hidden_effect = { add_modifier = { modifier = embraced_faction_timer days = 3600 } } } hidden_effect = { save_event_target_as = TargetFaction parameter:empire = { every_relation = { limit = { is_ai = no is_country_type = default has_communications = prev has_intel_level = { who = prev category = government level >= 1 } } country_event = { id = factions.2000 } } } } } ai_weight = { base = 1 modifier = { factor = 0 support < 0.50 owner = { has_ethic = ethic_materialist } } modifier = { factor = 0 owner = { has_valid_civic = civic_fanatic_purifiers } } modifier = { factor = 0 owner = { count_pop_faction = { count < 4 } } } } }
+        {% endif %}
+        
+        {% if isAuthoritarian > 0 %}
+        embrace_authoritarian = { title = "embrace_authoritarian" description = "embrace_authoritarian_desc" cost = { unity = 5000 } potential = { exists = owner owner = { OR = { is_subject = no NOT = { any_agreement = { agreement_preset = preset_dominion } } } } } valid = { custom_tooltip = { fail_text = EMBRACE_FACTION_COOLDOWN parameter:empire = { NOT = { has_modifier = embraced_faction_timer } } } support > 0.20 parameter:empire = { NOT = { has_ethic = "ethic_fanatic_authoritarian" } } } effect = { add_modifier = { modifier = embraced_faction days = 3600 } parameter:empire = { shift_ethic = ethic_authoritarian hidden_effect = { add_modifier = { modifier = embraced_faction_timer days = 3600 } } } hidden_effect = { save_event_target_as = TargetFaction parameter:empire = { every_relation = { limit = { is_ai = no is_country_type = default has_communications = prev has_intel_level = { who = prev category = government level >= 1 } } country_event = { id = factions.2000 } } } } } ai_weight = { base = 1 modifier = { factor = 0 support < 0.50 owner = { has_ethic = ethic_authoritarian } } modifier = { factor = 0 owner = { has_valid_civic = civic_fanatic_purifiers } } modifier = { factor = 0 owner = { count_pop_faction = { count < 4 } } } } }
+        {% endif %}
+        
+        {% if isEgalitarian > 0 %}
+        embrace_egalitarian = { title = "embrace_egalitarian" description = "embrace_egalitarian_desc" cost = { unity = 5000 } potential = { exists = owner owner = { OR = { is_subject = no NOT = { any_agreement = { agreement_preset = preset_dominion } } } } } valid = { custom_tooltip = { fail_text = EMBRACE_FACTION_COOLDOWN parameter:empire = { NOT = { has_modifier = embraced_faction_timer } } } support > 0.20 parameter:empire = { NOT = { has_ethic = "ethic_fanatic_egalitarian" } } } effect = { add_modifier = { modifier = embraced_faction days = 3600 } parameter:empire = { shift_ethic = ethic_egalitarian hidden_effect = { add_modifier = { modifier = embraced_faction_timer days = 3600 } } } hidden_effect = { save_event_target_as = TargetFaction parameter:empire = { every_relation = { limit = { is_ai = no is_country_type = default has_communications = prev has_intel_level = { who = prev category = government level >= 1 } } country_event = { id = factions.2000 } } } } } ai_weight = { base = 1 modifier = { factor = 0 support < 0.50 owner = { has_ethic = ethic_egalitarian } } modifier = { factor = 0 owner = { has_valid_civic = civic_fanatic_purifiers } } modifier = { factor = 0 owner = { count_pop_faction = { count < 4 } } } } }
+        {% endif %}
+    }
 
 	{% if isAuthoritarian > 0 %}
     demand = {

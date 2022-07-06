@@ -6,7 +6,7 @@
 
 found_{{varname}} = {
 	length = @EdictPerpetual
-	icon = "GFX_edict_type_policy"
+	icon = "GFX_type_policy"
 
 	resources = {
 		category = edicts
@@ -16,29 +16,201 @@ found_{{varname}} = {
 	}
 
 	modifier = {
-		custom_tooltip = edict_found_{{varname}}_tooltip
+		custom_tooltip = found_{{varname}}_tooltip
+
+		{% if isMilitarist == 2 %}
+		pop_ethic_militarist_attraction_mult = 0.25
+		{% endif %}
+
+		{% if isXenophobe == 2 %}
+		pop_ethic_xenophobe_attraction_mult = 0.25
+		{% endif %}
+
+		{% if isEgalitarian == 2 %}
+		pop_ethic_egalitarian_attraction_mult = 0.25
+		{% endif %}
+
+		{% if isMaterialist == 2 %}
+		pop_ethic_materialist_attraction_mult = 0.25
+		{% endif %}
+
+		{% if isPacifist == 2 %}
+		pop_ethic_pacifist_attraction_mult = 0.25
+		{% endif %}
+
+		{% if isXenophile == 2 %}
+		pop_ethic_xenophile_attraction_mult = 0.25
+		{% endif %}
+
+		{% if isAuthoritarian == 2 %}
+		pop_ethic_authoritian_attraction_mult = 0.25
+		{% endif %}
+
+		{% if isSpiritualist == 2 %}
+		pop_ethic_spiritualist_attraction_mult = 0.25
+		{% endif %}
+
+		{% if isMilitarist == 1 %}
+		pop_ethic_militarist_attraction_mult = 0.1
+		{% endif %}
+
+		{% if isXenophobe == 1 %}
+		pop_ethic_xenophobe_attraction_mult = 0.1
+		{% endif %}
+
+		{% if isEgalitarian == 1 %}
+		pop_ethic_egalitarian_attraction_mult = 0.1
+		{% endif %}
+
+		{% if isMaterialist == 1 %}
+		pop_ethic_materialist_attraction_mult = 0.1
+		{% endif %}
+
+		{% if isPacifist == 1 %}
+		pop_ethic_pacifist_attraction_mult = 0.1
+		{% endif %}
+
+		{% if isXenophile == 1 %}
+		pop_ethic_xenophile_attraction_mult = 0.1
+		{% endif %}
+
+		{% if isAuthoritarian == 1 %}
+		pop_ethic_authoritian_attraction_mult = 0.1
+		{% endif %}
+
+		{% if isSpiritualist == 1 %}
+		pop_ethic_spiritualist_attraction_mult = 0.1
+		{% endif %}
 	}
 
 	potential = {
-		OR = {
-			{% if isMilitarist > 0 %}has_ethic = ethic_fanatic_militarist{% endif %}
-			{% if isMilitarist > 0 %}has_ethic = ethic_militarist{% endif %}
-			{% if isXenophobe > 0 %}has_ethic = ethic_fanatic_xenophobe{% endif %}
-			{% if isXenophobe > 0 %}has_ethic = ethic_xenophobe{% endif %}
-			{% if isEgalitarian > 0 %}has_ethic = ethic_fanatic_egalitarian{% endif %}
-			{% if isEgalitarian > 0 %}has_ethic = ethic_egalitarian{% endif %}
-			{% if isMaterialist > 0 %}has_ethic = ethic_fanatic_materialist{% endif %}
-			{% if isMaterialist > 0 %}has_ethic = ethic_materialist{% endif %}
-			{% if isPacifist > 0 %}has_ethic = ethic_fanatic_pacifist{% endif %}
-			{% if isPacifist > 0 %}has_ethic = ethic_pacifist{% endif %}
-			{% if isXenophile > 0 %}has_ethic = ethic_fanatic_xenophile{% endif %}
-			{% if isXenophile > 0 %}has_ethic = ethic_xenophile{% endif %}
-			{% if isAuthoritarian > 0 %}has_ethic = ethic_fanatic_authoritarian{% endif %}
-			{% if isAuthoritarian > 0 %}has_ethic = ethic_authoritarian{% endif %}
-			{% if isSpiritualist > 0 %}has_ethic = ethic_fanatic_spiritualist{% endif %}
-			{% if isSpiritualist > 0 %}has_ethic = ethic_spiritualist{% endif %}
+		# We cannot suggest a moderate ethic that is at odds with our fanatacism
+		NOR = {
+			{% if isMilitarist == 1 %}
+			has_ethic = ethic_fanatic_pacifist
+			{% endif %}
+
+			{% if isXenophobe == 1 %}
+			has_ethic = ethic_fanatic_xenophile
+			{% endif %}
+
+			{% if isEgalitarian == 1 %}
+			has_ethic = ethic_fanatic_authoritarian
+			{% endif %}
+
+			{% if isMaterialist == 1 %}
+			has_ethic = ethic_fanatic_spiritualist
+			{% endif %}
+
+			{% if isPacifist == 1 %}
+			has_ethic = ethic_fanatic_militarist
+			{% endif %}
+
+			{% if isXenophile == 1 %}
+			has_ethic = ethic_fanatic_xenophobe
+			{% endif %}
+
+			{% if isAuthoritarian == 1 %}
+			has_ethic = ethic_fanatic_egalitarian
+			{% endif %}
+
+			{% if isSpiritualist == 1 %}
+			has_ethic = ethic_fanatic_authoritarian
+			{% endif %}
+		}
+		
+		# Disable edict if the galatic community does it for us
+		NOT = {
+			has_modifier = resolution_establish_galatic_{{varname}}_static_modifier
 		}
 
+		# If we are suggesting a fanatic ethic, it must be one of our ethics
+		AND = {
+			{% if isMilitarist == 2 %} OR = {
+				has_ethic = ethic_fanatic_militarist
+				has_ethic = ethic_militarist
+			} {% endif %}
+
+			{% if isXenophobe == 2 %} OR = {
+				has_ethic = ethic_fanatic_xenophobe
+				has_ethic = ethic_xenophobe
+			} {% endif %}
+
+			{% if isEgalitarian == 2 %} OR = {
+				has_ethic = ethic_fanatic_egalitarian
+				has_ethic = ethic_egalitarian
+			} {% endif %}
+
+			{% if isMaterialist == 2 %} OR = {
+				has_ethic = ethic_fanatic_materialist
+				has_ethic = ethic_materialist
+			} {% endif %}
+
+			{% if isPacifist == 2 %} OR = {
+				has_ethic = ethic_fanatic_pacifist
+				has_ethic = ethic_pacifist
+			} {% endif %}
+
+			{% if isXenophile == 2 %} OR = {
+				has_ethic = ethic_fanatic_xenophile
+				has_ethic = ethic_xenophile
+			} {% endif %}
+
+			{% if isAuthoritarian == 2 %} OR = {
+				has_ethic = ethic_fanatic_authoritarian
+				has_ethic = ethic_authoritarian
+			} {% endif %}
+
+			{% if isSpiritualist== 2 %} OR = {
+				has_ethic = ethic_fanatic_spiritualist
+				has_ethic = ethic_spiritualist
+			} {% endif %}
+		}
+
+		# The moderate ethic cannot be one of ours
+		AND = {
+			{% if isMilitarist == 1 %} NOR = {
+				has_ethic = ethic_fanatic_militarist
+				has_ethic = ethic_militarist
+			} {% endif %}
+
+			{% if isXenophobe == 1 %} NOR = {
+				has_ethic = ethic_fanatic_xenophobe
+				has_ethic = ethic_xenophobe
+			} {% endif %}
+
+			{% if isEgalitarian == 1 %} NOR = {
+				has_ethic = ethic_fanatic_egalitarian
+				has_ethic = ethic_egalitarian
+			} {% endif %}
+
+			{% if isMaterialist == 1 %} NOR = {
+				has_ethic = ethic_fanatic_materialist
+				has_ethic = ethic_materialist
+			} {% endif %}
+
+			{% if isPacifist == 1 %} NOR = {
+				has_ethic = ethic_fanatic_pacifist
+				has_ethic = ethic_pacifist
+			} {% endif %}
+
+			{% if isXenophile == 1 %} NOR = {
+				has_ethic = ethic_fanatic_xenophile
+				has_ethic = ethic_xenophile
+			} {% endif %}
+
+			{% if isAuthoritarian == 1 %} NOR = {
+				has_ethic = ethic_fanatic_authoritarian
+				has_ethic = ethic_authoritarian
+			} {% endif %}
+
+			{% if isSpiritualist== 1 %} NOR = {
+				has_ethic = ethic_fanatic_spiritualist
+				has_ethic = ethic_spiritualist
+			} {% endif %}
+		}
+
+		# Does not match our ethics exactly
 		NAND = {
 			{% if isMilitarist == 2 %}has_ethic = ethic_fanatic_militarist{% endif %}
 			{% if isMilitarist == 1 %}has_ethic = ethic_militarist{% endif %}

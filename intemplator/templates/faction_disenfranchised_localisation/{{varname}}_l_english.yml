@@ -1,0 +1,6 @@
+l_english:
+ pft_{{varname}}:2 "{{Faction}} Faction"
+ pft_{{varname}}_desc:4 "Not all ideas belong in government."
+
+ FACTION_DISENFRANCHISED:0 "Disenfranchised"
+ FACTION_DISENFRANCHISED_DESC:1 "All pops whose ethics are not represented in government are angry about their lack of representation."

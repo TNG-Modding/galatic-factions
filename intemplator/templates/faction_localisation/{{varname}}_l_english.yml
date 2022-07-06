@@ -1,5 +1,5 @@
 l_english:
 
- pft_{{varname}}:2 "{{Faction}} Faction"
+ pft_{{varname}}:2 "{{Faction}}s"
  pft_{{varname}}_desc:4 "We believe adopting a §L{{faction}}§! philosophy will bring us into the promised land."
  

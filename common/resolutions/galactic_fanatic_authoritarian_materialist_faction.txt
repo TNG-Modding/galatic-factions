@@ -27,11 +27,18 @@ resolution_establish_galatic_fanatic_authoritarian_materialist_faction = {
 	level = 1
 
 	modifier = {
-		resolution_force_establish_galatic_fanatic_authoritarian_materialist_faction_static_modifier = 1
+		resolution_galatic_fanatic_authoritarian_materialist_faction_static_modifier = 1
 	}
 
 	effect = {
 		custom_tooltip = resolution_establish_galatic_fanatic_authoritarian_materialist_faction_tooltip
+		hidden_effect = {
+			every_country = {
+				add_modifier = { 
+					modifier = resolution_establish_galatic_fanatic_authoritarian_materialist_faction_static_modifier
+				}
+			}
+		}
 	}
 
 	fail_effects = {
@@ -47,7 +54,60 @@ resolution_establish_galatic_fanatic_authoritarian_materialist_faction = {
 	}
 
 	potential = {
-		# Only available to countries that have an ethic
+
+		# We cannot suggest a moderate ethic that is at odds with our fanatacism
+		NOR = {
+			
+
+			
+
+			
+
+			
+			has_ethic = ethic_fanatic_spiritualist
+			
+
+			
+
+			
+
+			
+
+			
+		}
+
+		# If you are a fanatic, that ethic must be represented
+		NOR = {
+			
+			has_ethic = ethic_fanatic_militarist
+			
+
+			
+			has_ethic = ethic_fanatic_xenophobe
+			
+
+			
+			has_ethic = ethic_fanatic_egalitarian
+			
+
+			
+
+			
+			has_ethic = ethic_fanatic_pacifist
+			
+
+			
+			has_ethic = ethic_fanatic_xenophile
+			
+
+			
+
+			
+			has_ethic = ethic_fanatic_spiritualist
+			
+		}
+
+		# We must have at least one part of the ethics suggested 
 		OR = {
 			
 
@@ -127,6 +187,9 @@ resolution_disband_galatic_fanatic_authoritarian_materialist_faction = {
 		custom_tooltip = resolution_disband_galatic_fanatic_authoritarian_materialist_faction_effect_success
 		hidden_effect = {
 			cancel_resolution = "resolution_establish_galatic_fanatic_authoritarian_materialist_faction"
+			every_country = {
+				remove_modifier = resolution_establish_galatic_fanatic_authoritarian_materialist_faction_static_modifier
+			}
 		}
 	}
 

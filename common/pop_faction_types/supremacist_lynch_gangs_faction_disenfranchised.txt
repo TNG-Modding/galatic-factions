@@ -1,0 +1,123 @@
+##############################
+# Supremacist Lynch Gangs Faction
+##############################
+
+supremacist_lynch_gangs_faction = {
+	election_header = "GFX_faction_header_yellow"
+	guiding_ethic = ethic_militarist
+
+	unique = yes
+	support_multiplier = 1
+	use_guiding_ethic_as_pop_filter = no
+
+	resources = {
+		category = pop_factions
+		produces = {
+			
+		}
+	}
+
+	parameters = {
+		empire = {
+			type = country
+			valid_objects = {
+				is_same_value = root
+			}
+		}
+	}
+
+	is_potential = {
+		AND = { 
+			# is_faction_allowed = yes
+			
+			AND = {
+				
+				 NOR = {
+					has_ethic = ethic_fanatic_xenophobe
+					has_ethic = ethic_xenophobe
+				} 
+				
+				
+				
+				
+				
+				
+			}
+		}
+	}
+	can_join_pre_triggers = {
+		is_enslaved = no
+		is_being_purged = no
+	}
+
+	can_join_faction = {
+		is_shackled_robot = no
+		NOT = { has_trait = trait_nerve_stapled }
+
+		OR = {
+			
+			has_ethic = ethic_xenophobe
+			
+			
+			
+			
+			
+			
+		}
+	}
+
+	attraction = {
+		base = 50
+
+		modifier = {
+			factor = 1.25
+			exists = from
+			from = {
+				exists = leader
+				leader = { leader_class = ruler }
+			}
+		}
+
+		modifier = {
+			factor = 0.75
+			exists = from
+			from = {
+				NOT = { exists = leader }
+			}
+		}
+
+		modifier = {
+			factor = 1.25
+			has_citizenship_rights = yes
+		}
+	}
+
+	leader = {
+		base = 0
+	}
+
+	on_create = {
+		# pop_faction_event = { id = faction_spawn.1 }
+	}
+
+	actions = {
+	}
+
+    demand = {
+        title = "FACTION_DISENFRANCHISED"
+        unfulfilled_title = "FACTION_DISENFRANCHISED"
+        desc = "FACTION_DISENFRANCHISED_DESC"
+
+        fulfilled_effect = -100
+        unfulfilled_effect = -100
+
+        potential = {
+            exists = owner
+        }
+
+        trigger = {
+            exists = owner
+        }
+    }
+	
+}

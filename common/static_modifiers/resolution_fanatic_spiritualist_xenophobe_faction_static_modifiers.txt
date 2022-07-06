@@ -1,0 +1,24 @@
+# This needs to become a per country thing, since we cant check galcom modifiers at pop_faction level
+resolution_galatic_fanatic_spiritualist_xenophobe_faction_static_modifier = {
+   
+    
+    
+    
+    pop_ethic_xenophobe_attraction_mult = 0.25
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    pop_ethic_spiritualist_attraction_mult = 0.5
+    
+}
+
+resolution_establish_galatic_fanatic_spiritualist_xenophobe_faction_static_modifier = {
+    
+}

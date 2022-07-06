@@ -9,9 +9,11 @@
  resolution_disband_galatic_authoritarian_spiritualist_xenophobe_faction_effect_success:0 "Repeals the §Y$resolution_establish_galatic_authoritarian_spiritualist_xenophobe_faction$§! resolution."
  resolution_establish_galatic_authoritarian_spiritualist_xenophobe_faction_tooltip:1 "The Authoritarian Spiritualist Xenophobe Faction is able to spawn in empires that don't match the ethics of the faction."
 
+ resolution_galatic_authoritarian_spiritualist_xenophobe_faction_static_modifier:0 "Galatic Authoritarian Spiritualist Xenophobe Faction"
+ resolution_establish_galatic_authoritarian_spiritualist_xenophobe_faction_static_modifier:0 "Galatic Authoritarian Spiritualist Xenophobe Faction"
  resolution_force_establish_galatic_authoritarian_spiritualist_xenophobe_faction_static_modifier:0 "Galatic Authoritarian Spiritualist Xenophobe Faction"
- 
+
  edict_found_authoritarian_spiritualist_xenophobe_faction:0 "The Authoritarian Spiritualist Xenophobe Faction"
  edict_found_authoritarian_spiritualist_xenophobe_faction_desc:0 "Authoritarian Spiritualist Xenophobe ideals should be considered in matters of state."
- edict_found_authoritarian_spiritualist_xenophobe_faction_tooltip:0 "Enable the Authoritarian Spiritualist Xenophobe Faction to spawn."
+ found_authoritarian_spiritualist_xenophobe_faction_tooltip:0 "Enable the Authoritarian Spiritualist Xenophobe Faction to spawn."
  

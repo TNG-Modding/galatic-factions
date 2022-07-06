@@ -1,0 +1,6 @@
+﻿l_english:
+ pft_peasant_rabble_faction:2 "Peasant Rabble Faction"
+ pft_peasant_rabble_faction_desc:4 "Not all ideas belong in government."
+
+ FACTION_DISENFRANCHISED:0 "Disenfranchised"
+ FACTION_DISENFRANCHISED_DESC:1 "All pops whose ethics are not represented in government are angry about their lack of representation."

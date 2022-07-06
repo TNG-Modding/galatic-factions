@@ -1,7 +1,7 @@
 {
     "orders": [
         {
-            "name": "Moderation Faction Defines",
+            "name": "Moderate Faction Defines",
             "specFilePath": "./specs/moderateFactions.json",
             "templateDirectoryPath": "./templates/faction",
             "outputDirectoryPath": "../common/pop_faction_types",
@@ -19,7 +19,7 @@
             "isBom": false
         },
         {
-            "name": "Moderation Faction Names",
+            "name": "Moderate Faction Names",
             "specFilePath": "./specs/moderateFactions.json",
             "templateDirectoryPath": "./templates/faction_random_names",
             "outputDirectoryPath": "../common/random_names",
@@ -37,7 +37,7 @@
             "isBom": false
         },
         {
-            "name": "Moderation Faction Icons",
+            "name": "Moderate Faction Icons",
             "specFilePath": "./specs/moderateFactions.json",
             "templateDirectoryPath": "./templates/faction_interface",
             "outputDirectoryPath": "../interface/factions",
@@ -55,7 +55,7 @@
             "isBom": false
         },
         {
-            "name": "Moderation Faction Localisation",
+            "name": "Moderate Faction Localisation",
             "specFilePath": "./specs/moderateFactions.json",
             "templateDirectoryPath": "./templates/faction_localisation",
             "outputDirectoryPath": "../localisation/english/faction_defs",
@@ -125,6 +125,42 @@
             "disabled": false,
             "dumpContents": true,
             "isBom": false
+        },
+        {
+            "name": "Disenfranchised Faction Defines",
+            "specFilePath": "./specs/disenfranchisedFactions.json",
+            "templateDirectoryPath": "./templates/disenfranchised_faction",
+            "outputDirectoryPath": "../common/pop_faction_types",
+            "disabled": false,
+            "dumpContents": true,
+            "isBom": false
+        },
+        {
+            "name": "Disenfranchised Faction Names",
+            "specFilePath": "./specs/disenfranchisedFactions.json",
+            "templateDirectoryPath": "./templates/faction_random_names",
+            "outputDirectoryPath": "../common/random_names",
+            "disabled": false,
+            "dumpContents": true,
+            "isBom": false
+        },
+        {
+            "name": "Disenfranchised Faction Icons",
+            "specFilePath": "./specs/disenfranchisedFactions.json",
+            "templateDirectoryPath": "./templates/faction_disenfranchised_interface",
+            "outputDirectoryPath": "../interface/factions",
+            "disabled": false,
+            "dumpContents": true,
+            "isBom": false
+        },
+        {
+            "name": "Disenfranchised Faction Localisation",
+            "specFilePath": "./specs/disenfranchisedFactions.json",
+            "templateDirectoryPath": "./templates/faction_disenfranchised_localisation",
+            "outputDirectoryPath": "../localisation/english/faction_defs",
+            "disabled": false,
+            "dumpContents": true,
+            "isBom": true
         }
     ]
 }

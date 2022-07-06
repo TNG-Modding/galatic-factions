@@ -27,11 +27,18 @@ resolution_establish_galatic_{{varname}} = {
 	level = 1
 
 	modifier = {
-		resolution_force_establish_galatic_{{varname}}_static_modifier = 1
+		resolution_galatic_{{varname}}_static_modifier = 1
 	}
 
 	effect = {
 		custom_tooltip = resolution_establish_galatic_{{varname}}_tooltip
+		hidden_effect = {
+			every_country = {
+				add_modifier = { 
+					modifier = resolution_establish_galatic_{{varname}}_static_modifier
+				}
+			}
+		}
 	}
 
 	fail_effects = {
@@ -47,7 +54,78 @@ resolution_establish_galatic_{{varname}} = {
 	}
 
 	potential = {
-		# Only available to countries that have an ethic
+
+		# We cannot suggest a moderate ethic that is at odds with our fanatacism
+		NOR = {
+			{% if isMilitarist == 1 %}
+			has_ethic = ethic_fanatic_pacifist
+			{% endif %}
+
+			{% if isXenophobe == 1 %}
+			has_ethic = ethic_fanatic_xenophile
+			{% endif %}
+
+			{% if isEgalitarian == 1 %}
+			has_ethic = ethic_fanatic_authoritarian
+			{% endif %}
+
+			{% if isMaterialist == 1 %}
+			has_ethic = ethic_fanatic_spiritualist
+			{% endif %}
+
+			{% if isPacifist == 1 %}
+			has_ethic = ethic_fanatic_militarist
+			{% endif %}
+
+			{% if isXenophile == 1 %}
+			has_ethic = ethic_fanatic_xenophobe
+			{% endif %}
+
+			{% if isAuthoritarian == 1 %}
+			has_ethic = ethic_fanatic_egalitarian
+			{% endif %}
+
+			{% if isSpiritualist == 1 %}
+			has_ethic = ethic_fanatic_authoritarian
+			{% endif %}
+		}
+
+		# If you are a fanatic, that ethic must be represented
+		NOR = {
+			{% if isMilitarist == 0 %}
+			has_ethic = ethic_fanatic_militarist
+			{% endif %}
+
+			{% if isXenophobe == 0 %}
+			has_ethic = ethic_fanatic_xenophobe
+			{% endif %}
+
+			{% if isEgalitarian == 0 %}
+			has_ethic = ethic_fanatic_egalitarian
+			{% endif %}
+
+			{% if isMaterialist == 0 %}
+			has_ethic = ethic_fanatic_materialist
+			{% endif %}
+
+			{% if isPacifist == 0 %}
+			has_ethic = ethic_fanatic_pacifist
+			{% endif %}
+
+			{% if isXenophile == 0 %}
+			has_ethic = ethic_fanatic_xenophile
+			{% endif %}
+
+			{% if isAuthoritarian == 0 %}
+			has_ethic = ethic_fanatic_authoritarian
+			{% endif %}
+
+			{% if isSpiritualist == 0 %}
+			has_ethic = ethic_fanatic_spiritualist
+			{% endif %}
+		}
+
+		# We must have at least one part of the ethics suggested 
 		OR = {
 			{% if isMilitarist > 0 %}
 			has_ethic = ethic_militarist
@@ -222,6 +300,9 @@ resolution_disband_galatic_{{varname}} = {
 		custom_tooltip = resolution_disband_galatic_{{varname}}_effect_success
 		hidden_effect = {
 			cancel_resolution = "resolution_establish_galatic_{{varname}}"
+			every_country = {
+				remove_modifier = resolution_establish_galatic_{{varname}}_static_modifier
+			}
 		}
 	}
 

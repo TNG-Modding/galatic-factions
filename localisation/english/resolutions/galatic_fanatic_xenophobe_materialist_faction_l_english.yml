@@ -9,9 +9,11 @@
  resolution_disband_galatic_fanatic_xenophobe_materialist_faction_effect_success:0 "Repeals the §Y$resolution_establish_galatic_fanatic_xenophobe_materialist_faction$§! resolution."
  resolution_establish_galatic_fanatic_xenophobe_materialist_faction_tooltip:1 "The Fanatic Xenophobe Materialist Faction is able to spawn in empires that don't match the ethics of the faction."
 
+ resolution_galatic_fanatic_xenophobe_materialist_faction_static_modifier:0 "Galatic Fanatic Xenophobe Materialist Faction"
+ resolution_establish_galatic_fanatic_xenophobe_materialist_faction_static_modifier:0 "Galatic Fanatic Xenophobe Materialist Faction"
  resolution_force_establish_galatic_fanatic_xenophobe_materialist_faction_static_modifier:0 "Galatic Fanatic Xenophobe Materialist Faction"
- 
+
  edict_found_fanatic_xenophobe_materialist_faction:0 "The Fanatic Xenophobe Materialist Faction"
  edict_found_fanatic_xenophobe_materialist_faction_desc:0 "Fanatic Xenophobe Materialist ideals should be considered in matters of state."
- edict_found_fanatic_xenophobe_materialist_faction_tooltip:0 "Enable the Fanatic Xenophobe Materialist Faction to spawn."
+ found_fanatic_xenophobe_materialist_faction_tooltip:0 "Enable the Fanatic Xenophobe Materialist Faction to spawn."
  

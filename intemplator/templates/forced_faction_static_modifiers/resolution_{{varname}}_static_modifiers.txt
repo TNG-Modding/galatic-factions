@@ -1,0 +1,24 @@
+# This needs to become a per country thing, since we cant check galcom modifiers at pop_faction level
+resolution_galatic_{{varname}}_static_modifier = {
+   
+    {% if isMilitarist == 2 %}pop_ethic_militarist_attraction_mult = 0.5{% endif %}
+    {% if isMilitarist == 1 %}pop_ethic_militarist_attraction_mult = 0.25{% endif %}
+    {% if isXenophobe == 2 %}pop_ethic_xenophobe_attraction_mult = 0.5{% endif %}
+    {% if isXenophobe == 1 %}pop_ethic_xenophobe_attraction_mult = 0.25{% endif %}
+    {% if isEgalitarian == 2 %}pop_ethic_egalitarian_attraction_mult = 0.5{% endif %}
+    {% if isEgalitarian == 1 %}pop_ethic_egalitarian_attraction_mult = 0.25{% endif %}
+    {% if isMaterialist == 2 %}pop_ethic_materialist_attraction_mult = 0.5{% endif %}
+    {% if isMaterialist == 1 %}pop_ethic_materialist_attraction_mult = 0.25{% endif %}
+    {% if isPacifist == 2 %}pop_ethic_pacifist_attraction_mult = 0.5{% endif %}
+    {% if isPacifist == 1 %}pop_ethic_pacifist_attraction_mult = 0.25{% endif %}
+    {% if isXenophile == 2 %}pop_ethic_xenophile_attraction_mult = 0.5{% endif %}
+    {% if isXenophile == 1 %}pop_ethic_xenophile_attraction_mult = 0.25{% endif %}
+    {% if isAuthoritarian == 2 %}pop_ethic_authoritarian_attraction_mult = 0.5{% endif %}
+    {% if isAuthoritarian == 1 %}pop_ethic_authoritarian_attraction_mult = 0.25{% endif %}
+    {% if isSpiritualist == 2 %}pop_ethic_spiritualist_attraction_mult = 0.5{% endif %}
+    {% if isSpiritualist == 1 %}pop_ethic_spiritualist_attraction_mult = 0.25{% endif %}
+}
+
+resolution_establish_galatic_{{varname}}_static_modifier = {
+    
+}
